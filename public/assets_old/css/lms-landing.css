@@ -1,0 +1,1139 @@
+/* LMS Landing Css Start */
+/* Common */
+.text-18 {
+    color: #676C7D;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+.text-58 {
+    color: #181A1E;
+    font-family: Manrope;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 70px;
+}
+.text-42 {
+    color: #181A1E;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 54px;
+}
+.text-36 {
+    color: #181A1E;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+}
+.padding-bottom-110 {
+    padding-bottom: 110px;
+}
+.mrg-30{
+    row-gap: 30px;
+}
+.mcg-30>* {
+--bs-gutter-x: 30px;
+}
+/* Top Video Area */
+.lms-video-section {
+    background: #FCFBF3;
+    overflow-x: hidden;
+}
+.lms-video-area {
+    padding: 100px 0;
+    column-gap: 30px;
+}
+.lms-video-details {
+    max-width: 507px;
+    width: 100%;
+}
+.lms-video-details .text-18 {
+    color: #0072EF;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+.lms-video-details .text-58 {
+    margin-bottom: 30px;
+}
+.lms-video-details .text-58 span {
+    color: #0072EF;
+}
+.video-details-notice {
+    color: #4F536C;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 10px;
+}
+.video-details-notice a {
+    display: inline-block;
+    color: inherit;
+    color: #181A1E;
+}
+.video-details-notice::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 3px;
+    border-radius: 10px;
+    background: #FE4C93;
+}
+a.video-sign-up {
+    color: inherit;
+    display: inline-block;
+    border-radius: 8px;
+    background: #0A7EFB;
+    padding: 12px 28px;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 16px;
+    transition: .3s;
+}
+a.video-sign-up:hover {
+    background: #005ab9;
+}
+.creator-website {
+    border-radius: 32px;
+    background: #FFF5D3;
+    padding: 6px 10px;
+    max-width: max-content;
+    column-gap: 4px;
+}
+.creator-website img {
+    width: 20.834px;
+    height: 20.833px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1.39px solid #fff;
+}
+.creator-website img:not(:first-child) {
+    margin-left: -6px;
+}
+.creator-website p {
+    color: #8E7909;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.lms-video-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 571.325px;
+    width: 100%;
+}
+.lms-video-inner {
+    border-radius: 20.588px;
+    background: linear-gradient(111deg, #DEE7F6 0%, #F0E1F8 99.02%);
+    width: 100%;
+    height: 350px;
+    padding: 12.87px;
+}
+.lms-video-inner iframe {
+    height: 100%;
+    width: 100%;
+    border-radius: 15.441px;
+}
+.video-after-1 {
+    position: absolute;
+    top: -138px;
+    right: -142px;
+    height: 396px;
+    width: 586px;
+    z-index: -1;
+}
+.video-after-2 {
+    position: absolute;
+    bottom: -53px;
+    right: -43px;
+    height: 110px;
+    width: 110px;
+    z-index: -1;
+}
+.video-after-3 {
+    position: absolute;
+    bottom: -5px;
+    left: -43px;
+    width: 41px;
+    height: 42px;
+    z-index: -1;
+}
+.video-after-1 img, 
+.video-after-2 img, 
+.video-after-3 img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* LMS Problem Solve */
+.title-42{
+    color: #181A1E;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 54px;
+}
+.title-42 span{
+    color: #0072EF;
+    font-weight: 800;
+}
+.section-title-landing{
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.problem-solve-section{
+    padding-top: 80px;
+}
+.text-28{
+    color: #181A1E;
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: .3s;
+}
+.solve-img-wrap{
+    border-radius: 16px;
+    border: 1px solid #E8F3FF;
+    padding: 0 23px 23px 23px;
+    text-align: center;
+    margin-bottom: 24px;
+    transition: .3s;
+}
+.solve-card-img{
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: auto;
+    background: #E8F3FF;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: 17px solid #FFF;
+    margin-bottom: 23px;
+    margin-top: -65px;
+    transition: .3s;
+}
+.solve-card-list{
+    display: flex;
+    justify-content: center;
+}
+.solve-card-list li{
+    color: #181A1E;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: .3s;
+}
+.solve-card-list li:not(:last-child){
+    margin-bottom: 24px;
+}
+.problem-solve-card:hover .solve-card-img{
+    background: #0A7EFB;
+}
+.problem-solve-card:hover .solve-img-wrap{
+    background: #0A7EFB;
+    border-color: transparent;
+}
+.problem-solve-card:hover .solve-img-wrap .text-28{
+    color: #FFF;
+}
+.problem-solve-card:hover .solve-card-list li{
+    color: #0072EF;
+}
+.problem-solve-card{
+    cursor: pointer;
+    margin-top: 65px;
+}
+a.learn-btn{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background: #0A7EFB;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: inline-block;
+    transition: .3s;
+}
+.learn-btn:hover{
+    background: #005ab9;
+}
+.problem-solve-learn{
+    text-align: center;
+    margin-top: 20px;
+}
+.problem-solve-learn p{
+    color: #181A1E;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+/* Success Journey */
+.success-journey-wrap{
+    border-radius: 20px;
+    background: linear-gradient(100deg, #5438FF 3.29%, #9F0AFB 100%);
+    padding: 40px;
+}
+.success-journey-wrap .text-42 {
+    line-height: normal;
+    color: #FFF;
+    position: relative;
+    text-align: center;
+    padding: 0 70px 0 41px;
+    position: relative;
+    max-width: max-content;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.success-journey-wrap .text-42::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: -6px;
+    width: 34px;
+    height: 34px;
+    background: url(../img/new-icons-images/success-before.svg) no-repeat scroll center center / cover;
+}
+.success-journey-wrap .text-42::after{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -17px;
+    width: 70px;
+    height: 70px;
+    background: url(../img/new-icons-images/success-after.svg) no-repeat scroll center center / cover;
+}
+.single-success-wrap p{
+    color: #FFF;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: relative;
+    margin-bottom: 4px;
+}
+.single-success-wrap p::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 50px;
+    background: #FFF;
+}
+.single-success-wrap .text-46{
+    font-weight: 800;
+    line-height: normal;
+    color: #FFF;
+}
+.single-success-wrap{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+.single-success-wrap:not(:last-child):after{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80px;
+    width: 1px;
+    background: #FFF;
+}
+.success-counter-wrap{
+    justify-content: space-between;
+}
+.single-success-wrap:nth-of-type(1){
+    justify-content: flex-start;
+    width: 219px;
+}
+.single-success-wrap:nth-of-type(2){
+    justify-content: center;
+    width: 309px;
+}
+.single-success-wrap:nth-of-type(3){
+    justify-content: center;
+    width: 298px;
+}
+.single-success-wrap:nth-of-type(4){
+    justify-content: flex-end;
+    width: 233px;
+}
+/* How To Area */
+.how-to-title-2 .text-42{
+    margin-bottom: 30px;
+}
+.how-to-banner-area-2 .how-to-banner{
+    max-width: 439px;
+    margin: 45px 45px 54px 45px;
+}
+.how-to-banner-area-2 .how-to-banner-item-1 {
+    left: -45px;
+    top: -48px;
+    transform: translateY(0);
+}
+.how-to-banner-area-2 .how-to-banner-item-2 {
+    right: -45px;
+    bottom: -54px;
+    transform: translateY(0);
+}
+.success-signup-form{
+    margin-top: 30px;
+}
+.success-signup-form form{
+    display: flex;
+    column-gap: 16px;
+}
+.success-signup-form input{
+    border-radius: 8px;
+    border: 1px solid var(--Line, #E0E3E8);
+    background: #FFF;
+    padding: 13px 16px 14px 16px;
+    color: #3D4053;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.success-signup-form input:hover{
+    border-color: #86b7fe;
+}
+.success-signup-form input:focus{
+    color: #3D4053;
+    box-shadow: none;
+}
+.success-signup-form input::placeholder{
+    color: #4C4E5F;
+}
+.success-signup-form button{
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background: #FFE01B;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    color: #181A1E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    max-width: max-content;
+    width: 100%;
+    transition: .3s;
+}
+.success-signup-form button:hover{
+    background: #f7c934;
+}
+/* Why Creative LMS */
+.why-lms-section{
+    padding: 80px 50px;
+    border-radius: 28px;
+    background: #FCFBF3;
+}
+.lms-topic-wrap{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 50px;
+}
+.single-advice-topic img{
+    margin-bottom: 24px;
+}
+.single-advice-topic p{
+    color: #181A1E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+/* Why Creative LMS */
+.lms-new-topic{
+    padding: 0px 50px !important;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 54px;
+}
+.new-advice-topic img{
+    margin-bottom: 28px;
+}
+.new-advice-topic p{
+    color: #181A1E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.section-title-landing-2{
+    max-width: 784px;
+}
+/* How to choose LMS */
+.single-choose-item .choose-number{
+    width: 60px;
+    height: 60px;
+    background: #0072EF;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    margin: auto;
+}
+.single-choose-item .title{
+    color: #181A1E;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+.single-choose-item .info{
+    color: #3D4053;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.howto-choose-lms{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 60px;
+}
+.howto-choose-section{
+    overflow-x: hidden;
+}
+.first-choose-section{
+    position: relative;
+    z-index: 2;
+}
+.first-choose-section::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 20px;
+    max-width: 100%;
+    width: 100%;
+    height: 20px;
+    z-index: -1;
+    background: url(../img/new-icons-images/first-choose-after.webp) no-repeat scroll center center / cover;
+}
+.second-choose-section{
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* margin-top: 70px; */
+}
+.second-choose-section::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: -70px;
+    max-width: 100%;
+    width: 100%;
+    height: 110px;
+    z-index: -1;
+    background: url(../img/new-icons-images/second-choose-after.webp) no-repeat scroll center center / cover;
+}
+/* LMS Customer Support */
+.customer-support-details{
+    max-width: 585px;
+    width: 100%;
+}
+.customer-support-details .light-text{
+    color: #0072EF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+.customer-support-details .text-36{
+    padding-bottom: 20px;
+}
+.customer-support-details .text-36 span{
+    color: #0072EF;
+    font-weight: 800;
+}
+.customer-support-banner img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+/* LMS Best 3 Factor */
+.factor-img-wrap {
+    height: 253px;
+    border-radius: 20px;
+    border: 1px solid #E0E3E8;
+    padding: 12px 20px 30px 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: .3s;
+}
+.factor-img-wrap .text-24{
+    line-height: normal;
+    text-align: center;
+    transition: .3s;
+}
+.factor-img-wrap img{
+    margin-bottom: 16px;
+    max-height: 154px;
+    width: auto;
+    object-fit: contain;
+}
+.factor-img-wrap-2 img{
+    margin-bottom: 7px;
+    max-height: 171px;
+}
+.single-factor-new p{
+    color: #3D4053;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    transition: .3s;
+}
+.single-factor-new{
+    height: 100%;
+    cursor: pointer;
+}
+.single-factor-new:hover .factor-img-wrap{
+    border-color: transparent;
+    background: #0072EF;
+}
+.single-factor-new:hover .text-24{
+    color: #FFF;
+}
+.single-factor-new:hover p{
+    color: #0072EF;
+}
+/* How To Area */
+.how-to-banner {
+    height: auto;
+    position: relative;
+    max-width: 439px;
+    margin: 45px 45px 54px 45px;
+}
+.how-to-banner > img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+.how-to-banner-item-1 {
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 6px 26px 0px rgba(0, 101, 211, 0.15);
+    max-width: max-content;
+    padding: 9px 19px 10px 17px;
+    column-gap: 14px;
+    position: absolute;
+    left: -45px;
+    top: -48px;
+    transform: translateY(0);
+}
+.banner-win-img {
+    width: 47.568px;
+    height: 47.568px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FEF3D7;
+    padding: 8px;
+}
+.banner-win-details h4 {
+    color: #181A1E;
+    font-size: 17.947px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 3px;
+}
+.banner-win-details h4 span {
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 700;
+}
+.banner-win-details p {
+    color: #4F536C;
+    font-size: 13.461px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.how-to-banner-item-2 {
+    border-radius: 8px;
+    background: var(--WHITE, #FFF);
+    box-shadow: 0px 9.04534px 33.92002px 0px rgba(0, 101, 211, 0.12);
+    padding: 7px 19px;
+    max-width: max-content;
+    position: absolute;
+    right: -45px;
+    bottom: -54px;
+    transform: translateY(0);
+}
+.how-to-banner-item-2 p {
+    color: #181A1E;
+    font-size: 13.568px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.banner-item-profiles img {
+    width: 35.96px;
+    height: 35.96px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.banner-item-profiles img:not(:first-child) {
+    margin-left: -10px;
+}
+.banner-item-profiles .more-profiles {
+    width: 35.96px;
+    height: 35.96px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #0072EF;
+    color: #FFF;
+    font-size: 13.568px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10px;
+}
+.how-to-title .text-42 {
+    margin-bottom: 30px;
+}
+.how-to-title .text-42 span {
+    color: #0072EF;
+}
+.course-accordion .accordion-item {
+    border: none;
+}
+.course-accordion .accordion-button {
+    padding: 20px 0;
+    color: #212534;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.course-accordion .accordion-item:not(:last-child) .accordion-button {
+    border-bottom: 1px solid #E1E4EC;
+}
+.course-accordion .accordion-item:last-child .accordion-button:not(.collapsed) {
+    border-bottom: 1px solid #E1E4EC;
+}
+.course-accordion .accordion-button:focus {
+    box-shadow: none;
+}
+.course-accordion .accordion-button:not(.collapsed) {
+    color: #212534;
+    background-color: transparent;
+    box-shadow: none;
+}
+.course-accordion .accordion-button::after {
+    background-image: url("../img/new-icons-images/accordion-arrow-1.svg");
+    width: 24px;
+    height: 24px;
+}
+.course-accordion .accordion-body {
+    padding: 20px 0 10px 0;
+}
+.course-accordion .accordion-body p {
+    color: var(--Body, #3D4053);
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+}
+/* Downloadable LMS vs Creative LMS */
+.lms-difference-wrap .lms-difference-single:not(:last-child){
+    margin-bottom: 12px;
+}
+.lms-difference-single{
+    justify-content: center;
+    column-gap: 15px;
+    overflow: hidden;
+}
+.lms-difference-single .info{
+    color: #181A1E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lms-difference-single .img{
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid rgba(0, 114, 239, 0.08);
+    outline: 21px solid #fff;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+}
+.lms-difference-single .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.lms-difference-single .info{
+    max-width: 319.645px;
+    width: 100%;
+    padding: 13px 30px;
+}
+.lms-difference-single .info-left{
+    text-align: right;
+    border-radius: 30px 0px 0px 30px;
+    background: rgba(217, 217, 217, 1);
+}
+.lms-difference-single .info-right{
+    text-align: left;
+    border-radius: 0px 30px 30px 0px;
+    background: rgba(232, 243, 255, 1);
+}
+/* Dynamic LMS */
+.dynamic-lms-title .title-42{
+    margin-bottom: 24px;
+}
+.dynamic-lms-title .info{
+    color: var(--Body, #3D4053);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+.single-lms-functionality{
+    border-radius: 16px;
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #E0E3E8;
+    cursor: pointer;
+    transition: .3s;
+    height: 100%;
+}
+.single-lms-functionality .info{
+    color: #3D4053;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    transition: .3s;
+}
+.lms-functionality-icon{
+    margin-bottom: 8px;
+}
+.lms-functionality-icon path{
+    transition: .3s;
+}
+.single-lms-functionality:hover{
+    border-color: transparent;
+    background: #0072EF;
+}
+.single-lms-functionality:hover .info{
+    color: #fff;
+}
+.single-lms-functionality:hover .lms-functionality-icon svg{
+    fill: #fff;
+}
+.single-lms-functionality:hover .lms-functionality-icon path{
+    stroke: #fff;
+    fill: none;
+}
+/* LMS Landing Css End */
+
+
+/* Responsive Css */
+@media screen and (max-width: 991px){
+    /* LMS Landing */
+    .text-58 {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    /* LMS Landing */
+    .success-counter-wrap{
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 30px;
+    }
+    .single-success-wrap:nth-of-type(1){
+        width: 50%;
+        justify-content: center;
+    }
+    .single-success-wrap:nth-of-type(2){
+        width: 50%;
+    }
+    .single-success-wrap:nth-of-type(2)::after{
+        display: none;
+    }
+    .single-success-wrap:nth-of-type(3){
+        width: 50%;
+    }
+    .single-success-wrap:nth-of-type(4){
+        width: 50%;
+        justify-content: center;
+    }
+    .how-to-banner-area-2 {
+        padding-top: 0px;
+    }
+    .lms-topic-wrap {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .lms-new-topic {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .first-choose-section::after{
+        display: none;
+    }
+    .second-choose-section::after{
+        display: none;
+    }
+    .howto-choose-lms {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 30px;
+    }
+    /* How To */
+    .how-to-banner-area {
+        padding-top: 0px;
+        justify-content: center !important;
+    }
+}
+
+@media screen and (max-width: 767px){
+    /* LMS Landing */
+    .text-42 {
+        font-size: 37px;
+        line-height: 52px;
+    }
+    .text-36 {
+        font-size: 32px;
+        line-height: 45px;
+    }
+    /* LMS Landing */
+    /* Video Area */
+    .title-42 {
+        font-size: 37px;
+        line-height: 52px;
+    }
+    .lms-video-area {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .problem-solve-card {
+        max-width: 400px;
+        margin: auto;
+        margin-top: 65px;
+        margin-bottom: 20px;
+    }
+    .single-success-wrap p {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+    .lms-topic-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .lms-new-topic {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .single-factor-new {
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+    }
+    .customer-support-banner {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+    .customer-support-details {
+        margin: auto;
+    }
+    .howto-choose-lms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Downloadable vs */
+    .lms-difference-single .info {
+        padding: 13px 20px;
+    }
+    .lms-difference-single{
+        column-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    /* LMS Landing */
+    .text-58 {
+        font-size: 43px;
+    }
+    .text-42 {
+        font-size: 32px;
+        line-height: 50px;
+    }
+    .text-36 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    /* LMS Landing */
+    .title-42 {
+        font-size: 35px;
+        line-height: 48px;
+    }
+    /* Video Area */
+    .video-after-1,
+    .video-after-2,
+    .video-after-1 {
+        display: none;
+    }
+    .success-counter-wrap{
+        flex-direction: column;
+        align-items: center;
+    }
+    .single-success-wrap::after{
+        display: none;
+    }
+    .single-success-wrap:nth-of-type(1){
+        width: auto;
+        justify-content: flex-start;
+    }
+    .single-success-wrap:nth-of-type(2){
+        width: auto;
+        justify-content: flex-start;
+    }
+    
+    .single-success-wrap:nth-of-type(3){
+        width: auto;
+        justify-content: flex-start;
+    }
+    .single-success-wrap:nth-of-type(4){
+        width: auto;
+        justify-content: flex-start;
+    }
+    .single-success-wrap p::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .single-success-wrap {
+        text-align: center;
+    }
+    .lms-topic-wrap {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .single-advice-topic {
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    .lms-new-topic {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .new-advice-topic{
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    .howto-choose-lms {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .why-lms-section {
+        padding: 50px;
+    }
+    /* Downloadable vs */
+    .lms-difference-wrap .lms-difference-single:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .lms-difference-single {
+        column-gap: 0px;
+    }
+    .lms-difference-single .img {
+        outline: 13px solid #fff;
+    }
+    .lms-difference-single .info-left {
+        padding: 13px 20px 13px 5px;
+    }
+    .lms-difference-single .info-right {
+        padding: 13px 5px 13px 20px;
+    }
+    .lms-difference-single .info {
+        font-size: 14px;
+    }
+    .lms-difference-single .img {
+        min-width: 70px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+@media screen and (max-width: 450px){
+    /* LMS Landing */
+    .success-signup-form form {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    /* Downloadable vs */
+    .lms-difference-single .info {
+        font-size: 13px;
+    }
+    .lms-difference-single .img {
+        min-width: 65px;
+        width: 65px;
+        height: 65px;
+    }
+    .lms-difference-single .img {
+        border: 8px solid rgba(0, 114, 239, 0.08);
+        padding: 8px;
+    }
+    
+}

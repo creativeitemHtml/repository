@@ -1,0 +1,388 @@
+/* Element Menu Css */
+.element-menu-section{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+.element-menu-header {
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #d8dde2;
+}
+.element-desktop-nav ul{
+    /* column-gap: 30px; */
+    column-gap: 10px;
+}
+.element-desktop-nav li a{
+    color: #212534;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    position: relative;
+    line-height: 1.375rem;
+    /* padding: 1.25rem 0 1.25rem; */
+    padding: 1.25rem 10px 1.25rem;
+    transition: .3s;
+}
+.element-desktop-nav li a.active,
+.element-desktop-nav li a:hover{
+    color: #0A7EFB;
+}
+/* Submenu */
+.el-have-sub > a{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.el-have-sub > a svg{
+    margin-top: 2px;
+}
+.el-have-sub > a path{
+    transition: .3s;
+}
+.el-have-sub > a:hover path{
+    fill: #0A7EFB;
+}
+.el-sub-menu{
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px);
+    width: 200px;
+    height: auto;
+    box-shadow: 0rem 0.625rem 2.1875rem rgba(0, 0, 0, 0.08);
+    padding: 1px 1px 5px 5px;
+    background: #fff;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+.el-sub-menu > span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #0a7efb;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.el-sub-menu li a {
+    width: 100%;
+    display: block;
+    padding: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    color: #676c7d;
+    padding: 0.5625rem 0.625rem;
+    position: relative;
+    transition: 0.3s all ease-in-out;
+    border-radius: 0.1875rem;
+}
+.el-sub-menu li a:hover {
+    background-color: #edf2f6;
+    color: #0a7efb;
+}
+.el-sub-menu li a.active {
+    color: #0a7efb;
+}
+.el-have-sub {
+    position: relative;
+}
+.el-have-sub:hover .el-sub-menu {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+}
+
+
+/* Unlimited btn */
+.unlimited-btn{
+    border-radius: 10px;
+    background: #0A7EFB;
+    padding: 12px 20px;
+    color: #FFF !important;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: inline-block;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.unlimited-btn:hover{
+    background: #005ab9;
+}
+.element-menu-button{
+    display: none;
+}
+/* Element Menu Css */
+
+
+/* Element Menu Search */
+.element-menu-area {
+    position: relative;
+    display: block;
+}
+.el-have-search{
+    position: static;
+}
+.el-have-search a path{
+    transition: .3s;
+}
+.el-have-search a:hover path{
+    fill: #0A7EFB;
+}
+.menu-search-antry{
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0 0 5px 5px;
+    transition: .3s;
+    max-width: 575px;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+}
+.menu-search-antry.active{
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+}
+.menu-search-antry .nice-select {
+    min-width: 170px;
+    padding-left: 13px;
+    background-color: transparent !important;
+    font-size: 14px;
+    height: 45px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.menu-search-antry .nice-select:focus{
+    box-shadow: none;
+}
+.menu-search-antry .nice-select .current {
+    font-size: 14px;
+    color: #212534;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+}
+.menu-search-antry .nice-select.open .list {
+    margin-top: 14px;
+}
+.menu-search-antry .nice-select .list {
+    overflow: inherit;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 7px;
+    padding: 2px;
+}
+.menu-search-antry .nice-select.open .list::before {
+    position: absolute;
+    top: -9px;
+    left: 46%;
+    content: "";
+    background-color: #fff;
+    transform: rotate(137deg);
+    height: 18px;
+    width: 18px;
+    z-index: -1;
+}
+.menu-search-antry .nice-select .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: none;
+    padding: 0;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+.menu-search-antry .nice-select .option.selected {
+    font-weight: 400;
+    font-size: 14px;
+}
+.menu-search-antry .nice-select::after{
+    border: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 12px;
+    transform: rotate(0);
+    width: 10px;
+    height: 10px;
+}
+.menu-search-antry .form-control {
+    background-color: transparent;
+    font-size: 14px;
+    padding: 11px 12px;
+    border: none;
+    color: #212534;
+    width: 100%;
+}
+.menu-search-antry .form-control:focus{
+    box-shadow: none;
+}
+.search-input-after{
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+.search-input-after::after {
+    position: absolute;
+    top: 11px;
+    content: "";
+    left: -4px;
+    width: 1px;
+    height: 20px;
+    background-color: #676c7d;
+}
+.menu-search-antry button {
+    background-color: #0a7efb;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    color: #fff;
+    max-width: 105px;
+    width: 100%;
+}
+.menu-search-antry button svg {
+    margin-right: 5px;
+}
+.menu-search-antry button path {
+    fill: #FFF;
+}
+/* Element Menu Search */
+
+
+
+
+/* Responsive Css Start */
+@media all and (max-width: 1199px){
+    .element-desktop-nav ul{
+        /* column-gap: 20px; */
+        column-gap: 0px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    /* Unlimited btn */
+    .unlimited-btn{
+        padding: 10px 18px;
+    }
+    /* Element Header Search */
+    .menu-search-antry {
+        display: none;
+    }
+    /* Element 3 */
+    .element-menu-header {
+        padding: 6px 8px;
+    }
+    .element-menu-wrap{
+        position: static;
+    }
+    .element-menu-area {
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        background: #fff;
+        width: 100%;
+        display: none;
+        
+    }
+    .element-desktop-nav{
+        padding-bottom: 30px;
+        height: calc(100vh - 56px);
+        overflow-y: scroll;
+    }
+    .element-desktop-nav > ul {
+        flex-direction: column;
+        align-items: flex-start !important;
+        padding: 0 20px;
+    }
+    .element-menu-button{
+        display: block;
+        padding: 10px;
+    }
+    .element-logo img {
+        height: 30px;
+        width: auto;
+    }
+    .element-desktop-nav li{
+        width: 100%;
+    }
+    .element-desktop-nav > ul > li:not(:last-child) a{
+        border-bottom: 1px solid #d8dde2;
+    }
+    .element-desktop-nav > ul > li.active-el-submenu a{
+        border-bottom: 1px solid #d8dde2;
+    }
+    .element-desktop-nav > ul > li a.border-none {
+        border-bottom: 1px solid transparent;
+    }
+    .element-desktop-nav li a{
+        padding: 13px 10px 13px 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .el-have-sub .el-sub-menu {
+        visibility: visible;
+        opacity: 1;
+        top: 100%;
+        max-width: 100%;
+        width: 100%;
+        position: inherit;
+        box-shadow: none;
+        display: none;
+        transition: none;
+    }
+    .el-sub-menu > span{
+        display: none;
+    }
+    .element-desktop-nav li a.active, 
+    .element-desktop-nav li a:hover {
+        color: #212534;
+    }
+    .el-sub-menu li a.active,
+    .el-sub-menu li a:hover {
+        background-color: transparent;
+        color: #676c7d;
+    }
+    .el-have-sub > a:hover path {
+        fill: #212534;
+    }
+    .el-have-search{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px){
+    /* Unlimited btn */
+    .unlimited-btn .hide-text{
+        display: none;
+    }
+    .unlimited-btn {
+        padding: 9px 14px;
+    }
+    /* element header */
+    .element-logo img {
+        height: 28px;
+    }
+}
+
+/* Responsive Css End */

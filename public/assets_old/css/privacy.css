@@ -1,0 +1,99 @@
+/* Common Css */
+.pb-110 {
+    padding-bottom: 6.875rem;
+}
+.pb-20 {
+    padding-bottom: 1.25rem;
+}
+.pt-80 {
+    padding-top: 5rem;
+}
+
+.fz-24-sb-34-black {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.125rem;
+    color: #212534;
+}
+
+/* Pricavy Policy */
+.career-details .c_header {
+    max-width: 35.8125rem;
+    padding-bottom: 1.875rem;
+}
+.career-details .c_header .info {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: #676c7d;
+}
+.career-details .c_body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    padding-top: 1.875rem;
+    border-top: 0.0625rem solid #e6eaee;
+}
+.cd_title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.125rem;
+    color: #212534;
+}
+.c_text {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: #212534;
+}
+.fw-bolder {
+    font-weight: bolder!important;
+}
+.cd_list {
+    padding-left: 1em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cd_list li {
+    list-style: decimal;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: #212534;
+}
+.cd_list li:last-child {
+    padding-bottom: 0;
+}
+.cd_list_2 li {
+    position: relative;
+    padding-left: 2.1875rem;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: #212534;
+}
+.cd_list_2 li:last-child {
+    padding-bottom: 0;
+}
+.cd_list_2 li::before {
+    content: url(../img/icon/plus.svg);
+    position: absolute;
+    top: 3px;
+    left: 0;
+    line-height: 1;
+}
+.text-fast-blue{
+    color: #0d6efd;
+    transition: .3s;
+}
+.text-fast-blue:hover{
+    color: #0d6dfdc0;
+}
+/* Responsive */
+@media screen and (max-width: 575px){
+    .c-ling-text-wrap{
+        overflow: auto;
+    }
+}

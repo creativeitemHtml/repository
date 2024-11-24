@@ -1,0 +1,22 @@
+/* Player */
+.cin1-white-video-player .plyr{
+    border-radius: 11.667px;
+}
+.cin1-white-video-player .plyr__video-embed{
+    border-radius: 11.667px;
+}
+.cin1-white-video-player .plyr__control--overlaid{
+    background: #00000069;
+}
+.cin1-white-video-player .plyr__volume input[type=range]{
+    color: var(--whiteColor);
+}
+.cin1-white-video-player .plyr__progress input[type=range]{
+    color: var(--whiteColor);
+}
+.cin1-white-video-player .plyr--video .plyr__control:focus-visible, 
+.cin1-white-video-player .plyr--video .plyr__control:hover, 
+.cin1-white-video-player .plyr--video .plyr__control[aria-expanded=true] {
+    background: #000;
+    color: #fff;
+}

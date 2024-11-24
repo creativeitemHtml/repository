@@ -1,0 +1,658 @@
+/* Promotion Css */
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Book.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Bold.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Black.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Medium.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Light.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Thin.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('../fonts/gotham/Gotham-Ultra.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Ultra.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-XLight.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-XLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.promotion-top-section{
+    background: #02F285;
+}
+.promotion-top-wrap{
+    column-gap: 20px;
+    padding: 13px 0;
+}
+.promotion-top-wrap .info{
+    color: #323030;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.checkout-btn-1{
+    color: #323030;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #FFEE51;
+    box-shadow: 4px 4px 0px 0px #323030;
+    transition: .3s;
+    min-width: max-content;
+}
+.checkout-btn-1:hover{
+    color: #323030;
+    background: #FFEE51;
+    box-shadow: -4px -4px 0px 0px #323030;
+}
+/* Modal */
+.promotional-modal .header-logo{
+    width: 100%;
+    text-align: center;
+}
+.promotional-modal .header-logo img{
+    max-width: 208px;
+    width: 100%;
+    height: auto;
+}
+.promotional-modal .modal-content{
+    border-radius: 16px;
+    border: 3px solid #323030;
+    background: var(--WHITE, #FFF);
+    box-shadow: 12px 12px 0px 0px #323030;
+}
+.promotional-modal .modal-header{
+    padding: 11px 20px;
+    border-bottom: 3px solid #323030;
+}
+.promotional-modal .btn-close{
+    box-sizing: content-box;
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    color: #fff;
+    /* background: transparent url("../img/lms/white-cross.svg") center/16px auto no-repeat; */
+    border: 0;
+    border-radius: 50%;
+    opacity: 1;
+    background-color: #323030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.promotional-modal .btn-close:focus{
+    box-shadow: none;
+}
+.promotional-modal .modal-header .btn-close{
+    margin: 0;
+}
+.promotional-modal .modal-body{
+    padding: 37px 30px 30px 30px;
+}
+.promotional-modal .modal-body .black-friday-wrap{
+    position: relative;
+    z-index: 1;
+    max-width: max-content;
+    margin: 0 auto 16px auto;
+}
+.black-friday-wrap .title{
+    color: #212534;
+    font-family: Gotham;
+    font-size: 70.164px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+.black-friday-wrap .title-shadow{
+    font-family: Gotham;
+    font-size: 70.164px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-text-stroke: 1px #FFD951;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: -30px;
+    z-index: -1;
+}
+.black-friday-wrap .title-shadow:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 45%;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+}
+.promotional-modal .discount-title{
+    color: #212534;
+    font-family: Gotham;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.promotion-date-limit{
+    gap: 28px;
+}
+.promotion-time-card{
+    width: 140px;
+    border-radius: 8px;
+    border: 2.8px solid #323030;
+    background: #FFF;
+}
+.promotion-time-card .time{
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 2.8px solid #323030;
+    background: #92FFCD;
+    color: #292727;
+    font-family: Manrope;
+    font-size: 26.133px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    padding: 7px;
+}
+.promotion-time-card .limited-time{
+    color: #FFEE51;
+    filter: drop-shadow(3.7333333492279053px 3.7333333492279053px 0px #323030);
+    text-shadow: 
+    1px  1px     #000, 
+    -1px  1px     #000, 
+    1px -1px     #000, 
+    -1px -1px     #000,
+    1px  1px 5px transparent;
+    /* -webkit-text-stroke: 2px black; */
+    font-family: Manrope;
+    font-size: 54.133px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    padding: 2px 0 8px 0;
+    text-align: center;
+}
+.promotion-limit{
+    color: #292727;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    margin: 16px 0 19px 0;
+}
+.checkout-btn-2{
+    color: #323030;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #FFEE51;
+    box-shadow: 6px 6px 0px 0px #323030;
+    transition: .3s;
+    padding: 9px 19px;
+    display: block;
+    max-width: max-content;
+}
+.checkout-btn-2:hover{
+    color: #323030;
+    box-shadow: -6px -6px 0px 0px #323030;
+}
+/* Modal 2 */
+.promotional-modal-2 .modal-body{
+    padding: 0px 30px 20px 30px;
+}
+.promotional-modal-2 .add-banner-1{
+    margin: 0px auto 18px auto;
+    max-width: 457px;
+    width: 40%;
+}
+.checkout-btn-3{
+    background: linear-gradient(266deg, #FFE775 19.15%, #FF9A23 104.41%);
+}
+.promotional-modal-2 .modal-content{
+    position: relative;
+    margin-top: 75px;
+}
+.promotional-modal-2 .black-friday-img {
+    position: absolute;
+    left: -175px;
+    top: -125px;
+    z-index: 3;
+}
+
+/* Banner top 2 */
+.promotion-top-two-wrap{
+    padding: 18px 0;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.promotion-top-count{
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+.promotion-top-count .clone{
+    font-size: 25.143px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: linear-gradient(180deg, rgba(33, 37, 52, 0.16) 0%, #0C0E17 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.promotion-top-count .number{
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+}
+.promotion-top-count .number-inner{
+    display: block flex;
+    align-items: center;
+    justify-content: center;
+    width: 29.333px;
+    height: 44px;
+    border-radius: 3.143px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, #000 82.19%);
+    color: #FFEE51;
+    font-size: 25.143px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.promotion-top-two-wrap .info-2{
+    color: #212534;
+    font-family: Gotham;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1px;
+}
+.promotion-top-two-wrap .info-2 .price{
+    display: block flex;
+    align-items: flex-end;
+    column-gap: 7px;
+    /* margin-top: 2px; */
+    color: #FFEE51;
+    font-family: Gotham;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.promotion-top-two-wrap .info-2 .price .new-price{
+    filter: drop-shadow(3px 3px 0px #212534);
+    text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000, 1px 1px 5px transparent;
+}
+.promotion-top-two-wrap .info-2 .price .old-price{
+    color: #F91C86;
+    font-family: Gotham;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 4px;
+    text-decoration: line-through;
+}
+
+/* Modal 3 */
+.promotional-modal-3 .modal-header{
+    padding: 24px 20px 10px 20px;
+    border-bottom: none;
+}
+.promotional-modal-3 .save-yellow{
+    color: #323030;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    border-radius: 48px;
+    border: 1px solid #000;
+    background: #FFEE51;
+    box-shadow: 4px 4px 0px 0px #323030;
+    padding: 9px 19px;
+    max-width: max-content;
+    margin-bottom: 4px;
+}
+.lifetime-access-wrap{
+    column-gap: 5px;
+    margin-bottom: 8px;
+}
+.lifetime-access-wrap .lifetime-access{
+    color: #1E50FB;
+    font-family: Gotham;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.new-price-blue-wrap .title{
+    color: #212534;
+    font-family: Gotham;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 13px;
+    margin-bottom: 30px;
+}
+.new-price-blue-wrap .title .new-price-blue{
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #1E50FB;
+    box-shadow: 4px 4px 0px 0px #212534;
+    padding: 7px 23px;
+    color: #FFF;
+    font-family: Gotham;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.promotional-modal-3 .modal-body {
+    padding: 37px 24px 24px 24px;
+}
+.promotional-modal-3 .promotion-date-limit{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 1100px){
+    /* Banner 2 */
+    .promotion-top-two-wrap .info-2{
+        font-size: 32px;
+    }
+    .promotion-top-two-wrap .info-2 .price{
+        font-size: 32px;
+    }
+}
+@media (min-width: 576px){
+    /* Modal */
+    .promotional-modal .modal-dialog {
+        max-width: 630px;
+    }
+    /* Modal 3 */
+    .promotional-modal-3 .modal-dialog {
+        max-width: 900px;
+    }
+}
+@media (min-width: 992px){
+    /* Modal 2 */
+    .promotional-modal-2 .modal-dialog {
+        max-width: 630px;
+    }
+}
+@media (max-width: 991px){
+    /* Modal 2 */
+    .promotional-modal-2 .modal-dialog {
+        max-width: 530px;
+    }
+    .promotional-modal-2 .black-friday-img {
+        left: -175px;
+        top: -125px;
+        width: 370px;
+    }
+    /* Banner 2 */
+    .promotion-top-count{
+        width: 100%;
+        justify-content: center;
+    }
+    .promotion-top-two-wrap{
+        row-gap: 8px;
+    }
+    /* Modal 3 */
+    .black-friday-wrap .title {
+        font-size: 65px;
+    }
+    .black-friday-wrap .title-shadow {
+        font-size: 65px;
+        top: -29px;
+    }
+}
+@media screen and (max-width: 767px){
+    .black-friday-wrap .title {
+        font-size: 55px;
+    }
+    .black-friday-wrap .title-shadow{
+        font-size: 55px;
+        top: -24px;
+    }
+    /* Modal 2 */
+    .promotional-modal-2 .black-friday-img {
+        left: -75px;
+        top: -125px;
+        width: 270px;
+    }
+    /* Banner 2 */
+    .promotion-top-two-wrap{
+        flex-direction: column;
+    }
+    .promotion-top-two-wrap .info-2{
+        justify-content: center;
+    }
+    .promotion-top-count .number-inner {
+        height: 36px;
+        font-size: 24px;
+    }
+    .promotion-top-two-wrap .info-2{
+        font-size: 28px;
+    }
+    .promotion-top-two-wrap .info-2 .price{
+        font-size: 28px;
+    }
+    /* Modal 3 */
+    .promotional-modal-3 .black-friday-wrap .title {
+        font-size: 48px;
+    }
+    .promotional-modal-3 .black-friday-wrap .title-shadow{
+        font-size: 48px;
+        top: -22px;
+    }
+    .lifetime-access-wrap .lifetime-access {
+        font-size: 43px;
+    }
+    .new-price-blue-wrap .title {
+        font-size: 34px;
+    }
+    .new-price-blue-wrap .title .new-price-blue {
+        padding: 6px 18px;
+        font-size: 23px;
+    }
+    
+    
+}
+@media screen and (max-width: 575px){
+    .black-friday-wrap .title {
+        font-size: 47px;
+    }
+    .black-friday-wrap .title-shadow{
+        font-size: 47px;
+        top: -22px;
+    }
+    .promotion-date-limit {
+        gap: 20px;
+    }
+    .promotion-time-card {
+        width: 110px;
+    }
+    .promotion-time-card .time {
+        font-size: 24px;
+        padding: 5px;
+    }
+    .promotion-time-card .limited-time {
+        font-size: 50px;
+        padding: 1px 0 5px 0;
+    }
+    .promotional-modal .discount-title {
+        font-size: 33px;
+    }
+    .promotion-limit {
+        font-size: 22px;
+    }
+    /* Modal */
+    .promotional-modal-2 .black-friday-img {
+        left: -50px;
+        top: -134px;
+        width: 245px;
+        transform: rotate(24deg);
+    }
+    .promotional-modal-2 .modal-content {
+        margin-top: 80px;
+    }
+    /* Modal 3 */
+    .promotional-modal-3 .black-friday-wrap .title {
+        font-size: 48px;
+    }
+    .promotional-modal-3 .black-friday-wrap .title-shadow {
+        font-size: 48px;
+        top: -3px;
+        left: -3px;
+        width: 100%;
+    }
+    .black-friday-wrap .title-shadow:after {
+        display: none;
+    }
+    .lifetime-access-wrap .lifetime-access {
+        font-size: 34px;
+    }
+    .lifetime-access-wrap img{
+        width: 40px;
+    }
+    .new-price-blue-wrap .title {
+        font-size: 32px;
+    }
+    .new-price-blue-wrap .title .new-price-blue {
+        font-size: 22px;
+    }
+
+
+}
+@media screen and (max-width: 450px){
+    .promotion-top-wrap{
+        flex-direction: column;
+        row-gap: 10px;
+        text-align: center;
+    }
+    .promotional-modal .modal-body{
+        padding: 25px 25px 30px 25px;
+    }
+    .black-friday-wrap .title {
+        font-size: 36px;
+    }
+    .black-friday-wrap .title-shadow {
+        font-size: 36px;
+        top: -16px;
+    }
+    .promotional-modal .discount-title {
+        font-size: 28px;
+    }
+    .promotion-limit {
+        font-size: 20px;
+    }
+    /* Modal 3 */
+    .promotional-modal-3 .header-logo img {
+        max-width: 190px;
+    }
+    .promotional-modal-3 .black-friday-wrap .title {
+        font-size: 44px;
+    }
+    .promotional-modal-3 .black-friday-wrap .title-shadow {
+        font-size: 44px;
+    }
+    .lifetime-access-wrap .lifetime-access {
+        font-size: 26px;
+    }
+    .lifetime-access-wrap img {
+        width: 37px;
+    }
+    .new-price-blue-wrap .title {
+        font-size: 26px;
+    }
+    .new-price-blue-wrap .title .new-price-blue {
+        padding: 6px 15px;
+        font-size: 20px;
+    }
+    
+}

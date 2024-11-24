@@ -1,0 +1,7 @@
+    @include('global.facebook_open_graph')
+    @include('global.twitter_open_graph')
+    @include('global.facebook_pixel')
+    @include('global.creativeitem_google_analytics')
+    @include('global.google_ads')
+    @include('global.traffic_conversion')
+    @include('global.google_tag_manager')

@@ -1,0 +1,616 @@
+/* LMS Features Css Start */
+/* Common */
+.text-24 {
+    color: #212534;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.text-20 {
+    color: #212534;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+.padding-bottom-110 {
+    padding-bottom: 110px;
+}
+.mrg-30{
+    row-gap: 30px;
+}
+.mcg-30>* {
+--bs-gutter-x: 30px;
+}
+.overflow-x-hidden{
+    overflow-x: hidden;
+}
+
+/* Section Title */
+.section-title-lms-top{
+    padding-top: 50px;
+}
+.section-title-lms{
+    padding-bottom: 50px;
+}
+.section-title-lms .title-h{
+    color: #212534;
+    text-align: center;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 64px;
+    max-width: 750px;
+    width: 100%;
+    margin: auto;
+}
+.section-title-lms .bold-h{
+    font-weight: 800;
+}
+.section-title-lms .green-h{
+    font-weight: 800;
+    color: #0A7EFB;
+}
+.section-title-lms p{
+    color: var(--Body, #3D4053);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    max-width: 682px;
+    width: 100%;
+    margin: auto;
+    padding-top: 24px;
+}
+.section-title-lms .title-btn-lms{
+    padding-top: 36px;
+    padding-bottom: 20px;
+}
+.title-btn-lms{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+a.white-btn-lms{
+    padding: 12px 23px;
+    border-radius: 10px;
+    border: 1px solid #CFD4E1;
+    color: #212534;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: inline-block;
+    transition: .3s;
+}
+.white-btn-lms:hover{
+    background: #0A7EFB;
+    color: #FFF;
+    border-color: transparent;
+}
+/* Service Card */
+.lms-service-link{
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+.lms-service-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.lms-service-details .text-24{
+    line-height: normal;
+    margin-bottom: 4px;
+}
+.lms-service-details p{
+    color: #212534;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+.lms-service-course{
+    background: rgba(255, 241, 170, 0.84);
+}
+.lms-service-content{
+    background: rgba(255, 207, 181, 0.84);
+}
+.lms-service-coaching{
+    background: rgba(218, 242, 255, 0.84);
+}
+#online-course{
+    padding-top: 86px;
+}
+
+/* Create Course Area */
+.create-course-wrap{
+    column-gap: 30px;
+    border-radius: 30px;
+    background: #FBF8F7;
+    padding: 40px 30px 40px 40px;
+    margin-bottom: 110px;
+}
+/* Video Player */
+.create-cousre-video{
+    width: 100%;
+    /* height: 344px; */
+}
+.create-cousre-video iframe{
+    width: 100%;
+    border-radius: 20px;
+}
+.create-cousre-video .my-video-player{
+    width: 100%;
+    border-radius: 20px;
+}
+.create-cousre-video .plyr--video{
+    width: 100%;
+    border-radius: 20px;
+}
+.create-cousre-video .plyr__control--overlaid{
+    background: #0a7efb;
+}
+.create-cousre-video .plyr__volume input[type=range]{
+    color: #0a7efb;
+}
+.create-cousre-video .plyr__progress input[type=range]{
+    color: #0a7efb;
+}
+
+.create-course-details{
+    width: 100%;
+}
+.title-light{
+    color: #3D82F0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.title-32{
+    color: #212534;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.create-course-details .title-light{
+    padding-bottom: 12px;
+}
+.create-course-details .title-32{
+    padding-bottom: 30px;
+}
+.course-list-img{
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(61, 130, 240, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.create-course-list li{
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+}
+.create-course-list li span{
+    color: var(--Body, #3D4053);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: block;
+}
+.create-course-list li:not(:last-child){
+    margin-bottom: 16px;
+}
+/* Online Course Accordion and Img */
+.online-course-content .title-light{
+    padding-bottom: 12px;
+}
+.online-course-content .title-32{
+    padding-bottom: 10px;
+}
+.course-accordion .accordion-button:focus {
+    box-shadow: none;
+}
+.course-accordion .accordion-button{
+    padding: 20px 0;
+    color: #212534;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.course-accordion .accordion-button:not(.collapsed) {
+    color: #212534;
+    background-color: transparent;
+    box-shadow: none;
+}
+.course-accordion .accordion-button::after {
+    background-image: url("../img/new-icons-images/accordion-arrow-1.svg");
+    width: 24px;
+    height: 24px;
+}
+.course-accordion .accordion-item {
+    border: none;
+}
+.course-accordion .accordion-item:not(:last-child) .accordion-button{
+    border-bottom: 1px solid #E1E4EC;
+}
+.course-accordion .accordion-item:last-child .accordion-button:not(.collapsed){
+    border-bottom: 1px solid #E1E4EC;
+}
+.course-accordion .accordion-body {
+    padding: 20px 0 10px 0;
+}
+.course-accordion .accordion-body p {
+    color: var(--Body, #3D4053);
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+}
+.course-accordion .accordion-body img{
+    display: none;
+}
+.accordion-right-banner{
+    justify-content: flex-end;
+}
+.online-course-banner{
+    max-width: 535px;
+    width: 100%;
+    height: auto;
+}
+.online-course-banner img{
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+}
+.accordion-right-banner{
+    padding-top: 110px;
+}
+.online-course-section{
+    padding-bottom: 100px;
+}
+/* Course Organizer */
+.course-organizer-section{
+    padding-bottom: 100px;
+}
+.accordion-left-banner{
+    justify-content: flex-start;
+}
+.organizer-banner-title{
+    padding-bottom: 50px;
+}
+.organizer-banner-title .title-light{
+    padding-bottom: 12px;
+}
+/* Organizer Accordion */
+.organizer-accordion .accordion-button:focus {
+    box-shadow: none;
+}
+.organizer-accordion .accordion-button {
+    padding: 20px 30px;
+    border-radius: 16px;
+    background: rgba(61, 130, 240, 0.12);
+    box-shadow: none;
+    color: #212534;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.organizer-accordion .accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.organizer-accordion .accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+.organizer-accordion .accordion-item{
+    border: none;
+    border-radius: 16px;
+}
+.organizer-accordion .accordion-item:not(:last-child){
+    margin-bottom: 30px;
+}
+.organizer-accordion .accordion-button:not(.collapsed){
+    color: #212534;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.organizer-accordion .accordion-button::after {
+    background-image: url("../img/new-icons-images/accordion-arrow-1.svg");
+    width: 24px;
+    height: 24px;
+}
+.organizer-accordion .accordion-body {
+    padding: 30px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background: #FFF;
+}
+.accordion-item-shadow:has(> .accordion-button:not(.collapsed)){
+    box-shadow: 0px 6px 30px 0px rgba(28, 28, 28, 0.12);
+}
+.organizer-accordion .accordion-body p{
+    color: var(--Body, #3D4053);
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; 
+}
+.organizer-accordion .accordion-body img{
+    display: none;
+}
+
+/* Multiple Leason */
+.leason-card-link{
+    border-radius: 20px;
+    border: 1px solid #E1E4EC;
+    padding: 30px;
+    display: block;
+    transition: .3s;
+}
+.single-leason-card .text-24{
+    line-height: normal;
+    padding-bottom: 20px;
+    transition: .3s;
+}
+.single-leason-card p{
+    color: #3D4053;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    padding-bottom: 30px;
+    transition: .3s;
+}
+.single-leason-card .explore{
+    column-gap: 6px;
+    color: #212534;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition: .3s;
+}
+.single-leason-card .explore path{
+    transition: .3s;
+}
+.leason-card-link:hover{
+    border-color: #0A7EFB;
+}
+.leason-card-link:hover .text-24,
+.leason-card-link:hover p,
+.leason-card-link:hover .explore{
+    color: #3D82F0;
+}
+.leason-card-link:hover .explore path{
+    fill: #3D82F0;
+}
+.leason-card-wrap{
+    padding-bottom: 120px;
+}
+/* Learning Analytics Review and Interaction with Students Area */
+.learning-analyrics-section{
+    padding-bottom: 120px;
+}
+#digital-content{
+    padding-top: 120px;
+}
+.analytics-and-interaction .title-light{
+    padding-bottom: 12px;
+}
+.analytics-and-interaction .title-32{
+    padding-bottom: 24px;
+}
+.analytics-and-interaction p{
+    padding-bottom: 30px;
+    color: #3D4053;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+.analytics-and-interaction-list li{
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+}
+.analytics-and-interaction-list span{
+    color: #3D4053;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.analytics-and-interaction-list li:not(:last-child){
+    margin-bottom: 24px;
+}
+.interaction-student-section{
+    padding-bottom: 100px;
+}
+.interaction-right-banner{
+    justify-content: flex-end;
+}
+.analytics-left-banner{
+    justify-content: flex-start;
+}
+/* Digital Content */
+.feature-right-banner{
+    justify-content: flex-end;
+}
+.feature-left-banner{
+    justify-content: flex-start;
+}
+.feature-content-area .title-light{
+    padding-bottom: 12px;
+}
+.feature-content-area .title-32{
+    padding-bottom: 24px;
+}
+.feature-content-pera p{
+    color: #3D4053;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    padding-bottom: 16px;
+}
+.feature-content-pera p:last-child{
+    padding-bottom: 30px;
+}
+.feature-content-btn {
+    column-gap: 20px;
+}
+
+/* Multi Leason */
+#online-coaching{
+    padding-top: 110px;
+}
+.single-multi-card{
+    border-radius: 20px;
+    border: 1px solid #E1E4EC;
+    padding: 20px;
+    cursor: pointer;
+    transition: .3s;
+    background: #FFF;
+}
+.multi-item-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(61, 130, 240, 0.16);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.single-multi-card .text-20{
+    padding-bottom: 16px;
+}
+.single-multi-card p{
+    color: #3D4053;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+}
+.single-multi-card:hover{
+    border-color: transparent;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.12);
+}
+/* Appointment Booking */
+.feature-content-area .title-32 span{
+    color: #0072EF;
+    font-weight: 800;
+}
+a.black-btn-lms{
+    padding: 12px 23px;
+    border-radius: 10px;
+    border: 1px solid #181A1E;
+    color: #181A1E;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition: .3s;
+    display: inline-block;
+}
+.black-btn-lms:hover{
+    border-color: transparent;
+    color: #FFF;
+    background: #0A7EFB;
+}
+/* LMS Features Css End */
+
+
+/* LMS Responsive */
+@media all and (max-width: 991px){
+    /* LMS Features */
+    .section-title-lms .title-h {
+        font-size: 45px;
+        line-height: 57px;
+    }
+    .analytics-left-banner {
+        justify-content: center;
+    }
+    .interaction-right-banner {
+        justify-content: center;
+    }
+    .feature-right-banner {
+        justify-content: center;
+    }
+    .feature-left-banner {
+        justify-content: center;
+    }
+}
+
+
+
+@media all and (max-width: 767px){
+    /* LMS Features */
+    .section-title-lms .title-h {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .course-accordion .accordion-body img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        margin-top: 24px;
+    }
+    .title-32 {
+        font-size: 28px;
+    }
+    .organizer-banner-title {
+        padding-bottom: 15px;
+    }
+    .organizer-accordion .accordion-body img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        margin-top: 24px;
+    }
+}
+
+
+@media all and (max-width: 575px){
+    /* LMS Features */
+    .section-title-lms .title-h {
+        font-size: 35px;
+        line-height: 46px;
+    }
+    .title-32 {
+        font-size: 25px;
+    }
+}
+
+
+
+@media all and (max-width: 450px){
+    /* LMS Feature */
+    .create-course-wrap {
+        padding: 20px;
+    }
+}

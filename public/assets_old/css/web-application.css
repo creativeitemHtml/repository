@@ -1,0 +1,362 @@
+/* Common Css Start */
+.text-15{
+    color: #676C7D;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.text-16{
+    color: #676C7D;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.text-18{
+    color: #676C7D;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px; 
+}
+.text-20{
+    color: #212534;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+.text-22{
+    color: #676C7D;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+}
+.text-24{
+    color: #212534;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.text-26{
+    color: #212534;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 38px;
+}
+.text-32{
+    color: #212534;
+    font-family: Lora;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 46px; 
+}
+.text-36{
+    color: #181A1E;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+}
+.text-40{
+    color: #212534;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 54px;
+}
+.text-42{
+    color: #181A1E;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 54px;
+}
+.text-46{
+    color: #212534;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px; 
+}
+.text-50{
+    color: #212534;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px; 
+}
+.text-52{
+    color: #212534;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 64px; 
+}
+.text-54{
+    color: #212534;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 78px;
+}
+.text-58{
+    color: #181A1E;
+    font-family: Manrope;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 70px;
+}
+.padding-bottom-110{
+    padding-bottom: 110px;
+}
+.padding-top-110{
+    padding-top: 110px;
+}
+.mrg-30{
+    row-gap: 30px;
+}
+.mcg-30>* {
+--bs-gutter-x: 30px;
+}
+.mcg-60>* {
+--bs-gutter-x: 60px;
+}
+
+/* Common Css End */
+
+
+
+/* Product Page Web Application Start */
+.web-application-title{
+    margin: 50px auto 20px auto;
+    text-align: center;
+    max-width: 770px;
+    width: 100%;
+}
+.web-application-title .text-54{
+    margin-bottom: 30px;
+}
+.web-application-title .text-24{
+    color: #676C7D;
+    font-weight: 500;
+    line-height: 34px;
+}
+.single-application-link{
+    border-radius: 15px;
+    border: 1px solid #E3E9F1;
+    background: #FFF;
+    display: block;
+    width: 100%;
+    transition: 0.3s all ease-in-out;
+}
+.application-baner{
+    height: 220px;
+    width: 100%;
+}
+.application-baner img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+}
+.application-details{
+    padding: 20px 20px 16px 20px;
+    border-bottom: 1px solid #E3E9F1;
+}
+.app-details-inner{
+    margin-bottom: 20px;
+}
+.app-details-inner .text-15{
+    font-weight: 500;
+    line-height: 27px;
+    margin-top: 8px;
+}
+.app-virsion-download .version-text{
+    color: #676C7D;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.app-virsion-download .version-text span{
+    color: #212534;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.app-virsion-download .download-text{
+    column-gap: 8px;
+}
+.app-virsion-download .download-text span{
+    color: #212534;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.app-name-download .download-text{
+    column-gap: 8px;
+}
+.app-name-download .download-text span{
+    color: #212534;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.app-buy-price .buy-text{
+    column-gap: 8px;
+}
+.app-buy-price .buy-text span{
+    color: #212534;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: .3s;
+}
+.app-buy-price .price-text{
+    color: #212534;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.app-buy-price{
+    padding: 16px 20px;
+}
+.single-application-link:hover{
+    border-color: transparent;
+    box-shadow: 0px 9px 36px 0px rgba(27, 27, 27, 0.16);
+}
+.single-application-link:hover .buy-text span{
+    color: #0A7EFB;
+}
+.single-application-link:hover .buy-text path{
+    fill: #0A7EFB;
+}
+/* Product Page Web Application End */
+
+
+
+/* Responsive Css Start */
+@media all and (max-width: 991px){
+    .text-46 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .text-50 {
+        font-size: 42px;
+        line-height: 58px;
+    }
+    /* LMS Landing  */
+    .text-58 {
+        font-size: 45px;
+        line-height: 60px;
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 767px){
+    .text-52 {
+        font-size: 45px;
+        line-height: 62px;
+    }
+    .text-32 {
+        font-size: 30px;
+    }
+    .text-42 {
+        font-size: 37px;
+        line-height: 52px;
+    }
+    .title-42 {
+        font-size: 37px;
+        line-height: 52px;
+    }
+    .text-36 {
+        font-size: 32px;
+        line-height: 45px;
+    }
+    .text-54 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+    /* Product Page */
+    .single-application-link {
+        max-width: 500px;
+        margin: auto;
+    }
+    .web-application-title .text-54 {
+        margin-bottom: 20px;
+    }
+    
+}
+@media screen and (max-width: 575px){
+    .text-52 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .text-54 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .text-46 {
+        font-size: 32px;
+        line-height: 50px;
+    }
+    .text-32 {
+        font-size: 28px;
+    }
+    .text-36 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+    .text-50 {
+        font-size: 34px;
+        line-height: 52px;
+    }
+    /* LMS Landing */
+    .text-42 {
+        font-size: 32px;
+        line-height: 50px;
+    }
+    .title-42 {
+        font-size: 35px;
+        line-height: 48px;
+    }
+    /* Element 3 */
+    .text-40 {
+        font-size: 30px;
+        line-height: 43px;
+    }
+    /* LMS Features */
+    .title-32 {
+        font-size: 25px;
+    }
+
+    
+}
+@media screen and (max-width: 450px){
+    /* Blog Page */
+    .text-32 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .text-58 {
+        font-size: 43px;
+    }
+
+
+}
+
+/* Responsive Css End */

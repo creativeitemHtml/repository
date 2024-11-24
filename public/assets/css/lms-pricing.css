@@ -1,0 +1,474 @@
+/* LMS Pricing Page Css Start */
+/* Common */
+.padding-bottom-110{
+    padding-bottom: 110px;
+}
+.mrg-30{
+    row-gap: 30px;
+}
+.mcg-30>* {
+--bs-gutter-x: 30px;
+}
+.title-58{
+    color: #212534;
+    text-align: center;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 68px; 
+}
+
+/* Title */
+.pricing-st-top{
+    padding-top: 80px;
+}
+.pricing-section-title{
+    max-width: 750px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+/* Nav Tab */
+.pricing-tab-btn .nav{
+    justify-content: center;
+    padding: 5px;
+    border-radius: 12px;
+    border: 1px solid #E0E3E8;
+    max-width: max-content;
+    margin: auto;
+    margin-top: 30px;
+    column-gap: 5px;
+}
+.pricing-tab-btn .nav-link{
+    color: #181A1E;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 8px;
+    padding: 12px 30px;
+}
+.pricing-tab-btn .nav-link.active{
+    color: #FFF;
+    background: #0072EF;
+}
+/* Pricin Card */
+.single-pricing-card{
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #E0E3E8;
+    height: 100%;
+}
+.pn-light{
+    color: #0072EF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.plan-btn{
+    border-radius: 8px;
+    border: 1px solid #0072EF;
+    color: #0072EF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 16px;
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
+    transition: .3s;
+}
+.plan-btn:hover{
+    background: #0072EF;
+    color: #fff;
+}
+.pn-light-package{
+    margin-bottom: 20px;
+}
+.pn-price-month{
+    column-gap: 12px;
+    margin-bottom: 12px;
+}
+.pn-price-month .title-price{
+    color: #212534;
+    text-align: center;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 68px;
+}
+.pn-month p{
+    color: #686A73;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.pn-month p:first-child{
+    margin-bottom: 6px;
+}
+.feature-limit{
+    color: #3D4053;
+    font-family: Manrope;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 32px;
+}
+.pricing-list-title{
+    padding: 30px 0;
+    border-top: 1px solid #E0E3E8;
+}
+.pricing-list-title h4{
+    color: #181A1E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 8px;
+}
+.pricing-list-title p{
+    color: #686A73;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+/* List */
+.pricing-card-list ul li{
+    color: #3D4053;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 32px;
+    position: relative;
+}
+.pricing-card-list ul li::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/lms/black-check.svg) no-repeat scroll center center / cover;
+}
+.pricing-card-list ul li:not(:last-child){
+    margin-bottom: 20px;
+}
+.pn-popular-batch{
+    color: #FFF;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 3px 15px 2px 15px;
+    border-radius: 4px;
+    background: #0072EF;
+}
+.single-pricing-card.active{
+    background: #181A1E;
+    box-shadow: 0px 8px 26px 0px rgba(24, 26, 30, 0.16);
+    border-color: transparent;
+}
+.single-pricing-card.active .pn-light{
+    color: #fff;
+}
+.single-pricing-card.active .pn-price-month .title-price{
+    color: #fff;
+}
+.single-pricing-card.active .pn-month p{
+    color: #fff;
+}
+.single-pricing-card.active .feature-limit{
+    color: #D7D4D4;
+}
+.single-pricing-card.active .plan-btn{
+    background: #0072EF;
+    color: #fff;
+}
+.single-pricing-card.active .pricing-list-title{
+    border-color: #3B4352;
+}
+.single-pricing-card.active .pricing-list-title h4{
+    color: #fff;
+}
+.single-pricing-card.active .pricing-list-title p{
+    color: #D7D4D4;
+}
+.single-pricing-card.active .pricing-card-list ul li{
+    color: #fff;
+}
+.single-pricing-card.active .pricing-card-list ul li::after{
+    background: url(../img/lms/blue-check.svg) no-repeat scroll center center / cover;
+}
+
+/* Frequently Asked  Question */
+.frequently-section{
+    padding: 80px 0;
+    background: #FCFBF3;
+    margin-bottom: 110px;
+}
+.frequently-section-2{
+    margin-bottom: 0;
+}
+.frequently-title{
+    padding-bottom: 50px;
+    text-align: center;
+}
+.frequently-accordion .accordion-button:focus{
+    box-shadow: none;
+}
+.frequently-accordion .accordion-button{
+    padding: 24px 30px;
+    border-radius: 16px;
+    background: #fff;
+    color: #181A1E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.frequently-accordion .accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.frequently-accordion .accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+.frequently-accordion .accordion-body{
+    padding: 0px 30px 30px 30px;
+}
+.frequently-accordion .accordion-body p{
+    color: #0072EF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+.frequently-accordion .accordion-item{
+    border: none;
+    border-radius: 16px;
+}
+.frequently-accordion .accordion-item:not(:last-child){
+    margin-bottom: 20px;
+}
+.frequently-accordion .accordion-button:not(.collapsed) {
+    color: #0072EF;
+    background-color: #fff;
+    box-shadow: none;
+}
+.frequently-accordion .accordion-button::after {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+}
+/* LMS Testimonials */
+.lms-testimonial-title {
+    max-width: 750px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.lms-testimonial-title .info{
+    color: #3D4053;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    margin-top: 24px;
+}
+.lms-testimonial-rating{
+    column-gap: 4px;
+    margin-bottom: 30px;
+}
+.single-lms-testimonial{
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 8px 30px 0px rgba(12, 119, 236, 0.12);
+    padding: 30px;
+    transition: .3s;
+}
+.single-lms-testimonial .info{
+    color: #181A1E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 60px;
+}
+.lmst-user-brand{
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.lmst-user-wrap{
+    column-gap: 16px;
+}
+.lmst-user-wrap .lmst-user{
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.lmst-user-wrap .lmst-user img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.lmst-user-details .name{
+    color: #181A1E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+.lmst-user-details .role{
+    color: #3D4053;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lmsSwiper{
+    padding: 30px 0;
+    margin-bottom: 80px;
+}
+.single-lms-testimonial.swiper-slide{
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+.single-lms-testimonial.swiper-slide-active{
+    transform: scale(1);
+    opacity: 1;
+}
+.swiper-next-prev {
+    left: 0;
+    right: 0;
+    top: 50%;
+    max-width: 1180px;
+    margin: auto;
+    position: absolute;
+    background: transparent;
+}
+.swiper-next-prev .swiper-button-prev{
+    position: absolute;
+    left: 20px;
+}
+.swiper-next-prev .swiper-button-next{
+    position: absolute;
+    left: initial;
+    right: 20px;
+}
+.swiper-next-prev .swiper-button-next:after{
+    position: absolute;
+    content: "";
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url(../img/lms/arrow-right-blue.svg);
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: center;
+    filter: drop-shadow(0px 8px 20px rgba(12, 119, 236, 0.12));
+} 
+.swiper-next-prev .swiper-button-prev:after {
+    position: absolute;
+    content: "";
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url(../img/lms/arrow-left-blue.svg);
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: center;
+    filter: drop-shadow(0px 8px 20px rgba(12, 119, 236, 0.12));
+}
+/* LMS Pricing Css End */
+
+/* Responsive Css */
+@media screen and (max-width: 991px){
+    /* LMS Pricing */
+    .title-58 {
+        font-size: 53px;
+        line-height: 63px;
+    }
+    .pn-price-month .title-price{
+        font-size: 53px;
+        line-height: 63px;
+    }
+}
+@media screen and (max-width: 767px){
+    /* LMS Pricing */
+    .title-58 {
+        font-size: 45px;
+        line-height: 58px;
+    }
+    .single-pricing-card {
+        max-width: 450px;
+        margin: auto;
+    }
+    .lmsSwiper{
+        padding: 30px;
+    }
+}
+@media screen and (max-width: 575px){
+    /* LMS Pricing */
+    .title-58 {
+        font-size: 37px;
+        line-height: 50px;
+    }
+    .single-lms-testimonial {
+        padding: 22px;
+    }
+    .swiper-next-prev .swiper-button-prev:after {
+        width: 45px;
+        height: 45px;
+    }
+    .swiper-next-prev .swiper-button-next:after {
+        width: 45px;
+        height: 45px;
+    }
+    .swiper-next-prev .swiper-button-prev {
+        left: 15px;
+    }
+    .swiper-next-prev .swiper-button-next {
+        right: 15px;
+    }
+    .lms-testimonial-rating svg{
+        height: 30px;
+        width: 30px;
+    }
+    .lms-testimonial-rating {
+        margin-bottom: 20px;
+    }
+    .single-lms-testimonial .info {
+        margin-bottom: 30px;
+    }
+    .lmst-user-details .name {
+        margin-bottom: 5px;
+    }
+    .lmst-user-wrap {
+        column-gap: 10px;
+    }
+    .lmst-user-wrap .lmst-user {
+        min-width: 60px;
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 450px){
+    /* LMS Pricing */
+    .pricing-tab-btn .nav-link {
+        padding: 12px 25px;
+    }
+}

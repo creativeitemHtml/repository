@@ -1,0 +1,83 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 01, 2023 at 08:12 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `eativeit_test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles_and_permissions`
+--
+
+DROP TABLE IF EXISTS `roles_and_permissions`;
+CREATE TABLE `roles_and_permissions` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `projects` int(11) DEFAULT 0,
+  `products` int(11) DEFAULT 0,
+  `blog` int(11) DEFAULT 0,
+  `doc` int(11) DEFAULT 0,
+  `user` int(11) DEFAULT 0,
+  `element_product_type` int(11) NOT NULL DEFAULT 0,
+  `element_product_manage` int(11) NOT NULL DEFAULT 0,
+  `download_product` int(11) NOT NULL DEFAULT 0,
+  `report` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `roles_and_permissions`
+--
+
+INSERT INTO `roles_and_permissions` (`id`, `name`, `slug`, `projects`, `products`, `blog`, `doc`, `user`, `element_product_type`, `element_product_manage`, `download_product`, `report`, `created_at`, `updated_at`) VALUES
+(1, 'Superadmin', 'superadmin', 1, 1, 1, 1, 1, 1, 1, 1, 1, '2023-02-14 05:14:35', '2023-02-14 05:14:35'),
+(2, 'Project Admin', 'project_admin', 1, 0, 0, 0, 0, 0, 0, 0, 0, '2023-02-14 05:15:36', '2023-02-14 05:15:36'),
+(3, 'Product admin', 'product_admin', 0, 0, 0, 0, 0, 0, 1, 1, 0, '2023-02-14 05:16:53', '2023-02-14 05:16:53'),
+(4, 'Blog Writer', 'blog_writer', 0, 0, 1, 0, 0, 0, 0, 0, 0, '2023-02-14 05:16:02', '2023-02-14 05:16:02'),
+(5, 'Document Writer', 'doc_writer', 0, 0, 0, 1, 0, 0, 0, 0, 0, '2023-02-14 05:16:53', '2023-02-14 05:16:53'),
+(6, 'Customer', 'customer', 0, 0, 0, 0, 0, 0, 0, 1, 0, '2023-02-14 05:16:53', '2023-02-14 05:16:53');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `roles_and_permissions`
+--
+ALTER TABLE `roles_and_permissions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `roles_and_permissions`
+--
+ALTER TABLE `roles_and_permissions`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
