@@ -804,4 +804,9 @@ class LmsController extends Controller
 
         return $recover_user_data;
     }
+
+    public function signup()
+    {
+        return view('frontend.growup_lms.signup');
+    }
 }

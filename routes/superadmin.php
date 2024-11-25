@@ -111,7 +111,7 @@ Route::name('superadmin.')->prefix('superadmin')->middleware('auth', 'superadmin
         Route::any('language/{language?}', 'updatedPhrase')->name('language.update_phrase');
         Route::get('language/delete/{name}', 'deleteLanguage')->name('language.delete');
         Route::post('change_language', 'user_language')->name('user_language');
-        
+
         //Payment Request
         Route::get('payment-request', 'paymentRequestView')->name('payment_request');
         Route::get('payment-request-approve/{id}', 'paymentRequestAprrove')->name('paymentRequestApprove');

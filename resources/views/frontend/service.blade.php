@@ -336,10 +336,10 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="service_pause()">x</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="alert(); service_pause();">x</button>
             </div>
             <div class="modal-body">
-                <div id="player2" data-plyr-provider="youtube" data-plyr-embed-id="XZePsCuSOtU"></div>
+                <div id="player-2" data-plyr-provider="youtube" data-plyr-embed-id="XZePsCuSOtU"></div>
             </div>
         </div>
     </div>

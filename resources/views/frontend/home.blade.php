@@ -6,7 +6,7 @@
                 <div class="col-md-6">
                     <div class="ci-banner-details2">
                         <h1 class="mb-20px man-title-60px mb-20px">{{ get_phrase('Train, Sell, Succeed with') }} <span class="ci2-title-gradient fw-extrabold">{{ get_phrase('GrowUp Lms') }}</span></h1>
-                        <p class="man-subtitle-2 mb-38px">{{ get_phrase('Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor.') }}</p>
+                        <p class="man-subtitle-2 mb-38px">{{ get_phrase('GrowUp LMS helps you train students, sell courses, and achieve success effortlessly. Empower learners, expand your reach, and grow your business with a user-friendly platform designed for results.') }}</p>
                         <div class="d-flex align-items-center gap-4 flex-wrap">
                             <a href="#" class="btn btn-primary-ci1">{{ get_phrase('Get Started free') }}</a>
                             <a href="javascript:void(0)" class="video-play-btn" data-bs-toggle="modal" data-bs-target="#video-modal">
@@ -75,7 +75,7 @@
                             <p class="product-logo-sm-name">{{ get_phrase('Academy LMS') }}</p>
                         </div>
                         <h2 class="man-title-40px mb-20px">{{ get_phrase('Explore Limitless Learning with') }} <span class="ci2-title3-gradient fw-bold">{{ get_phrase('Academy LMS') }}</span></h2>
-                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor.') }}</p>
+                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Academy LMS are all-in-one place platform no doubt. Effortlessly Create, sell, manage, and offer courses that are comfortable for students. So that students can find courses easily and connect them.') }}</p>
                         <div class="d-flex align-items-center g-30px flex-wrap">
                             <a href="https://1.envato.market/jGqOZ" class="btn btn-outline-primary-ci1 d-flex align-items-center gap-1">
                                 <span>{{ get_phrase('Buy Now') }}</span>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow bounceInRight" data-wow-duration="2s">
+                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow animate__fadeInUp" data-wow-delay=".3s">
                         <img src="{{ asset('assets/img/home-2/product-illustration-5.webp') }}" alt="banner">
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                             <p class="product-logo-sm-name">{{ get_phrase('Locus') }}</p>
                         </div>
                         <h2 class="man-title-40px mb-20px">{{ get_phrase('Explore Property and Connect Seamlessly with') }} <span class="ci2-text-primary fw-bold">{{ get_phrase('Locus') }}</span></h2>
-                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor.') }}</p>
+                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Locus is a real estate directory. Create subscription packages for agents to list properties, connect with buyers, and close sales or rentals easily.') }}</p>
                         <div class="d-flex align-items-center g-30px flex-wrap">
                             <a href="https://1.envato.market/locus_creativeitem" class="btn btn-outline-primary-ci1 d-flex align-items-center gap-1">
                                 <span>{{ get_phrase('Buy Now') }}</span>
@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow bounceInRight" data-wow-duration="2s">
+                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow animate__fadeInUp" data-wow-delay=".3s">
                         <img src="{{ asset('assets/img/home-2/product-illustration-6.webp') }}" alt="banner">
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                             <p class="product-logo-sm-name">{{ get_phrase('Sociopro') }}</p>
                         </div>
                         <h2 class="man-title-40px mb-20px">{{ get_phrase('Connect, Protect, and Monetize Securely with') }} <span class="ci2-title4-gradient fw-bold">{{ get_phrase('Sociopro') }}</span></h2>
-                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor.') }}</p>
+                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Sociopro is a private social platform that helps to connect, create groups, run business pages, share blogs, organize events, sell products, and earn through ads and many other ways.') }}</p>
                         <div class="d-flex align-items-center g-30px flex-wrap">
                             <a href="https://1.envato.market/15n2Px" class="btn btn-outline-primary-ci1 d-flex align-items-center gap-1">
                                 <span>{{ get_phrase('Buy Now') }}</span>
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow bounceInRight" data-wow-duration="2s">
+                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow animate__fadeInUp" data-wow-delay=".3s">
                         <img src="{{ asset('assets/img/home-2/product-illustration-7.webp') }}" alt="banner">
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                             <p class="product-logo-sm-name">{{ get_phrase('Ekattor') }} 8</p>
                         </div>
                         <h2 class="man-title-40px mb-20px">{{ get_phrase('Manage Your School with Ease Using') }} <span class="ci2-title5-gradient fw-bold">{{ get_phrase('Ekattor 8') }}</span></h2>
-                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor.') }}</p>
+                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Ekattor 8 is an advanced school management system offering modern features for students, teachers, parents, and admins, simplifying daily school operations efficiently.') }}</p>
                         <div class="d-flex align-items-center g-30px flex-wrap">
                             <a href="https://1.envato.market/gb0BLv" class="btn btn-outline-primary-ci1 d-flex align-items-center gap-1">
                                 <span>{{ get_phrase('Buy Now') }}</span>
@@ -194,7 +194,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow bounceInRight" data-wow-duration="2s">
+                    <div class="ci-product-short-banner d-flex flex-column align-items-center align-items-md-end wow animate__fadeInUp" data-wow-delay=".3s">
                         <img src="{{ asset('assets/img/home-2/product-illustration-8.webp') }}" alt="banner">
                     </div>
                 </div>
@@ -206,7 +206,7 @@
     <section class="why-best-products">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="best-products">
                         <h1 class="es-title-1 mb-20px text-center text-white mx-auto">{{ get_phrase('Why Our Products are the best') }}</h1>
                         <p class="info">{{ get_phrase("We work on products that matter & make the product keeping in mind customers' needs. What you actually want, what's going to reduce your workload, and make your life easier is our first priority.") }}</p>
@@ -246,7 +246,7 @@
                         <div class="icon">
                             <img src="{{ asset('assets/img/home/refresh.svg') }}" alt="">
                         </div>
-                        <h4>{{ get_phrase('Xontinuous Update') }}</h4>
+                        <h4>{{ get_phrase('Continuous Update') }}</h4>
                     </div>
                     <p class="info">{{ get_phrase('Our products are updated with new features and bug fixes regularly.') }}</p>
                 </div>
@@ -297,7 +297,7 @@
                 <div class="col-lg-4">
                     <div class="pt-lg-0 pt-5">
                         <h2 class="man-title-40px mb-4 me-lg-4">{{ get_phrase('Happy Customers, Proven') }} <span class="ci2-title6-gradient ">{{ get_phrase('Results') }}</span></h2>
-                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor.') }}</p>
+                        <p class="man-subtitle-2 mb-40px">{{ get_phrase('Happy customers are proof of success. Their positive experiences and proven results showcase trust, quality, and satisfaction, inspiring others to choose services confidently.') }}</p>
                         <a href="#" class="btn btn-primary-ci1">{{ get_phrase('View All Reviews') }}</a>
                     </div>
                 </div>

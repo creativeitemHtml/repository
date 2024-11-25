@@ -495,7 +495,6 @@
 }
 
 .es-title-1{
-    font-family: 'Encode Sans Condensed';
     font-weight: 600;
     font-size: 60px;
     line-height: 1.26667;
@@ -649,15 +648,13 @@
     padding-bottom: 3.75rem;
     text-align: center;
 }
-.best-products .es-title-1 {
-    max-width: 31.25rem;
-}
 .best-products .info {
     max-width: 46.5rem;
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.875rem;
     color: #676c7d;
+    margin: 0 auto;
 }
 .why-best-items {
     display: flex;

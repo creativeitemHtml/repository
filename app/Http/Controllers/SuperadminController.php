@@ -24,6 +24,7 @@ use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\Project;
 use App\Models\RolesAndPermission;
+use App\Models\SaasProduct;
 use App\Models\SeoField;
 use App\Models\Service;
 use App\Models\ServicePackage;
@@ -301,8 +302,14 @@ class SuperadminController extends Controller
 
     public function documentation()
     {
-        $page_data                  = array();
-        $page_data['products']      = Product::orderBy('order', 'asc')->paginate(12);
+        $products = [];
+        if (request()->has('type') && request()->query('type') == 'codecanyon') {
+            $products = Product::orderBy('order', 'asc')->paginate(12);
+        } elseif (request()->has('type') && request()->query('type') == 'saas') {
+            $products = SaasProduct::paginate(12);
+        }
+
+        $page_data['products']      = $products;
         $page_data['page_title']    = 'Documentation';
         $page_data['documentation'] = 'active';
         $page_data['file_name']     = 'documentation';
@@ -1552,7 +1559,38 @@ class SuperadminController extends Controller
         $attachments_name = json_decode($project_details->attachment_name);
 
         $filepath = public_path('uploads/projects/' . $attachments[$key]);
-        return response()->download($filepath, $attachments_name[$key], array('content-description' => 'description'));
+        // Get the contents of the file
+        // $fileContents = file_get_contents($filepath);
+
+        // if(file_exists($filepath)) echo 44444;
+        // die;
+
+        // // Force the download
+        // return Response::make($fileContents, 200, [
+        //     'Content-Type' => 'application/octet-stream',
+        //     'Content-Disposition' => 'attachment; filename="' . basename($filepath) . '"',
+        //     'Content-Length' => filesize($filepath),
+        // ]);
+
+        if (file_exists($filepath)) {
+            // Get the file's MIME type (you can specify the MIME type if needed)
+            $fileMimeType = mime_content_type($filepath);
+        
+            // Set headers to force download
+            header('Content-Description: File Transfer');
+            header('Content-Type: ' . $fileMimeType); // Set MIME type
+            header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
+            header('Content-Length: ' . filesize($filepath)); // Set file size
+            header('Pragma: public');
+            header('Cache-Control: must-revalidate');
+        
+            // Read the file and send it to the browser
+            readfile($filepath);
+            exit;
+        } else {
+            echo "File not found!";
+        }
+        
     }
 
     public function remove_attachment($project_id = "", $key = "")

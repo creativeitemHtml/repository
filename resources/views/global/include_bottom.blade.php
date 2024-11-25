@@ -13,7 +13,7 @@
     <script src="{{ asset('assets/vendors/counterup/jquery.waypoints.js') }}"></script>
     <script src="{{ asset('assets/vendors/counterup/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/counterup/counterup-active.js') }}"></script>
-    <script src="{{ asset('assets/vendors/wow-js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/wow-js-new/wow.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap-tagsinput.js') }}"></script>
     <script src="{{ asset('assets/js/new-script.js') }}"></script>
 

@@ -1,15 +1,15 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon" />
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/global-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/vendors/plyr/plyr.css') }}" rel="stylesheet" />
 
     <!-- lms css -->
     @if (Route::getCurrentRoute() && Route::getCurrentRoute()->getPrefix() == '/growup-lms')
-        <link href="{{ asset('assets/css/lms-main.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/lms-signup.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/element-header.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/vendors/wow-js-new/animate.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
-        <link href="{{ asset('assets/vendors/plyr/plyr.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/lms-main.css') }}" rel="stylesheet" />
     @endif
 
     @if (Route::currentRouteName() == 'customer.growup.lms.subscription' || Route::currentRouteName() == 'customer.growup.lms.purchase.history')
@@ -18,7 +18,7 @@
     @endif
 
     @if (Route::currentRouteName() == 'home' || Route::currentRouteName() == 'product_academy')
-        <link rel="stylesheet" href="{{ asset('assets/vendors/wow-js/animate.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/vendors/wow-js-new/animate.min.css') }}" />
         <link href="{{ asset('assets/css/home-2-product-details.css') }}" rel="stylesheet" />
     @endif
 

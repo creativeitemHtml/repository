@@ -1282,7 +1282,25 @@ class CustomerController extends Controller
         $attachments_name = json_decode($project_details->attachment_name);
 
         $filepath = public_path('uploads/projects/' . $attachments[$key]);
-        return response()->download($filepath, $attachments_name[$key], array('content-description' => 'description'));
+        // return response()->download($filepath, $attachments_name[$key], array('content-description' => 'description'));
+        if (file_exists($filepath)) {
+            // Get the file's MIME type (you can specify the MIME type if needed)
+            $fileMimeType = mime_content_type($filepath);
+        
+            // Set headers to force download
+            header('Content-Description: File Transfer');
+            header('Content-Type: ' . $fileMimeType); // Set MIME type
+            header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
+            header('Content-Length: ' . filesize($filepath)); // Set file size
+            header('Pragma: public');
+            header('Cache-Control: must-revalidate');
+        
+            // Read the file and send it to the browser
+            readfile($filepath);
+            exit;
+        } else {
+            echo "File not found!";
+        }
     }
 
     public function remove_attachment($project_id = "", $key = "")

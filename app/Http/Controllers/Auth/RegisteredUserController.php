@@ -92,8 +92,7 @@ class RegisteredUserController extends Controller
                 // Automatically log in the user
                 Auth::login($user);
 
-                // Redirect the user to the 'customer.projects' route
-                return redirect()->route('customer.subscription_details');
+                return redirect()->route('customer.dashboard');
                 
             } else {
                 return redirect()->route('rigistration')->with('message', 'Registration failed');
