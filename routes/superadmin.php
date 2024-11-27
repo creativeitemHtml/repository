@@ -19,22 +19,22 @@ Route::name('superadmin.')->prefix('superadmin')->middleware('auth', 'superadmin
         Route::get('tag-delete/{id}', 'tag_delete')->name('tag_delete');
         Route::any('product/create', 'create_product')->name('create_product');
         Route::any('product/edit/{id}', 'edit_product')->name('edit_product');
-        Route::any('products/sort', 'sort_products')->name('sort_products');
+        Route::any('products/sort/{type}', 'sort_products')->name('sort_products');
         Route::get('product/delete/{id}', 'product_delete')->name('product.delete');
 
-        Route::get('documentation', 'documentation')->name('documentation');
-        Route::get('topics/{slug}', 'edit_documentation')->name('edit_documentation');
-        Route::any('topic/create/{slug}', 'create_topic')->name('create_topic');
+        Route::get('documentation/{type}', 'documentation')->name('documentation');
+        Route::get('topics/{type}/{slug}', 'edit_documentation')->name('edit_documentation');
+        Route::any('topic/create/{type}/{slug}', 'create_topic')->name('create_topic');
         Route::any('topic/edit/{id}', 'edit_topic')->name('edit_topic');
         Route::get('topic/delete/{id}', 'topic_delete')->name('topic.delete');
+        Route::any('topic/sort/{slug}', 'sort_topics')->name('sort_topics');
 
-        Route::any('article/create/{slug}', 'create_article')->name('create_article');
+        Route::any('article/create/{type}/{slug}', 'create_article')->name('create_article');
         Route::any('article/edit/{id}', 'edit_article')->name('edit_article');
         Route::get('article/delete/{id}', 'article_delete')->name('article.delete');
-
-        Route::get('documentation_details/{id}', 'documentation_details')->name('documentation_details');
-        Route::any('topic/sort/{slug}', 'sort_topics')->name('sort_topics');
         Route::any('article/sort/{topic_id}', 'sort_articles')->name('sort_articles');
+
+        Route::get('documentation_details/{type}/{id}', 'documentation_details')->name('documentation_details');
         Route::post('create_documentation/{article_id}', 'create_documentation')->name('create_documentation');
 
         Route::get('blogs', 'blogs')->name('blogs');

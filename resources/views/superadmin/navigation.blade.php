@@ -279,7 +279,7 @@
                                             </a>
                                         </li>
 
-                                        <li class="nav-links-li-2 @if ($current_route == 'superadmin.documentation') active-submenu @endif">
+                                        <li class="nav-links-li-2 @if ($current_route == 'superadmin.documentation' || $current_route == 'superadmin.edit_documentation' || $current_route == 'superadmin.documentation_details') active-submenu @endif">
                                             <a href="javascript:void(0);" class="nav-item nav-item-have-sub d-flex align-items-center">
                                                 <div class="sidebar_icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
@@ -290,9 +290,9 @@
                                                 </div>
                                                 <span class="link-name">{{ get_phrase('Documentation') }}</span>
                                             </a>
-                                            <ul class="sideBar-sub" style="{{ request()->is('superadmin/documentation') ? 'display: block;' : '' }}">
-                                                <li><a href="{{ route('superadmin.documentation', ['type' => 'saas']) }}" class="@if ($current_route == 'superadmin.documentation' && request()->query('type') == 'saas') active @endif {{ $element_product }}">{{ get_phrase('SAAS Products') }}</a></li>
-                                                <li><a href="{{ route('superadmin.documentation', ['type' => 'codecanyon']) }}" class="@if ($current_route == 'superadmin.documentation' && request()->query('type') == 'codecanyon') active @endif {{ $categories }}">{{ get_phrase('CodeCanyon Products') }}</a></li>
+                                            <ul class="sideBar-sub" style="{{ request()->is('superadmin/documentation/*') || request()->is('superadmin/topics/*') || request()->is('superadmin/documentation_details/*') ? 'display: block;' : '' }}">
+                                                <li><a href="{{ route('superadmin.documentation', 'saas') }}" class="@if (($current_route == 'superadmin.documentation' || $current_route == 'superadmin.edit_documentation' || $current_route == 'superadmin.documentation_details') && request()->route()->parameter('type') == 'saas') active @endif {{ $element_product }}">{{ get_phrase('SAAS Products') }}</a></li>
+                                                <li><a href="{{ route('superadmin.documentation', 'codecanyon') }}" class="@if (($current_route == 'superadmin.documentation' || $current_route == 'superadmin.edit_documentation' || $current_route == 'superadmin.documentation_details') && request()->route()->parameter('type') == 'codecanyon') active @endif {{ $categories }}">{{ get_phrase('CodeCanyon Products') }}</a></li>
                                             </ul>
                                         </li>
 

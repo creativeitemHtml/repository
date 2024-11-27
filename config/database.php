@@ -16,7 +16,7 @@ return [
     |
      */
 
-    'default'     => env('DB_CONNECTION', 'sqlite'),
+    'default'     => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -44,9 +44,9 @@ return [
             'url'            => env('DB_URL'),
             'host'           => env('DB_HOST', '127.0.0.1'),
             'port'           => env('DB_PORT', '3306'),
-            'database'       => 'ctmacademy_creativeitem',//'latest_creativeitem',
-            'username'       => 'ctmacademy_creativeitem',//'root',
-            'password'       => 'a7#YwR!Ii]^k',
+            'database'       => 'creativeitem',
+            'username'       => 'root',
+            'password'       => '',
             'unix_socket'    => env('DB_SOCKET', ''),
             'charset'        => env('DB_CHARSET', 'utf8mb4'),
             'collation'      => env('DB_COLLATION', 'utf8mb4_unicode_ci'),

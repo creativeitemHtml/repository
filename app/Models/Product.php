@@ -14,31 +14,30 @@ class Product extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'id', 'name', 'product_type_id', 'order', 'thumbnail', 'slug', 'sub_title', 'excerpt', 'price', 'purchase_url', 'visibility', 'number_of_purchase', 'directory', 'favicon', 'color_code' ];
+    protected $fillable = ['id', 'name', 'product_type_id', 'order', 'thumbnail', 'slug', 'sub_title', 'excerpt', 'price', 'purchase_url', 'visibility', 'number_of_purchase', 'directory', 'favicon', 'color_code'];
 
     public function product_to_productType()
     {
-        return $this->belongsTo(ProductType::class,'product_type_id','id');
+        return $this->belongsTo(ProductType::class, 'product_type_id', 'id');
     }
 
     public function product_to_topic()
     {
-        return $this->hasMany(Topic::class,'product_id','id')->orderBy('order', 'asc');
+        return $this->hasMany(Topic::class, 'product_id', 'id')->orderBy('order', 'asc');
     }
 
     public function product_to_article()
     {
-        return $this->hasMany(Article::class,'product_id','id');
+        return $this->hasMany(Article::class, 'product_id', 'id');
     }
 
     public function product_to_service_package()
     {
-        return $this->hasMany(ServicePackage::class,'product_id','id');
+        return $this->hasMany(ServicePackage::class, 'product_id', 'id');
     }
 
     public function product_to_service()
     {
-        return $this->hasMany(Service::class,'product_id','id');
+        return $this->hasMany(Service::class, 'product_id', 'id');
     }
-
 }

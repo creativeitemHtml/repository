@@ -2,7 +2,7 @@
     @csrf
     <div class="input-wrap mt-2">
         <label for="topic" class="eForm-label">{{ get_phrase('Topic') }}</label>
-        <input type="text" class="form-control eForm-control" id="topic" name="topic" value="{{ $topic->topic }}"/>
+        <input type="text" class="form-control eForm-control" id="topic" name="topic" value="{{ $topic->topic }}" />
     </div>
     <div class="mt-2">
         <label for="summary" class="eForm-label">{{ get_phrase('Summary') }}</label>
@@ -13,7 +13,7 @@
         <input class="form-control eForm-control-file" id="thumbnail" name="thumbnail" onchange="changeTitleOfImageUploader(this)" accept="image/*" type="file" />
     </div>
     <div class="form-check mt-2">
-        <input class="form-check-input ciRadio" type="checkbox" name="visibility" id="visibility" value="1" @if($topic->visibility == 1) checked @endif >
+        <input class="form-check-input ciRadio" type="checkbox" name="visibility" id="visibility" value="1" @if ($topic->visibility == 1) checked @endif>
         <label class="form-check-label" for="onlyFree">{{ get_phrase('Make this topic public') }}</label>
     </div>
     <div class="text-center float-end mt-4">

@@ -8,13 +8,13 @@
                         <h1 class="mb-20px man-title-60px mb-20px">{{ get_phrase('Train, Sell, Succeed with') }} <span class="ci2-title-gradient fw-extrabold">{{ get_phrase('GrowUp Lms') }}</span></h1>
                         <p class="man-subtitle-2 mb-38px">{{ get_phrase('GrowUp LMS helps you train students, sell courses, and achieve success effortlessly. Empower learners, expand your reach, and grow your business with a user-friendly platform designed for results.') }}</p>
                         <div class="d-flex align-items-center gap-4 flex-wrap">
-                            <a href="#" class="btn btn-primary-ci1">{{ get_phrase('Get Started free') }}</a>
-                            <a href="javascript:void(0)" class="video-play-btn" data-bs-toggle="modal" data-bs-target="#video-modal">
+                            <a href="#" class="btn btn-primary-ci1">{{ get_phrase('Coming Soon') }}</a>
+                            {{-- <a href="javascript:void(0)" class="video-play-btn" data-bs-toggle="modal" data-bs-target="#video-modal">
                                 <span class="play-icon">
                                     <img src="{{ asset('assets/img/icon/video-play-icon2.svg') }}">
                                 </span>
                                 <span>{{ get_phrase('Watch demo') }}</span>
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                 </div>

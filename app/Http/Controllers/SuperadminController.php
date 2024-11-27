@@ -300,13 +300,13 @@ class SuperadminController extends Controller
         return redirect()->back()->with('message', 'Product deleted successfully.');
     }
 
-    public function documentation()
+    public function documentation($type)
     {
         $products = [];
-        if (request()->has('type') && request()->query('type') == 'codecanyon') {
+        if ($type == 'codecanyon') {
             $products = Product::orderBy('order', 'asc')->paginate(12);
-        } elseif (request()->has('type') && request()->query('type') == 'saas') {
-            $products = SaasProduct::paginate(12);
+        } elseif ($type == 'saas') {
+            $products = SaasProduct::with(['saas_topics', 'saas_topics.saas_articles'])->orderBy('order', 'asc')->paginate(12);
         }
 
         $page_data['products']      = $products;
@@ -316,88 +316,89 @@ class SuperadminController extends Controller
         return view('superadmin.navigation', $page_data);
     }
 
-    public function sort_products(Request $request)
+    public function sort_products(Request $request, $type)
     {
-        $page_data = array();
+        $model = $type == 'saas' ? SaasProduct::query() : Product::query();
 
         if (! empty($request->all())) {
-
-            $data = $request->all();
-
+            $data     = $request->all();
             $products = json_decode($data['itemJSON']);
 
             foreach ($products as $key => $value) {
-                $product          = Product::find($value);
-                $product['order'] = $key + 1;
-                $product->save();
+                $model          = $model->find($value);
+                $model['order'] = $key + 1;
+                $model->save();
             }
 
             return redirect()->back()->with('message', 'Product sorted successfully');
         }
 
-        $page_data['products'] = Product::orderBy('order', 'asc')->get();
+        $page_data['type']     = $type;
+        $page_data['products'] = $model->orderBy('order', 'asc')->get();
+
         return view('superadmin.sort_products', $page_data);
     }
 
-    public function edit_documentation($slug = "")
+    public function edit_documentation($type, $slug)
     {
-        $page_data                  = array();
-        $page_data['product']       = Product::where('slug', $slug)->first();
-        $page_data['page_title']    = 'Topics and aricles of product : ' . $page_data['product']->name;
+        if ($type == 'saas') {
+            $page_data['product']    = SaasProduct::where('slug', $slug)->first();
+            $page_data['page_title'] = 'Topics and articles of product : ' . $page_data['product']->title;
+            $page_data['topics']     = $page_data['product']->saas_topics;
+        } elseif ($type == 'codecanyon') {
+            $page_data['product']    = Product::where('slug', $slug)->first();
+            $page_data['page_title'] = 'Topics and articles of product : ' . $page_data['product']->name;
+            $page_data['topics']     = $page_data['product']->product_to_topic;
+        }
+
         $page_data['documentation'] = 'active';
         $page_data['file_name']     = 'topics';
 
         return view('superadmin.navigation', $page_data);
     }
 
-    public function create_topic(Request $request, $slug = "")
+    public function create_topic(Request $request, $type, $slug)
     {
-        $page_data = array();
-
-        $product = Product::where('slug', $slug)->first();
-
+        $model                   = $type == 'saas' ? SaasProduct::query() : Product::query();
+        $product                 = $model->where('slug', $slug)->first();
         $page_data['product_id'] = $product->id;
+        $page_data['type']       = $type;
 
         if (! empty($request->all())) {
 
             $data = $request->all();
 
-            $page_data['topic']   = $data['topic'];
-            $page_data['summary'] = $data['summary'];
+            $page_data['is_saas']    = $type == 'saas' ? 1 : 0;
+            $page_data['topic']      = $data['topic'];
+            $page_data['summary']    = $data['summary'];
+            $page_data['visibility'] = 0;
             if (! empty($data['visibility'])) {
                 $page_data['visibility'] = $data['visibility'];
-            } else {
-                $page_data['visibility'] = 0;
             }
-            $page_data['slug'] = slugify($data['topic']);
 
-            // DUPLICATION CHECK
+            $page_data['slug']     = slugify($data['topic']);
             $duplicate_topic_check = Topic::get()->where('topic', $data['topic'])->where('product_id', $product->id);
 
             if (count($duplicate_topic_check) != 0) {
                 return redirect()->back()->with('error', 'Sorry this topic already exist');
             }
 
+            $page_data['thumbnail'] = 'thumbnail.png';
             if (! empty($data['thumbnail'])) {
-
                 $thumbnailName = random(15) . '.' . $data['thumbnail']->extension();
-
                 $data['thumbnail']->move(public_path('uploads/thumbnails/topic_thumbnails/'), $thumbnailName);
-
                 $page_data['thumbnail'] = $thumbnailName;
-            } else {
-                $page_data['thumbnail'] = 'thumbnail.png';
             }
 
             Topic::create($page_data);
-
             return redirect()->back()->with('message', 'Topic created successfully.');
         }
-        $page_data['product'] = Product::where('slug', $slug)->first();
+
+        $page_data['product'] = $product;
         return view('superadmin.add_topic', $page_data);
     }
 
-    public function edit_topic(Request $request, $id = "")
+    public function edit_topic(Request $request, $id)
     {
         $page_data = array();
 
@@ -424,16 +425,13 @@ class SuperadminController extends Controller
                 }
 
                 $thumbnailName = random(15) . '.' . $data['thumbnail']->extension();
-
                 $data['thumbnail']->move(public_path('uploads/thumbnails/topic_thumbnails/'), $thumbnailName);
-
                 $page_data['thumbnail'] = $thumbnailName;
             } else {
                 $page_data['thumbnail'] = $topic->thumbnail;
             }
 
             Topic::where('id', $id)->update($page_data);
-
             return redirect()->back()->with('message', 'Topic updated successfully.');
 
         }
@@ -455,9 +453,13 @@ class SuperadminController extends Controller
         return redirect()->back()->with('message', 'Topic deleted successfully.');
     }
 
-    public function create_article(Request $request, $slug = "")
+    public function create_article(Request $request, $type, $slug)
     {
         $page_data = array();
+
+        $model             = $type == 'saas' ? SaasProduct::query() : Product::query();
+        $product           = $model->where('slug', $slug)->first();
+        $page_data['type'] = $type;
 
         if (! empty($request->all())) {
 
@@ -466,7 +468,7 @@ class SuperadminController extends Controller
             $page_data['article']  = $data['article'];
             $page_data['topic_id'] = $data['topic_id'];
 
-            $product = Product::where('slug', $slug)->first();
+            $product = $model->where('slug', $slug)->first();
 
             $page_data['product_id'] = $product->id;
 
@@ -489,8 +491,10 @@ class SuperadminController extends Controller
 
             return redirect()->back()->with('message', 'Article created successfully.');
         }
-        $page_data['product'] = Product::where('slug', $slug)->first();
-        $page_data['topics']  = Topic::where('product_id', $page_data['product']->id)->get();
+
+        $page_data['product'] = $product;
+        $page_data['topics']  = Topic::where('product_id', $product->id)->where('is_saas', $type == 'saas' ? 1 : 0)->get();
+
         return view('superadmin.article_add', $page_data);
     }
 
@@ -534,10 +538,9 @@ class SuperadminController extends Controller
         return redirect()->back()->with('message', 'Article deleted successfully.');
     }
 
-    public function documentation_details($article_id = "")
+    public function documentation_details($type, $article_id)
     {
-        $page_data = array();
-
+        $page_data['type']             = $type;
         $page_data['selected_article'] = Article::find($article_id);
 
         $page_data['articles']        = Article::where('topic_id', $page_data['selected_article']->topic_id)->get();
@@ -546,6 +549,7 @@ class SuperadminController extends Controller
         $page_data['page_title']    = 'Documentation for ' . $page_data['selected_article']->article;
         $page_data['documentation'] = 'active';
         $page_data['file_name']     = 'documentation_details';
+
         return view('superadmin.navigation', $page_data);
     }
 
@@ -633,14 +637,16 @@ class SuperadminController extends Controller
         }
     }
 
-    public function sort_topics(Request $request, $slug = "")
+    public function sort_topics(Request $request, $slug)
     {
-        $page_data = array();
+        $type              = request()->query('type');
+        $model             = $type == 'saas' ? SaasProduct::query() : Product::query();
+        $product           = $model->where('slug', $slug)->first();
+        $page_data['type'] = $type;
 
-        if (! empty($request->all())) {
+        if (! empty($request->except('type'))) {
 
-            $data = $request->all();
-
+            $data   = $request->all();
             $topics = json_decode($data['itemJSON']);
 
             foreach ($topics as $key => $value) {
@@ -652,8 +658,9 @@ class SuperadminController extends Controller
             return redirect()->back()->with('message', 'Topic sorted successfully');
         }
 
-        $page_data['product'] = Product::where('slug', $slug)->first();
-        $page_data['topics']  = Topic::where('product_id', $page_data['product']->id)->orderBy('order', 'asc')->get();
+        $page_data['product'] = $product;
+        $page_data['topics']  = Topic::where('product_id', $product->id)->where('is_saas', $type == 'saas' ? 1 : 0)->orderBy('order', 'asc')->get();
+
         return view('superadmin.sort_topics', $page_data);
     }
 
@@ -663,7 +670,7 @@ class SuperadminController extends Controller
 
         $page_data['topic_id'] = $topic_id;
 
-        if (! empty($request->all())) {
+        if (! empty($request->except('type'))) {
             $data     = $request->all();
             $articles = json_decode($data['itemJSON']);
 
@@ -1575,7 +1582,7 @@ class SuperadminController extends Controller
         if (file_exists($filepath)) {
             // Get the file's MIME type (you can specify the MIME type if needed)
             $fileMimeType = mime_content_type($filepath);
-        
+
             // Set headers to force download
             header('Content-Description: File Transfer');
             header('Content-Type: ' . $fileMimeType); // Set MIME type
@@ -1583,14 +1590,14 @@ class SuperadminController extends Controller
             header('Content-Length: ' . filesize($filepath)); // Set file size
             header('Pragma: public');
             header('Cache-Control: must-revalidate');
-        
+
             // Read the file and send it to the browser
             readfile($filepath);
             exit;
         } else {
             echo "File not found!";
         }
-        
+
     }
 
     public function remove_attachment($project_id = "", $key = "")

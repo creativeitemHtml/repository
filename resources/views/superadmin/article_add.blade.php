@@ -1,13 +1,13 @@
-<form method="POST" enctype="multipart/form-data" class="d-block ajaxForm" action="{{ route('superadmin.create_article', ['slug' => $product->slug]) }}">
+<form method="POST" enctype="multipart/form-data" class="d-block ajaxForm" action="{{ route('superadmin.create_article', [$type, $product->slug]) }}">
     @csrf
     <div class="input-wrap mt-2">
         <label for="article" class="eForm-label">{{ get_phrase('Article') }}</label>
-        <input type="text" class="form-control eForm-control" id="article" name="article"/>
+        <input type="text" class="form-control eForm-control" id="article" name="article" />
     </div>
     <div class="input-wrap mt-2">
         <label for="topic_id" class="eForm-label">{{ get_phrase('Topic') }}</label>
         <select id="topic_id" name="topic_id" class="form-select eForm-select eChoice-multiple-without-remove" data-placeholder="Type to search...">
-            @foreach($topics as $topic)
+            @foreach ($topics as $topic)
                 <option value="{{ $topic->id }}">{{ $topic->topic }}</option>
             @endforeach
         </select>

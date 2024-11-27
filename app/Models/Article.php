@@ -26,4 +26,9 @@ class Article extends Model
         return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 
+    public function saas_product()
+    {
+        return $this->belongsTo(SaasProduct::class, 'product_id', 'id');
+    }
+
 }

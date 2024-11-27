@@ -1,6 +1,6 @@
 @extends('global.index')
 @section('content')
-    @include('frontend.creative_lms.lms_header')
+    @include('frontend.growup_lms.lms_header')
 
     <!-- Pricing Area Start -->
     <section>
@@ -329,7 +329,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaOne" aria-expanded="true" aria-controls="collapseqnaOne">
-                                        Can I use CreativeLMS at no cost?
+                                        Can I use GrowUp LMS at no cost?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaOne" class="accordion-collapse collapse show" data-bs-parent="#lms-qna-accordion">

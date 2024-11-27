@@ -1,8 +1,13 @@
+@php
+    $product = $type == 'saas' ? $selected_article->saas_product : $selected_article->article_to_product;
+    $doc_url = $type == 'saas' ? url("{$product->slug}/help/{$selected_article->slug}") : route('documentation_details');
+@endphp
+
 <div class="admin_main_right p-30 bd-r-5 mb-60">
     <div class="title-btn-menu-wrap d-flex justify-content-between align-items-center flex-wrap g-10 pb-30">
         <h4 class="fz-20-sb-black">{{ $selected_article->article }}</h4>
-        <a href="{{ route('documentation_details', [$selected_article->article_to_product->slug, $selected_article->slug]) }}" class="new-project-btn new-project-btn-desktop">{{ get_phrase('Preview') }}</a>
-        <a href="{{ route('superadmin.edit_documentation', $selected_article->article_to_product->slug) }}" class="new-project-btn new-project-btn-desktop">{{ get_phrase('Back to topics') }}</a>
+        <a href="{{ $doc_url }}" class="new-project-btn new-project-btn-desktop">{{ get_phrase('Preview') }}</a>
+        <a href="{{ route('superadmin.edit_documentation', [$type, $product->slug]) }}" class="new-project-btn new-project-btn-desktop">{{ get_phrase('Back to topics') }}</a>
         <button class="d-lg-none mobile-menu-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <img src="{{ asset('assets/img/new-icons-images/menu-icon.svg') }}" alt="menu">
         </button>
@@ -12,7 +17,7 @@
 <div class="admin_main_right p-30 bd-r-5 mb-60">
     <div class="d-flex align-items-center flex-wrap g-10">
         @foreach ($articles as $article)
-            <a href="{{ route('superadmin.documentation_details', ['id' => $article->id]) }}" class="btn-main @if ($selected_article->id == $article->id) el-save-btn @else btn-popularity @endif">{{ $article->article }}</a>
+            <a href="{{ route('superadmin.documentation_details', [$type, $article->id]) }}" class="btn-main @if ($selected_article->id == $article->id) el-save-btn @else btn-popularity @endif">{{ $article->article }}</a>
         @endforeach
     </div>
     <form method="POST" enctype="multipart/form-data" class="d-block ajaxForm" action="{{ route('superadmin.create_documentation', ['article_id' => $selected_article->id]) }}">

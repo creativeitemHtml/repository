@@ -1,8 +1,8 @@
-<form method="POST" enctype="multipart/form-data" class="d-block ajaxForm" action="{{ route('superadmin.create_topic', ['slug' => $product->slug]) }}">
+<form method="POST" enctype="multipart/form-data" class="d-block ajaxForm" action="{{ route('superadmin.create_topic', [$type, $product->slug]) }}">
     @csrf
     <div class="input-wrap mt-2">
         <label for="topic" class="eForm-label">{{ get_phrase('Topic') }}</label>
-        <input type="text" class="form-control eForm-control" id="topic" name="topic"/>
+        <input type="text" class="form-control eForm-control" id="topic" name="topic" />
     </div>
     <div class="mt-2">
         <label for="summary" class="eForm-label">{{ get_phrase('Summary') }}</label>

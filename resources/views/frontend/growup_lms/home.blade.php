@@ -31,7 +31,7 @@
                                 <input type="text" class="form-control ci2-form-control" id="type-company-name" name="company_name" placeholder="Your company name*">
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control ci2-form-control" id="" name="email" @auth value="{{ auth()->user()->id }}" @endauth placeholder="Your Email Address*">
+                                <input type="text" class="form-control ci2-form-control" id="" name="email" @auth value="{{ auth()->user()->email }}" @endauth placeholder="Your Email Address*">
                             </div>
                             <div class="mb-3">
                                 <div class="input-password-wrap">

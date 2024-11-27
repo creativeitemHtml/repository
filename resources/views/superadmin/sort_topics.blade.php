@@ -54,6 +54,8 @@
 
         var url = "{{ route('superadmin.sort_topics', ['slug' => ':slug']) }}";
         url = url.replace(":slug", slug);
+
+
         $.ajax({
             url: url,
             headers: {

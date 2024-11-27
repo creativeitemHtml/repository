@@ -50,7 +50,7 @@
         }
         itemJSON = JSON.stringify(itemArray);
 
-        var url = "{{ route('superadmin.sort_products') }}";
+        var url = @json(route('superadmin.sort_products', $type));
         $.ajax({
             url: url,
             headers: {

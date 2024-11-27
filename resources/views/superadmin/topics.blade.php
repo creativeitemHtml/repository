@@ -1,5 +1,6 @@
 @php
 
+    $card_color = '';
     if ($product->slug == 'academy-lms') {
         $card_color = 'doc-item-academy-LMS';
     } elseif ($product->slug == 'ekattor-7') {
@@ -22,26 +23,28 @@
         $card_color = 'doc-item-mastery-LMS';
     }
 
+    $type = request()->route()->parameter('type');
+
 @endphp
 
 <!-- Title -->
 <div class="admin_main_right p-30 bd-r-5 mb-60">
     <div class="title-btn-menu-wrap d-flex justify-content-between align-items-center flex-wrap g-10 pb-30">
         <h4 class="fz-20-sb-black">{{ get_phrase($page_title) }}</h4>
-        <a href="{{ route('superadmin.documentation') }}" class="new-project-btn new-project-btn-desktop">{{ get_phrase('Back to products') }}</a>
+        <a href="{{ route('superadmin.documentation', $type) }}" class="new-project-btn new-project-btn-desktop">{{ get_phrase('Back to products') }}</a>
         <button class="d-lg-none mobile-menu-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <img src="{{ asset('assets/img/new-icons-images/menu-icon.svg') }}" alt="menu">
         </button>
     </div>
     <div class="d-flex align-items-center flex-wrap g-10">
-        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="defaultModal('{{ route('superadmin.create_topic', ['slug' => $product->slug]) }}', '{{ get_phrase('Create new topic') }}')"><i class="fa-solid fa-add"></i> {{ get_phrase('Add new topic') }}</a>
-        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="defaultModal('{{ route('superadmin.create_article', ['slug' => $product->slug]) }}', '{{ get_phrase('Create new article') }}')"><i class="fa-solid fa-add"></i> {{ get_phrase('Add new article') }}</a>
-        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="largeModal('{{ route('superadmin.sort_topics', ['slug' => $product->slug]) }}', '{{ get_phrase('Sort topics') }}')"><i class="fa-solid fa-list"></i> {{ get_phrase('Sort topics') }}</a>
+        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="defaultModal('{{ route('superadmin.create_topic', [$type, $product->slug]) }}', '{{ get_phrase('Create new topic') }}')"><i class="fa-solid fa-add"></i>
+            {{ get_phrase('Add new topic') }}</a>
+        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="defaultModal('{{ route('superadmin.create_article', [$type, $product->slug]) }}', '{{ get_phrase('Create new article') }}')"><i class="fa-solid fa-add"></i> {{ get_phrase('Add new article') }}</a>
+        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="largeModal('{{ route('superadmin.sort_topics', [$product->slug, 'type' => $type]) }}', '{{ get_phrase('Sort topics') }}')"><i class="fa-solid fa-list"></i> {{ get_phrase('Sort topics') }}</a>
     </div>
 </div>
 
 <div class="row">
-    @php $topics = $product->product_to_topic; @endphp
     @foreach ($topics as $topic)
         @php $articles = $topic->topic_to_article; @endphp
         <div class="col-lg-4 col-md-4 col-sm-6">
@@ -87,7 +90,7 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('superadmin.documentation_details', ['id' => $article->id]) }}">{{ get_phrase('Update documentation') }}</a>
+                                            <a class="dropdown-item" href="{{ route('superadmin.documentation_details', [$type, $article->id]) }}">{{ get_phrase('Update documentation') }}</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="javascript:;" onclick="defaultModal('{{ route('superadmin.edit_article', ['id' => $article->id]) }}', '{{ get_phrase('Update topic') }}')">{{ get_phrase('Edit article') }}</a>

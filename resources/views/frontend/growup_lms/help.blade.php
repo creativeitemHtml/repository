@@ -233,11 +233,11 @@
                         <div class="accordion" id="accordionExample2">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Can I use CreativeLMS at no cost?</button>
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Can I use GrowUp LMS at no cost?</button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle-4">Yes! You can start with free plan  of Creative LMS at no cost and begin earning right away.</p>
+                                        <p class="man-subtitle-4">Yes! You can start with free plan  of GrowUp LMS at no cost and begin earning right away.</p>
                                     </div>
                                 </div>
                             </div>
@@ -263,7 +263,7 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Does Creative LMS take a percentage of my earnings?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Does GrowUp LMS take a percentage of my earnings?</button>
                                 </h2>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample2">
                                     <div class="accordion-body">

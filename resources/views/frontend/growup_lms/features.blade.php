@@ -42,7 +42,8 @@
                         <h1 class="man-title-48px mb-3">{{ get_phrase('Test Your Knowledge Through Quizzes') }}</h1>
                         <p class="man-subtitle3-16px mb-32px">{{ get_phrase('Launch your business with a reliable') }}, <span class="cin2-text-dark fw-semibold">{{ get_phrase('ready-to-use') }}</span> {{ get_phrase('website or mobile app—no coding needed, just a few clicks! Enjoy interesting and') }}
                             <span class="cin2-text-dark fw-semibold">{{ get_phrase('interactive learning
-                                                                                                                    process') }}</span> {{ get_phrase('that students love.') }}
+                                                                                                                                                                                                        process') }}</span>
+                            {{ get_phrase('that students love.') }}
                         </p>
                         <a href="#" class="btn gr-btn-primary">
                             <span>{{ get_phrase('Get Started') }}</span>
@@ -709,12 +710,12 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaOne" aria-expanded="true" aria-controls="collapseqnaOne">
-                                        Can I use CreativeLMS at no cost?
+                                        Can I use GrowUp LMS at no cost?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaOne" class="accordion-collapse collapse show" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">Yes! You can start with free plan  of Creative LMS at no cost and begin earning right away.</p>
+                                        <p class="man-subtitle3-16px">Yes! You can start with free plan  of GrowUp LMS at no cost and begin earning right away.</p>
                                     </div>
                                 </div>
                             </div>
@@ -746,7 +747,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaFour" aria-expanded="false" aria-controls="collapseqnaFour">
-                                        Does Creative LMS take a percentage of my earnings?
+                                        Does GrowUp LMS take a percentage of my earnings?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaFour" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
@@ -763,7 +764,7 @@
                                 </h2>
                                 <div id="collapseqnaFive" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">Yes, Creative LMS offers robust communication tools. You can make global announcements visible to all users, send direct messages to individuals or groups, and automate emails for events like recertification or course completion.</p>
+                                        <p class="man-subtitle3-16px">Yes, GrowUp LMS offers robust communication tools. You can make global announcements visible to all users, send direct messages to individuals or groups, and automate emails for events like recertification or course completion.</p>
                                     </div>
                                 </div>
                             </div>
@@ -775,7 +776,7 @@
                                 </h2>
                                 <div id="collapseqnaSix" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">No matter your size, Creative LMS offers affordable plans for everyone—from solo entrepreneurs to SMBs and growing enterprises. That’s why over 28000  teams rely on Creative LMS for their training needs.</p>
+                                        <p class="man-subtitle3-16px">No matter your size, GrowUp LMS offers affordable plans for everyone—from solo entrepreneurs to SMBs and growing enterprises. That’s why over 28000  teams rely on GrowUp LMS for their training needs.</p>
                                     </div>
                                 </div>
                             </div>

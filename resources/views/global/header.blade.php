@@ -6,11 +6,7 @@
                 <div class="main-menu-wrap d-flex justify-content-between align-items-center">
                     <div class="menu-logo">
                         <a href="{{ route('home') }}" class="desk-menu-logo">
-                            @if (request()->routeIs('home'))
-                                <img src="{{ asset('assets/img/home-2/logo-black.svg') }}" alt="logo" />
-                            @else
-                                <img src="{{ asset('assets/img/logo-white.svg') }}" alt="logo" />
-                            @endif
+                            <img src="{{ asset('assets/img/logo-white.svg') }}" alt="logo" />
                         </a>
                         <a href="{{ route('home') }}" class="mobile-menu-logo">
                             <img src="{{ asset('assets/img/logo-icon.svg') }}" alt="logo" />
@@ -70,11 +66,13 @@
                                 <li><a href="javascript:;" class="menu-parent-a" onclick="support()">{{ get_phrase('Support') }}</a></li>
                             </ul>
                         </nav>
+
+
                         <!-- Mobile Menu -->
                         <div class="main-mobile-menu {{ request()->routeIs(['home', 'product_academy']) ? 'wh-main-mobile-menu' : '' }}">
                             <div class="mobile-logo-area d-flex justify-content-between">
                                 <a href="{{ route('home') }}" class="mobile-menu-logo">
-                                    <img src="{{ asset('assets/img/logo-icon.svg') }}" alt="logo" />
+                                    <img src="{{ asset('assets/img/home-2/logo-black.svg') }}" alt="logo" />
                                 </a>
                                 <div class="mobile-menu-close">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">

@@ -1,7 +1,11 @@
+@php
+    $type = request()->route()->parameter('type');
+@endphp
+
 <div class="admin_main_right p-30 bd-r-5">
     <div class="title-btn-menu-wrap d-flex justify-content-between align-items-center flex-wrap g-10 pb-30">
         <h4 class="fz-20-sb-black">{{ get_phrase($page_title) }}</h4>
-        <a href="javascript:;" class="new-project-btn new-project-btn-desktop" onclick="largeModal('{{ route('superadmin.sort_products') }}', '{{ get_phrase('Sort products') }}')">{{ get_phrase('Sort products') }}</a>
+        <a href="javascript:;" class="new-project-btn new-project-btn-desktop" onclick="largeModal('{{ route('superadmin.sort_products', $type) }}', '{{ get_phrase('Sort products') }}')">{{ get_phrase('Sort products') }}</a>
         <button class="d-lg-none mobile-menu-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <img src="{{ asset('assets/img/new-icons-images/menu-icon.svg') }}" alt="menu">
         </button>
@@ -11,11 +15,10 @@
         @foreach ($products as $product)
             @php
                 $product_img = !empty($product->favicon) ? $product->favicon : 'favicon.png';
-
-                $topics = isset($product->product_to_topic) ? $product->product_to_topic : [];
-                $articles = isset($product->product_to_article) ? $product->product_to_article : [];
-
+                $topics = $type == 'saas' ? $product->saas_topics : $product->product_to_topic;
+                $articles = $type == 'saas' ? $product->saas_articles : $product->product_to_article;
             @endphp
+
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="doc-item d-flex justify-content-between" style="border-color: {{ $product->color_code }}">
                     <div class="doc-item-icon" style="background-color: {{ $product->color_code }}20">
@@ -38,7 +41,7 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
-                                <a class="dropdown-item" href="{{ route('superadmin.edit_documentation', ['slug' => $product->slug]) }}">{{ get_phrase('Go to documentation') }}</a>
+                                <a class="dropdown-item" href="{{ route('superadmin.edit_documentation', [request()->route()->parameter('type'), $product->slug]) }}">{{ get_phrase('Go to documentation') }}</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="javascript:;" onclick="showAjaxModal('{{ route('superadmin.select_article_to_export', ['slug' => $product->slug]) }}', '{{ $product->name }}')">{{ get_phrase('Export Documentation') }}</a>

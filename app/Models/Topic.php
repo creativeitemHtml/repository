@@ -14,16 +14,26 @@ class Topic extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'id', 'topic', 'slug', 'product_id', 'summary', 'thumbnail', 'visibility', 'order' ];
+    protected $fillable = ['id', 'topic', 'slug', 'product_id', 'summary', 'thumbnail', 'visibility', 'order', 'is_saas'];
 
     public function topic_to_product()
     {
-        return $this->belongsTo(Product::class,'product_id','id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 
     public function topic_to_article()
     {
-        return $this->hasMany(Article::class,'topic_id','id')->orderBy('order', 'asc');
+        return $this->hasMany(Article::class, 'topic_id', 'id')->orderBy('order', 'asc');
+    }
+
+    public function saas_product()
+    {
+        return $this->belongsTo(SaasProduct::class, 'product_id', 'id');
+    }
+
+    public function saas_articles()
+    {
+        return $this->belongsTo(Article::class, 'topic_id', 'id');
     }
 
 }
