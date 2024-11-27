@@ -40,7 +40,7 @@
                                         fill="#595C6D" />
                                 </svg>
                             </span>
-                            <h4 class="mb-1 cin1-service-title">Getting Started</h4>
+                            <h4 class="mb-1 cin1-service-title">{{ get_phrase('Getting Started') }}</h4>
                             <p class="cin1-service-subtitle">12 articles</p>
                         </div>
                     </a>
