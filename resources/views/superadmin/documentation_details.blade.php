@@ -1,6 +1,6 @@
 @php
     $product = $type == 'saas' ? $selected_article->saas_product : $selected_article->article_to_product;
-    $doc_url = $type == 'saas' ? url("{$product->slug}/help/{$selected_article->slug}") : route('documentation_details');
+    $doc_url = $type == 'saas' ? url("{$product->slug}/help/{$selected_article->slug}") : route('documentation_details', [$selected_article->article_to_product->slug, $selected_article->slug]);
 @endphp
 
 <div class="admin_main_right p-30 bd-r-5 mb-60">

@@ -1665,21 +1665,29 @@ class SuperadminController extends Controller
 
     public function user_list(Request $request)
     {
-        $page_data['users'] = array();
+        $query = User::query();
 
-        if (! empty($request->all())) {
-            $role_details = RolesAndPermission::where('slug', $request->role)->first();
-
-            $page_data['users'] = User::where('role_id', $role_details->id)->paginate(10);
+        if (request()->query('role')) {
+            $role = RolesAndPermission::where('slug', request()->query('role'))->first();
+            $query->where('role_id', $role->id);
         }
 
+        if (request()->query('search')) {
+            $search = request()->query('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', $search);
+            });
+        }
+
+        $page_data['users']         = $query->paginate(12);
         $page_data['roles']         = RolesAndPermission::all();
         $page_data['selected_role'] = $request->role;
         $page_data['page_title']    = 'User List';
         $page_data['user_list']     = 'active';
         $page_data['file_name']     = 'user_list';
-        return view('superadmin.navigation', $page_data);
 
+        return view('superadmin.navigation', $page_data);
     }
 
     public function user_create(Request $request)

@@ -1,4 +1,0 @@
-    // Aos Animation
-      AOS.init({
-          duration: 900,
-      });

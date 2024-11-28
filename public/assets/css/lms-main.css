@@ -5475,3 +5475,754 @@ a.black-btn-lms{
         display: block;
     }
 }
+
+
+/* GrowUp lms Features Css Start */
+.man-subtitle2-14px{
+    color: #595C6D;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+}
+
+/* Button */
+.gr-btn-primary{
+    border: none;
+    box-shadow: none;
+    border-radius: 12px;
+    background: var(--skinColor);
+    padding: 16px 32px;
+    display: inline flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    color: var(--whiteColor);
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+}
+.gr-btn-primary:hover{
+    color: var(--whiteColor);
+    background: var(--skinHover);
+}
+.gr-btn-primary:focus{
+    box-shadow: none;
+}
+.gr-btn-primary:active{
+    color: var(--whiteColor) !important;
+    background: var(--skinHover) !important;
+}
+
+
+/* Purple Gradient */
+.gr-btn-purple-gradient{
+    display: inline flex;
+    padding: 14px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #3B25F4 0%, #C255AB 51%, #FF5C50 100%);
+    color: #FFF;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    border: none;
+    transition: all ease 450ms;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.gr-btn-purple-gradient::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: linear-gradient(90deg, rgba(255,92,80,1) 0%, rgba(194,85,171,1) 50%, rgba(59,37,244,1) 100%);
+	border-radius: inherit;
+	opacity: 1;
+	z-index: -1;
+	transition: all ease 450ms;
+	-moz-transition: all ease 450ms;
+	-webkit-transition: all ease 450ms;
+    width: 100%;
+	right: auto;
+	left: 0;
+    opacity: 0;
+}
+.gr-btn-purple-gradient:hover::before {
+	opacity: 1;
+}
+.gr-btn-purple-gradient:hover{
+    color: var(--whiteColor);
+}
+.gr-btn-purple-gradient:focus{
+    box-shadow: none;
+}
+
+
+.max-w-726px{
+    max-width: 726px;
+}
+.max-w-836px{
+    max-width: 836px;
+}
+
+
+
+.lms2-modal-video-btn{
+    transition: .3s;
+    color: #141451;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+.lms2-modal-video-btn:hover{
+    color: var(--skinColor);
+}
+
+.linearbg-img-wrap{
+    border-radius: 16px;
+    background: var(--linear-bg, linear-gradient(180deg, #FF99B0 0%, #F9F6F1 100%));
+    aspect-ratio: 555 / 460;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.linearbg-banner{
+    max-width: var(--banner-max-width, 475px);
+    width: 100%;
+}
+.linearbg-banner .banner{
+    width: 100%;
+}
+.linearbg-banner-right{
+    margin-right: -16px;
+}
+.linearbg-banner-left{
+    margin-left: -16px;
+}
+.linearbg-banner-bottom{
+    margin-bottom: -16px;
+}
+
+.gr-light-section{
+    background: #F7F5FF;
+    padding: 80px 0;
+}
+.inspire-growth-banner{
+    width: 100%;
+}
+.inspire-growth-banner .banner{
+    width: 100%;
+}
+
+.gr-color-card{
+    padding: 32px 16px;
+    border-radius: 16px;
+    background: var(--bg-color, #fff);
+}
+
+/* Flexible */
+.gr-light-area{
+    padding: 80px 30px;
+    border-radius: 16px;
+    background: #F7F5FF;
+}
+.box-items-group{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 45px;
+}
+.box-item-single{
+    position: relative;
+    height: 100%;
+    padding-top: 26px;
+}
+.box-item-single::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background: #D8DDE2;
+    right: -15px;
+    top: 0;
+    display: none;
+}
+.box-item-single::before{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: #D8DDE2;
+    left: 0;
+    bottom: -30px;
+    display: none;
+}
+.box-item-single:nth-of-type(1)::after,
+.box-item-single:nth-of-type(2)::after,
+.box-item-single:nth-of-type(4)::after,
+.box-item-single:nth-of-type(5)::after{
+    display: block;
+}
+.box-item-single:nth-of-type(1)::before,
+.box-item-single:nth-of-type(2)::before,
+.box-item-single:nth-of-type(3)::before{
+    display: block;
+}
+
+.google-play-btn{
+    transition: .3s;
+    border-radius: 6px;
+}
+.google-play-btn img{
+    border-radius: 6px;
+}
+.google-play-btn:hover{
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.36));
+}
+
+.api-mobile-banner{
+    width: 100%;
+}
+.api-mobile-banner img{
+    width: 100%;
+}
+
+/* Testimonial */
+.img-circle-44px{
+    height: 44px;
+    width: 44px;
+    flex: 0 0 44px;
+    border-radius: 50%;
+}
+.img-circle-44px img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.gr-single-testimonial{
+    padding: 16px;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.12);
+}
+.gr-testimonial .swiper-slide{
+    height: auto;
+}
+.gr-testimonial{
+    padding-top: 32px;
+    padding-bottom: 30px;
+    margin-right: -12px;
+    margin-left: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.gr-testimonial .swiper-pagination{
+    bottom: 0;
+}
+.gr-testimonial .swiper-pagination-bullet-active{
+    background: #0A7EFB;
+}
+/* GrowUp lms Features Css End */
+
+
+/* Growup LMS Login Pages Css Start */
+.man-title-36px{
+    color: #181A1E;
+    font-family: 'Manrope';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 111.111%; /* 40px */
+}
+.gr-user-access-main{
+    position: relative;
+}
+.gr-user-access-banner{
+    position: static;
+}
+.gr-user-access-banner::after{
+    content: "";
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(../img/lms/lms2-login-banner.webp) no-repeat scroll center center / cover;
+}
+.gr-user-access-inner{
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.gr-user-access-page-logo a{
+    display: block;
+    width: fit-content;
+}
+.max-w-458px{
+    max-width: 458px;
+}
+.gr-user-access-content{
+    width: 100%;
+}
+
+.gr-form-control{
+    color: #595C6D;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    border-color: transparent;
+    padding: 15px;
+    border-radius: 12px;
+    background: #F1F5F9;
+}
+.gr-form-control:focus{
+    box-shadow: none;
+    color: #595C6D;
+    background: #F1F5F9;
+    border-color: var(--skinColor);
+}
+.gr-form-control:hover{
+    border-color: var(--skinColor);
+}
+.gr-form-control::placeholder{
+    color: #595C6D;
+    opacity: 1;
+}
+/* Chrome, Safari, Edge, Opera */
+.gr-form-control::-webkit-outer-spin-button,
+.gr-form-control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.gr-form-control[type=number] {
+  -moz-appearance: textfield;
+}
+
+.gr-input-value-text{
+    color: #212534;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    margin-top: 12px;
+}
+
+
+/* password icon */
+.input-password-wrap .gr-form-control{
+    padding-right: 34px;
+}
+.toggle-password:hover ~ .gr-form-control{
+    border-color: var(--skinColor);
+}
+.input-password-wrap{
+    width: 100%;
+    position: relative;
+}
+.input-password-wrap .password-icons{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.input-password-wrap .password-icons > img{
+    display: block;
+}
+.input-password-wrap .password-icons.unlock .eye-lock{
+    display: none;
+}
+.input-password-wrap .password-icons.lock .eye-unlock{
+    display: none;
+}
+
+/* Checkbox */
+.gr-form-check{
+    min-height: 20px;
+    padding-left: 28px;
+    margin-bottom: 0;
+}
+.gr-form-check-input{
+    border: 1.25px solid #CFD4E1;
+    height: 20px;
+    width: 20px;
+    margin-top: 0;
+    cursor: pointer;
+}
+.gr-form-check .gr-form-check-input {
+    margin-left: -28px;
+}
+.gr-form-check-input:focus{
+    box-shadow: none;
+    border-color: #CFD4E1;
+}
+.gr-form-check-input:checked {
+    background-color: #0A7EFB;
+    border-color: #0A7EFB;
+}
+.gr-form-check-input[type=checkbox] {
+    border-radius: 5px;
+}
+.gr-form-check-label{
+    color: #595C6D;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    display: block;
+    width: fit-content;
+}
+
+.gr-verify-input{
+    color: #181A1E;
+    font-family: 'Manrope';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    border-radius: 12px;
+    border: 1px solid #F1F5F9;
+    height: 68px;
+    width: 67px;
+    flex: 0 0 67px;
+    text-align: center;
+    transition: .3s;
+}
+.gr-verify-input:focus{
+    box-shadow: none;
+    color: #181A1E;
+    border-color: #217CE9;
+}
+.gr-verify-input:hover{
+    border-color: #217CE9;
+}
+
+.gr-verify-code-wrap{
+    gap: 30px;
+}
+/* Growup LMS Login Pages Css End */
+
+
+/* Growup LMS Main Home Pages Css Start */
+.ms-76px{
+    margin-left: 76px !important;
+}
+.mb-44px{
+    margin-bottom: 44px !important;
+}
+.gr-iconbox-card{
+    border-radius: 20px;
+    background: #FFF;
+    transition: .3s;
+    padding: 44px 24px;
+}
+.gr-iconbox-card:hover{
+    box-shadow: 0px 14px 20px 0px rgba(0, 0, 0, 0.08);
+}
+.gr-iconbox-card-title{
+    color: #3D4053;
+    text-align: center;
+    font-family: 'Manrope';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 120% */
+}
+.gr-iconbox-card-subtitle{
+    color: #3D4053;
+    text-align: center;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+}
+
+/* List */
+.gr-radio-list{
+    color: #212534;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    padding-left: 34px;
+    position: relative;
+}
+.gr-radio-list::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 24px;
+    width: 24px;
+    background-image: url(../img/icon/radio-icon-16.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border-radius: 50%;
+}
+.gr-radio-list:not(:last-child){
+    margin-bottom: 20px;
+}
+.gr-radio-list-grid{
+    display: grid;
+    row-gap: 40px;
+    column-gap: 30px;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, auto);
+}
+
+/* Search */
+.gr-subscribe-wrap{
+    position: relative;
+    max-width: 503px;
+}
+.gr-subscribe-btn{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #3B25F4 0%, #C255AB 51%, #FF5C50 100%);
+    padding: 12px 28px;
+    color: #FFF;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 128.571% */
+    transition: all ease 450ms;
+    z-index: 1;
+    overflow: hidden;
+}
+.gr-subscribe-btn:focus{
+    box-shadow: none;
+}
+.gr-subscribe-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: linear-gradient(90deg, rgba(255,92,80,1) 0%, rgba(194,85,171,1) 50%, rgba(59,37,244,1) 100%);
+	border-radius: inherit;
+	opacity: 1;
+	z-index: -1;
+	transition: all ease 450ms;
+	-moz-transition: all ease 450ms;
+	-webkit-transition: all ease 450ms;
+    width: 100%;
+	left: 0;
+    opacity: 0;
+}
+.gr-subscribe-btn:hover::before {
+	opacity: 1;
+}
+.gr-subscribe-btn:hover{
+    color: var(--whiteColor);
+}
+.gr-subscribe-btn:hover ~ .gr-subscribe-input{
+    border-color: #0A7EFB;
+}
+.gr-subscribe-input{
+    border-radius: 12px;
+    border: 1px solid #E1E4EC;
+    padding: 12px 145px 12px 11px;
+    color: #212534;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    transition: .3s;
+}
+.gr-subscribe-input:focus{
+    box-shadow: none;
+    color: #212534;
+    border-color: #0A7EFB;
+}
+.gr-subscribe-input:hover{
+    border-color: #0A7EFB;
+}
+.gr-subscribe-input::placeholder{
+    color: #212534;
+}
+.gr-main-hero-section{
+    padding: 26px 0 88px 0;
+}
+.gr-main-hero-banner{
+    max-width: 485px;
+    width: 100%;
+}
+.gr-main-hero-banner .banner{
+    width: 100%;
+}
+
+.gr-chart-nav-pills{
+    justify-content: center;
+    padding: 7px;
+    border-radius: 16px;
+    border: 1px solid rgba(10, 126, 251, 0.40);
+    width: fit-content;
+}
+.gr-chart-nav-link{
+    color: #0A7EFB;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    padding: 16px 32px;
+}
+.nav-pills .nav-link.gr-chart-nav-link{
+    border-radius: 12px;
+}
+.nav-pills .nav-link.active.gr-chart-nav-link{
+    background-color: #0A7EFB;
+}
+
+.gr-chart-graph{
+    width: 100%;
+}
+.gr-chart-graph .chart{
+    width: 100%;
+}
+/* Growup LMS Main Home Pages Css End */
+
+
+
+/* Responsive Css End */
+@media screen and (min-width: 768px){
+    .md-max-w-535px{
+        max-width: 535px;
+    }
+    .md-max-w-503px{
+        max-width: 503px;
+    }
+}
+@media screen and (max-width: 991px){
+    /* Login signup */
+    .man-title-36px {
+        font-size: 33px;
+    }
+    .gr-verify-code-wrap {
+        gap: 20px;
+    }
+    /* gorwup lms main */
+    .gr-radio-list-grid{
+        grid-template-columns: repeat(3, auto);
+    }
+}
+@media screen and (max-width: 767px){
+    /* GrowUp lms Features Css */
+    .linearbg-img-wrap{
+        max-width: 555px;
+        margin: 0 auto;
+    }
+    .inspire-growth-banner {
+        max-width: 555px;
+        margin: 0 auto;
+    }
+    .box-items-group{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .box-item-single:nth-of-type(2)::after,
+    .box-item-single:nth-of-type(4)::after{
+        display: none;
+    }
+    .box-item-single:nth-of-type(3)::after{
+        display: block;
+    }
+    .box-item-single:nth-of-type(4)::before{
+        display: block;
+    }
+    .api-mobile-banner{
+        max-width: 555px;
+        margin: 0 auto;
+    }
+    /* Login signup */
+    .man-title-36px {
+        font-size: 30px;
+    }
+    .gr-user-access-inner{
+        justify-content: center;
+    }
+    /* gorwup lms main */
+    .gr-radio-list-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gr-main-hero-section {
+        padding: 36px 0 88px 0;
+    }
+}
+@media screen and (max-width: 575px){
+    /* GrowUp lms Features Css */
+    .growup-title-60px{
+        font-size: 38px;
+    }
+    .max-sm-400px{
+        max-width: 400px;
+    }
+    /* Login signup */
+    .man-title-36px {
+        font-size: 27px;
+    }
+    /* GrowUp LMS Main */
+    .gr-iconbox-card{
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .gr-radio-list-grid{
+        grid-template-columns: repeat(1, auto);
+        justify-content: center;
+    }
+    .gr-chart-nav-link {
+        padding: 14px 22px;
+    }
+}
+@media screen and (max-width: 450px){
+    .box-items-group{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .box-item-single:nth-of-type(1)::after,
+    .box-item-single:nth-of-type(3)::after,
+    .box-item-single:nth-of-type(5)::after{
+        display: none;
+    }
+    .box-item-single:nth-of-type(5)::before{
+        display: block;
+    }
+    /* Growup lms Main */
+    .gr-chart-nav-pills {
+        flex-direction: column;
+    }
+}

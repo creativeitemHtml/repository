@@ -20,6 +20,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <img class="banner" src="{{ asset('assets/img/growup/feature-page-banner.webp') }}" alt="banner">
+                </div>
             </div>
         </div>
     </section>
@@ -41,8 +45,7 @@
                         <p class="lms-notice-badge-warning mb-3 text-center">{{ get_phrase('Quiz') }}</p>
                         <h1 class="man-title-48px mb-3">{{ get_phrase('Test Your Knowledge Through Quizzes') }}</h1>
                         <p class="man-subtitle3-16px mb-32px">{{ get_phrase('Launch your business with a reliable') }}, <span class="cin2-text-dark fw-semibold">{{ get_phrase('ready-to-use') }}</span> {{ get_phrase('website or mobile app—no coding needed, just a few clicks! Enjoy interesting and') }}
-                            <span class="cin2-text-dark fw-semibold">{{ get_phrase('interactive learning
-                                                                                                                                                                                                        process') }}</span>
+                            <span class="cin2-text-dark fw-semibold">{{ get_phrase('interactive learning process') }}</span>
                             {{ get_phrase('that students love.') }}
                         </p>
                         <a href="#" class="btn gr-btn-primary">

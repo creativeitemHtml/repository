@@ -37,8 +37,7 @@
         </button>
     </div>
     <div class="d-flex align-items-center flex-wrap g-10">
-        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="defaultModal('{{ route('superadmin.create_topic', [$type, $product->slug]) }}', '{{ get_phrase('Create new topic') }}')"><i class="fa-solid fa-add"></i>
-            {{ get_phrase('Add new topic') }}</a>
+        <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="defaultModal('{{ route('superadmin.create_topic', [$type, $product->slug]) }}', '{{ get_phrase('Create new topic') }}')"><i class="fa-solid fa-add"></i>{{ get_phrase('Add new topic') }}</a>
         <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="defaultModal('{{ route('superadmin.create_article', [$type, $product->slug]) }}', '{{ get_phrase('Create new article') }}')"><i class="fa-solid fa-add"></i> {{ get_phrase('Add new article') }}</a>
         <a href="javascript:;" class="btn-main new-project-btn new-project-btn-desktop" onclick="largeModal('{{ route('superadmin.sort_topics', [$product->slug, 'type' => $type]) }}', '{{ get_phrase('Sort topics') }}')"><i class="fa-solid fa-list"></i> {{ get_phrase('Sort topics') }}</a>
     </div>

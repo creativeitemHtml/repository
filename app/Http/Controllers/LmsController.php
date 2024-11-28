@@ -43,10 +43,9 @@ class LmsController extends Controller
 
     public function help()
     {
-        // $page_data['product_details'] = Product::where('slug', 'growup_lms')->first();
-
-        $page_data['topic'] = Topic::where('product_id', )->where('visibility', 1)->orderBy('order', 'asc')->get();
-        return view('frontend.growup_lms.help');
+        $page_data['topics'] = Topic::where('product_id', 1)->where('visibility', 1)
+            ->where('is_saas', 1)->orderBy('order', 'asc')->get();
+        return view('frontend.growup_lms.help', $page_data);
     }
 
     public function register_company_lms(Request $request)
