@@ -75,11 +75,11 @@
                 <h3 class="title">{{ get_phrase('Project File') }}</h3>
             </div>
             <!-- File Upload -->
-            <form method="POST" enctype="multipart/form-data" class="d-block ajaxForm" action="{{ route('customer.upload_attachment', ['project_id' => $project_details->id]) }}">
+            {{-- <form method="POST" enctype="multipart/form-data" class="d-block ajaxForm" action="{{ route('customer.upload_attachment', ['project_id' => $project_details->id]) }}">
                 @csrf
                 <input class="form-control eForm-control-file" type="file" id="attachment" name="attachment">
                 <button type="submit" class="edit-project-btn mt-20">{{ get_phrase('Upload') }}</button>
-            </form>
+            </form> --}}
             @php
                 $attachments = json_decode($project_details->attachment_name);
             @endphp
