@@ -2340,6 +2340,75 @@ a.black-btn-lms{
     font-weight: 500;
     line-height: 28px;
 }
+
+.gr-subscribe-area{
+    border-radius: 32px;
+    background: linear-gradient(180deg, #0A7EFB 0%, #0059FF 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.gr-subscribe-content{
+    padding: 80px 0 90px 78px;
+}
+.gr-subscribe-img{
+    width: 360px;
+}
+.gr-subscribe-img > img{
+    width: 100%;
+}
+.max-w-503px{
+    max-width: 503px;
+}
+.gr-subscribe2-input{
+    background: transparent;
+    border-radius: 12px;
+    border: 1px solid #E1E4EC;
+    padding: 12px 142px 12px 11px;
+    color: #FFF;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+}
+.gr-subscribe2-input::placeholder{
+    color: #FFF;
+}
+.gr-subscribe2-input:focus{
+    background: transparent;
+    border-color: #E1E4EC;
+    color: #FFF;
+}
+.gr-btn-white{
+    border-radius: 8px;
+    background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(90deg, #3B25F4 0%, #C255AB 51%, #FF5C50 100%);
+    background: var(--whiteColor);
+    border: none;
+    padding: 12px 28px;
+    color: #0364FE;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 128.571% */
+    transition: .3s;
+}
+.gr-btn-white:hover{
+    color: #0364FE;
+    background: #edf2f6;
+}
+.gr-btn-white:focus{
+    box-shadow: none;
+}
+.gr-subscribe2-btn{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+
 .one-place-left-card{
     padding-right: 60px;
     padding-bottom: 50px;
@@ -6118,6 +6187,190 @@ a.black-btn-lms{
 }
 /* Growup LMS Main Home Pages Css End */
 
+.mrg-70 {
+    row-gap: 70px;
+}
+/* card 1 */
+.white-service-info-card{
+    border-radius: 16px;
+    border: 1px solid #E0E3E8;
+    background: #FFF;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+}
+.white-service-card-details{
+    padding: 32px 32px 0 32px;
+}
+.white-service-card-details .title{
+    color: #212534;
+    font-family: 'Manrope';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    margin-bottom: 20px;
+    transition: .3s;
+}
+.white-service-card-details .info{
+    color: #3D4053;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    transition: .3s;
+}
+.white-service-card-img{
+    height: auto;
+    width: 100%;
+    border-radius: 0px 0px 16px 16px;
+    position: relative;
+}
+.white-service-card-img img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+.white-service-card-img::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: -1px;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 30.45%, #FFF 95.99%);
+}
+.white-service-info-card:hover{
+    box-shadow: 0px 8px 32px 0px rgba(32, 94, 214, 0.12);
+    border-color: transparent;
+}
+.white-service-info-card:hover .white-service-card-details .title{
+    color: #3D82F0;
+}
+.white-service-info-card:hover .white-service-card-details .info{
+    color: #3D82F0;
+}
+
+
+.services-card-main{
+    column-gap: 60px;
+}
+.services-card-left,
+.services-card-right{
+    flex-basis: 50%;
+}
+.services-card-inner{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+.black-service-info-card {
+    border-radius: 16px;
+    border: 1px solid #E0E3E8;
+    background: #0E0E0E;
+    cursor: pointer;
+    transition: .3s;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.black-service-card-details{
+    padding: 32px 32px 0 32px;
+}
+.black-service-card-details .title{
+    color: #fff;
+    font-family: 'Manrope';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    margin-bottom: 20px;
+    transition: .3s;
+}
+.black-service-card-details .info{
+    color: var(--BG, #E8F3FF);
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    transition: .3s;
+}
+.black-service-card-img{
+    height: auto;
+    width: 100%;
+    border-radius: inherit;
+}
+.black-service-card-img img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+.black-service-info-card:hover{
+    box-shadow: 0px 8px 32px 0px rgba(32, 94, 214, 0.12);
+}
+.black-service-info-card:hover .black-service-card-details .title{
+    color: #3D82F0;
+}
+.black-service-info-card:hover .black-service-card-details .info{
+    color: #3D82F0;
+}
+
+.service-card-details-bottom {
+    padding: 0 32px 32px 32px;
+}
+
+.mb-36px {
+    margin-bottom: 36px !important;
+}
+
+.one-place-title2 .title{
+    color: #212534;
+    font-family: 'Manrope';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+.one-place-title2 .info{
+    color: #595C6D;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 175% */
+}
+.one-place-icon-card .info {
+    color: #595C6D;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 175% */
+}
+.gr-large-iconbox{
+    border-radius: 32px;
+    max-width: 263px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 32px;
+    background: var(--bg-color, linear-gradient(180deg, #64EAA0 0%, #2AC871 100%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 
 /* Responsive Css End */
@@ -6183,7 +6436,53 @@ a.black-btn-lms{
     .gr-main-hero-section {
         padding: 36px 0 88px 0;
     }
+
+    .gr-subscribe-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* gorwup lms feature */
+    .gr-feature-hero-banner{
+        max-width: 555px;
+        margin: 0 auto;
+    }
+    /* gorwup lms Solution */
+    .services-card-main{
+        row-gap: 30px;
+        flex-direction: column;
+    }
+    .black-service-info-card {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+    .white-service-info-card {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+    .problem-solver-details2 .title {
+        font-size: 23px;
+    }
+    .man-title-24px {
+        font-size: 23px;
+    }
+    .gr-subscribe-area{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .gr-subscribe-content{
+        margin: 0 auto;
+        padding: 65px 65px 40px 65px;
+    }
+    .gr-subscribe-img{
+        max-width: 360px;
+        width: 100%;
+        margin: 0 auto;
+    }
 }
+
 @media screen and (max-width: 575px){
     /* GrowUp lms Features Css */
     .growup-title-60px{
@@ -6209,6 +6508,7 @@ a.black-btn-lms{
         padding: 14px 22px;
     }
 }
+
 @media screen and (max-width: 450px){
     .box-items-group{
         grid-template-columns: repeat(1, 1fr);

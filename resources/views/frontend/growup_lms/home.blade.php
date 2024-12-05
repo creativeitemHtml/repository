@@ -12,14 +12,16 @@
                 <div class="col-md-6 order-2 order-md-1">
                     <div class="md-max-w-535px">
                         <h1 class="man-title-60px mb-3">{{ get_phrase('Sell, Earn, Train and GrowUp') }}</h1>
+
                         <p class="man-subtitle3-16px mb-32px md-max-w-503px">
                             {{ get_phrase('An advanced LMS that turns your learning Into earning potentials. Share what you know and earn money on your own terms.') }}
                             <span class="cin2-text-dark fw-semibold">{{ get_phrase('Turn your knowledge into business opportunity.') }}</span>
                         </p>
-                        <form action="">
+
+                        <form action="{{ route('lms.signup') }}" method="post">@csrf
                             <div class="gr-subscribe-wrap">
                                 <button type="submit" class="btn gr-subscribe-btn">{{ get_phrase('Get Started') }}</button>
-                                <input type="email" class="form-control gr-subscribe-input" placeholder="Enter your email">
+                                <input type="email" name="email" class="form-control gr-subscribe-input" placeholder="Enter your email">
                             </div>
                         </form>
                     </div>
@@ -314,88 +316,40 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-100px">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="gr-iconbox-card h-100">
-                        <div class="lms-color-iconbox-circle mx-auto mb-44px" style="--bg-color:#EFF9FE">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path
-                                    d="M35.9354 17.8999L33.6688 15.2666C33.2354 14.7666 32.8854 13.8333 32.8854 13.1666V10.3333C32.8854 8.5666 31.4354 7.1166 29.6687 7.1166H26.8354C26.1854 7.1166 25.2354 6.7666 24.7354 6.33327L22.1021 4.0666C20.9521 3.08327 19.0688 3.08327 17.9021 4.0666L15.2854 6.34993C14.7854 6.7666 13.8354 7.1166 13.1854 7.1166H10.3021C8.53542 7.1166 7.08542 8.5666 7.08542 10.3333V13.1833C7.08542 13.8333 6.73542 14.7666 6.31875 15.2666L4.06875 17.9166C3.10208 19.0666 3.10208 20.9333 4.06875 22.0833L6.31875 24.7333C6.73542 25.2333 7.08542 26.1666 7.08542 26.8166V29.6666C7.08542 31.4333 8.53542 32.8833 10.3021 32.8833H13.1854C13.8354 32.8833 14.7854 33.2333 15.2854 33.6666L17.9188 35.9333C19.0688 36.9166 20.9521 36.9166 22.1188 35.9333L24.7521 33.6666C25.2521 33.2333 26.1854 32.8833 26.8521 32.8833H29.6854C31.4521 32.8833 32.9021 31.4333 32.9021 29.6666V26.8333C32.9021 26.1833 33.2521 25.2333 33.6854 24.7333L35.9521 22.0999C36.9188 20.9499 36.9188 19.0499 35.9354 17.8999ZM26.9354 16.8499L18.8854 24.8999C18.6521 25.1333 18.3354 25.2666 18.0021 25.2666C17.6688 25.2666 17.3521 25.1333 17.1188 24.8999L13.0854 20.8666C12.6021 20.3833 12.6021 19.5833 13.0854 19.0999C13.5688 18.6166 14.3687 18.6166 14.8521 19.0999L18.0021 22.2499L25.1688 15.0833C25.6521 14.5999 26.4521 14.5999 26.9354 15.0833C27.4188 15.5666 27.4188 16.3666 26.9354 16.8499Z"
-                                    fill="#49B6EE" />
-                            </svg>
-                        </div>
-                        <h5 class="gr-iconbox-card-title">{{ get_phrase('Online Course') }}</h5>
+            <div class="row mb-100px justify-content-center">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="gr-large-iconbox mb-4 mx-auto" style="--bg-color: linear-gradient(180deg, #64EAA0 0%, #2AC871 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <path
+                                d="M62.4832 87.5H37.5127C34.0669 87.5 32.1041 83.5415 34.1832 80.779L46.6665 64.1663C48.3373 61.9454 51.6581 61.9454 53.329 64.1663L65.8127 80.779C67.8918 83.5415 65.929 87.5 62.4832 87.5ZM65.2206 53.6621C65.4873 52.4246 65.625 51.1917 65.625 50C65.625 41.3833 58.6125 34.375 50 34.375C41.3875 34.375 34.375 41.3833 34.375 50C34.375 51.1917 34.5085 52.4246 34.7794 53.6621C35.146 55.3496 36.8125 56.4245 38.5 56.0537C40.1833 55.6912 41.254 54.0251 40.8915 52.3376C40.7124 51.521 40.6291 50.7543 40.6291 49.9959C40.6291 44.8251 44.8374 40.6209 50.0041 40.6209C55.1707 40.6209 59.3791 44.8251 59.3791 49.9959C59.3791 50.7543 59.2916 51.5168 59.1166 52.3376C58.7541 54.0251 59.8248 55.687 61.5082 56.0537C61.7332 56.1037 61.9542 56.1249 62.175 56.1249C63.6083 56.1249 64.904 55.1246 65.2206 53.6621ZM73.1583 66.0248C76.4083 61.3206 78.125 55.7792 78.125 50C78.125 34.4917 65.5083 21.875 50 21.875C34.4917 21.875 21.875 34.4917 21.875 50C21.875 55.7792 23.5917 61.3206 26.8417 66.0248C27.8167 67.4414 29.7582 67.8046 31.1915 66.8213C32.6082 65.8421 32.9668 63.8912 31.9834 62.4746C29.4584 58.8204 28.1209 54.5042 28.1209 50C28.1209 37.9375 37.9334 28.125 49.9959 28.125C62.0584 28.125 71.8709 37.9375 71.8709 50C71.8709 54.5042 70.5376 58.8162 68.0084 62.4746C67.0293 63.8954 67.3873 65.8421 68.7998 66.8213C69.3457 67.1963 69.9624 67.3747 70.5749 67.3747C71.5749 67.3747 72.5499 66.9039 73.1583 66.0248ZM80.6875 76.5544C87.0958 69.2127 90.625 59.7833 90.625 50C90.625 27.6 72.4 9.375 50 9.375C27.6 9.375 9.375 27.6 9.375 50C9.375 59.7833 12.9042 69.2127 19.3125 76.5544C20.4459 77.8544 22.4165 77.9878 23.7249 76.8544C25.0249 75.7211 25.1625 73.7457 24.025 72.4457C18.6083 66.2415 15.625 58.2708 15.625 50C15.625 31.0458 31.0458 15.625 50 15.625C68.9542 15.625 84.375 31.0458 84.375 50C84.375 58.2708 81.3917 66.2415 75.975 72.4457C74.8417 73.7457 74.9751 75.7211 76.2751 76.8544C76.871 77.3711 77.5998 77.6245 78.329 77.6245C79.204 77.6245 80.0708 77.2627 80.6875 76.5544Z"
+                                fill="white" />
+                        </svg>
                     </div>
+                    <h4 class="man-title2-20px text-center cin1-text-dark fw-semibold">Online Course</h4>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="gr-iconbox-card h-100">
-                        <div class="lms-color-iconbox-circle mx-auto mb-44px" style="--bg-color:#E8FCF2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path
-                                    d="M14.7421 7.66866C13.4088 1.90199 4.72543 1.88532 3.3921 7.66866C2.60877 11.052 4.75877 13.9187 6.62543 15.702C7.9921 16.9853 10.1421 16.9853 11.5088 15.702C13.3754 13.9187 15.5088 11.052 14.7421 7.66866ZM9.12543 10.3353C8.20877 10.3353 7.45877 9.58532 7.45877 8.66866C7.45877 7.75199 8.1921 7.00199 9.10877 7.00199H9.12543C10.0588 7.00199 10.7921 7.75199 10.7921 8.66866C10.7921 9.58532 10.0588 10.3353 9.12543 10.3353Z"
-                                    fill="#19B363" />
-                                <path
-                                    d="M36.5342 27.6687C35.2009 21.902 26.4842 21.8853 25.1342 27.6687C24.3509 31.052 26.5009 33.9187 28.3842 35.702C29.7509 36.9853 31.9176 36.9853 33.2842 35.702C35.1676 33.9187 37.3176 31.052 36.5342 27.6687ZM30.9009 30.3353C29.9842 30.3353 29.2342 29.5853 29.2342 28.6687C29.2342 27.752 29.9676 27.002 30.8842 27.002H30.9009C31.8176 27.002 32.5676 27.752 32.5676 28.6687C32.5676 29.5853 31.8176 30.3353 30.9009 30.3353Z"
-                                    fill="#19B363" />
-                                <path
-                                    d="M19.9971 32.9172H15.5305C13.5971 32.9172 11.9138 31.7505 11.2471 29.9505C10.5638 28.1505 11.0638 26.1672 12.5138 24.8839L25.8305 13.2339C26.6305 12.5339 26.6471 11.5839 26.4138 10.9339C26.1638 10.2839 25.5305 9.58386 24.4638 9.58386H19.9971C19.3138 9.58386 18.7471 9.0172 18.7471 8.33386C18.7471 7.65053 19.3138 7.08386 19.9971 7.08386H24.4638C26.3971 7.08386 28.0805 8.25053 28.7471 10.0505C29.4305 11.8505 28.9305 13.8339 27.4805 15.1172L14.1638 26.7672C13.3638 27.4672 13.3471 28.4172 13.5805 29.0672C13.8305 29.7172 14.4638 30.4172 15.5305 30.4172H19.9971C20.6805 30.4172 21.2471 30.9839 21.2471 31.6672C21.2471 32.3505 20.6805 32.9172 19.9971 32.9172Z"
-                                    fill="#19B363" />
-                            </svg>
-                        </div>
-                        <h5 class="gr-iconbox-card-title">{{ get_phrase('Coaching') }}</h5>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="gr-large-iconbox mb-4 mx-auto" style="--bg-color: linear-gradient(180deg, #D5C9FF 0%, #665EFF 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <path d="M57.6289 71.9584H22.0456C20.3197 71.9584 18.9206 73.3575 18.9206 75.0834C18.9206 76.8093 20.3197 78.2084 22.0456 78.2084H57.6289C59.3548 78.2084 60.7539 76.8093 60.7539 75.0834C60.7539 73.3575 59.3548 71.9584 57.6289 71.9584Z" fill="white" />
+                            <path
+                                d="M81.5873 31.2917V27.6667C81.5918 23.2069 78.0842 19.5341 73.6289 19.3334H18.0456C15.8868 19.3768 13.8351 20.2822 12.3479 21.8477C10.8607 23.4131 10.0617 25.5085 10.1289 27.6667V56.8334C10.1234 61.2778 13.6067 64.9445 18.0456 65.1667H61.7123V39.25C61.735 34.8642 65.2848 31.3145 69.6706 31.2917H81.5873Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M71.2539 34.75H83.7539C85.4339 34.8044 87.0234 35.5244 88.1723 36.7514C89.3211 37.9784 89.9351 39.6118 89.8789 41.2917V74.0417C89.9351 75.7217 89.3211 77.355 88.1723 78.582C87.0234 79.809 85.4339 80.529 83.7539 80.5834H71.2539C67.749 80.47 64.9937 77.5472 65.0872 74.0417V41.2917C65.0165 37.7949 67.7591 34.8856 71.2539 34.75ZM75.5039 73.4584C75.5039 74.609 76.4367 75.5417 77.5872 75.5417C78.7378 75.5417 79.6706 74.609 79.6706 73.4584C79.6706 72.3078 78.7378 71.375 77.5872 71.375C76.446 71.3972 75.5261 72.3171 75.5039 73.4584Z"
+                                fill="white" />
+                        </svg>
                     </div>
+                    <h4 class="man-title2-20px text-center cin1-text-dark fw-semibold">Coaching</h4>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="gr-iconbox-card h-100">
-                        <div class="lms-color-iconbox-circle mx-auto mb-44px" style="--bg-color:#F4F3FF">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path
-                                    d="M20.0026 3.3335C10.8193 3.3335 3.33594 10.8168 3.33594 20.0002C3.33594 29.1835 10.8193 36.6668 20.0026 36.6668C29.1859 36.6668 36.6693 29.1835 36.6693 20.0002C36.6693 10.8168 29.1859 3.3335 20.0026 3.3335ZM27.2526 25.9502C27.0193 26.3502 26.6026 26.5668 26.1693 26.5668C25.9526 26.5668 25.7359 26.5168 25.5359 26.3835L20.3693 23.3002C19.0859 22.5335 18.1359 20.8502 18.1359 19.3668V12.5335C18.1359 11.8502 18.7026 11.2835 19.3859 11.2835C20.0693 11.2835 20.6359 11.8502 20.6359 12.5335V19.3668C20.6359 19.9668 21.1359 20.8502 21.6526 21.1502L26.8193 24.2335C27.4193 24.5835 27.6193 25.3502 27.2526 25.9502Z"
-                                    fill="#7E6FFF" />
-                            </svg>
-                        </div>
-                        <h5 class="gr-iconbox-card-title">{{ get_phrase('Training Fits') }}</h5>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="gr-large-iconbox mb-4 mx-auto" style="--bg-color: linear-gradient(180deg, #FEB79D 0%, #FD6786 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <path
+                                d="M65.9164 44.7083C65.2914 44.2916 65.2501 43.4169 65.7501 42.8752C68.9168 39.1669 70.875 34.4167 70.875 29.1667C70.875 27.625 70.7084 26.1252 70.3751 24.6669C70.3751 24.6669 70.2916 24.3336 70.2916 24.2086C70.2916 23.542 70.8167 22.9874 71.4834 22.9457C71.525 22.9457 72.0415 22.9167 72.2499 22.9167C80.0415 22.9167 86.125 30.5419 83.375 38.7085C82.1667 42.3335 79.0832 45.1665 75.4166 46.1248C71.8749 47.0415 68.5414 46.375 65.9164 44.7083ZM77.7918 50.7086C77.0002 50.7086 76.4999 51.2499 76.4999 51.9583C76.4999 52.2499 76.7332 52.6248 76.9582 52.8748C81.9165 57.9998 84.2499 65.1666 84.2499 72.2916V76C84.2499 76.5833 84.75 77.0834 85.375 77.0834H91.6667C92.8333 77.0834 93.75 76.1667 93.75 75V66.7084C93.75 59.3334 89.5835 50.7086 77.7918 50.7086ZM24.5834 46.1248C28.1251 47.0415 31.4586 46.375 34.0836 44.7083C34.7086 44.2916 34.7499 43.4169 34.2499 42.8752C31.0832 39.1669 29.125 34.4167 29.125 29.1667C29.125 27.625 29.2916 26.1252 29.6249 24.6669C29.6249 24.6669 29.7084 24.3336 29.7084 24.2086C29.7084 23.542 29.1833 22.9874 28.5166 22.9457C28.475 22.9457 27.9585 22.9167 27.7501 22.9167C19.9585 22.9167 13.875 30.5419 16.625 38.7085C17.8333 42.3335 20.9168 45.1665 24.5834 46.1248ZM23.5001 51.9583C23.5001 51.2499 22.9998 50.7086 22.2081 50.7086C10.4165 50.7086 6.25 59.3334 6.25 66.7084V75C6.25 76.1667 7.16667 77.0834 8.33333 77.0834H14.625C15.25 77.0834 15.7501 76.5833 15.7501 76V72.2916C15.7501 65.1666 18.0835 57.9998 23.0418 52.8748C23.2668 52.6248 23.5001 52.2499 23.5001 51.9583ZM50.0336 43.75C58.0752 43.75 64.6169 37.2084 64.6169 29.1667C64.6169 21.125 58.0752 14.5834 50.0336 14.5834C41.9919 14.5834 35.4502 21.125 35.4502 29.1667C35.4502 37.2084 41.9919 43.75 50.0336 43.75ZM57.4041 51.621H42.5919C27.3835 51.621 21.9874 62.7541 21.9874 72.2916V83.3334C21.9874 84.4834 22.9207 85.4167 24.0707 85.4167H75.9252C77.0752 85.4167 78.0085 84.4834 78.0085 83.3334V72.2916C78.0127 62.7541 72.6166 51.621 57.4041 51.621Z"
+                                fill="white" />
+                        </svg>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="gr-iconbox-card h-100">
-                        <div class="lms-color-iconbox-circle mx-auto mb-44px" style="--bg-color:#FFF2F0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path
-                                    d="M19.9974 19.2168C15.3974 19.2168 11.6641 22.9501 11.6641 27.5501C11.6641 28.7835 11.9307 29.9501 12.4307 30.9835C12.5641 31.2835 12.7141 31.5668 12.8807 31.8335C14.3141 34.2501 16.9641 35.8835 19.9974 35.8835C23.0307 35.8835 25.6807 34.2501 27.1141 31.8335C27.2807 31.5668 27.4307 31.2835 27.5641 30.9835C28.0641 29.9501 28.3307 28.7835 28.3307 27.5501C28.3307 22.9501 24.5974 19.2168 19.9974 19.2168ZM23.4474 26.8335L19.8974 30.1168C19.6641 30.3335 19.3474 30.4501 19.0474 30.4501C18.7307 30.4501 18.4141 30.3335 18.1641 30.0835L16.5141 28.4335C16.0307 27.9501 16.0307 27.1501 16.5141 26.6668C16.9974 26.1835 17.7974 26.1835 18.2807 26.6668L19.0807 27.4668L21.7474 25.0001C22.2641 24.5335 23.0474 24.5668 23.5141 25.0668C23.9807 25.5668 23.9474 26.3501 23.4474 26.8335Z"
-                                    fill="#FF5F4A" />
-                                <path
-                                    d="M33.6597 28.4502C33.0597 28.9835 32.4097 29.4335 31.7097 29.8002C31.1097 30.1002 30.5097 29.5169 30.6097 28.8502C30.6764 28.3669 30.7097 27.8669 30.7097 27.3502C30.7097 21.3835 25.843 16.5169 19.8764 16.5169C13.9097 16.5169 9.04304 21.3835 9.04304 27.3502C9.04304 28.1169 9.12637 28.8502 9.27637 29.5669C9.39304 30.1502 8.94304 30.7335 8.3597 30.5835C1.77637 28.9835 1.74304 18.8502 9.1097 18.3335H9.19304C3.84304 3.45021 26.4097 -2.49979 28.993 13.1335C36.2097 14.0502 39.1264 23.6669 33.6597 28.4502Z"
-                                    fill="#FF5F4A" />
-                            </svg>
-                        </div>
-                        <p class="gr-iconbox-card-subtitle">{{ get_phrase('Properly organize and truck all tasks and projects.') }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="gr-iconbox-card h-100">
-                        <div class="lms-color-iconbox-circle mx-auto mb-44px" style="--bg-color:#F1F6FF">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path
-                                    d="M32.5172 9.75016L22.6172 4.0335C21.0005 3.10016 19.0005 3.10016 17.3672 4.0335L7.48385 9.75016C5.86719 10.6835 4.86719 12.4168 4.86719 14.3002V25.7002C4.86719 27.5668 5.86719 29.3002 7.48385 30.2502L17.3839 35.9668C19.0005 36.9002 21.0005 36.9002 22.6339 35.9668L32.5339 30.2502C34.1505 29.3168 35.1505 27.5835 35.1505 25.7002V14.3002C35.1339 12.4168 34.1339 10.7002 32.5172 9.75016ZM20.0005 12.2335C22.1505 12.2335 23.8839 13.9668 23.8839 16.1168C23.8839 18.2668 22.1505 20.0002 20.0005 20.0002C17.8505 20.0002 16.1172 18.2668 16.1172 16.1168C16.1172 13.9835 17.8505 12.2335 20.0005 12.2335ZM24.4672 27.7668H15.5339C14.1839 27.7668 13.4005 26.2668 14.1505 25.1502C15.2839 23.4668 17.4839 22.3335 20.0005 22.3335C22.5172 22.3335 24.7172 23.4668 25.8505 25.1502C26.6005 26.2502 25.8005 27.7668 24.4672 27.7668Z"
-                                    fill="#508BFF" />
-                            </svg>
-                        </div>
-                        <p class="gr-iconbox-card-subtitle">{{ get_phrase('Properly organize and truck all tasks and projects.') }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="gr-iconbox-card h-100">
-                        <div class="lms-color-iconbox-circle mx-auto mb-44px" style="--bg-color:#EAF5FF">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path d="M35 37.9166H5C4.31667 37.9166 3.75 37.35 3.75 36.6666C3.75 35.9833 4.31667 35.4166 5 35.4166H35C35.6833 35.4166 36.25 35.9833 36.25 36.6666C36.25 37.35 35.6833 37.9166 35 37.9166Z" fill="#008AFF" />
-                                <path d="M9.33333 13.9667H6.66667C5.75 13.9667 5 14.7167 5 15.6333V30C5 30.9167 5.75 31.6667 6.66667 31.6667H9.33333C10.25 31.6667 11 30.9167 11 30V15.6333C11 14.7 10.25 13.9667 9.33333 13.9667Z" fill="#008AFF" />
-                                <path d="M21.3411 8.6499H18.6745C17.7578 8.6499 17.0078 9.3999 17.0078 10.3166V29.9999C17.0078 30.9166 17.7578 31.6666 18.6745 31.6666H21.3411C22.2578 31.6666 23.0078 30.9166 23.0078 29.9999V10.3166C23.0078 9.3999 22.2578 8.6499 21.3411 8.6499Z" fill="#008AFF" />
-                                <path d="M33.3333 3.3335H30.6667C29.75 3.3335 29 4.0835 29 5.00016V30.0002C29 30.9168 29.75 31.6668 30.6667 31.6668H33.3333C34.25 31.6668 35 30.9168 35 30.0002V5.00016C35 4.0835 34.25 3.3335 33.3333 3.3335Z" fill="#008AFF" />
-                            </svg>
-                        </div>
-                        <p class="gr-iconbox-card-subtitle">{{ get_phrase('Properly organize and truck all tasks and projects.') }}</p>
-                    </div>
+                    <h4 class="man-title2-20px text-center cin1-text-dark fw-semibold">Training Fits</h4>
                 </div>
             </div>
         </div>
@@ -410,14 +364,14 @@
                     <div>
                         <ul class="nav nav-pills gr-chart-nav-pills mb-52px mx-auto" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link gr-chart-nav-link" id="pills-two-tab" data-bs-toggle="pill" data-bs-target="#pills-two" type="button" role="tab" aria-controls="pills-two" aria-selected="false">Course Selling</button>
+                                <button class="nav-link gr-chart-nav-link active" id="pills-two-tab" data-bs-toggle="pill" data-bs-target="#pills-two" type="button" role="tab" aria-controls="pills-two" aria-selected="false">Course Selling</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link gr-chart-nav-link active" id="pills-one-tab" data-bs-toggle="pill" data-bs-target="#pills-one" type="button" role="tab" aria-controls="pills-one" aria-selected="true">Team Training</button>
+                                <button class="nav-link gr-chart-nav-link " id="pills-one-tab" data-bs-toggle="pill" data-bs-target="#pills-one" type="button" role="tab" aria-controls="pills-one" aria-selected="true">Team Training</button>
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab" tabindex="0">
+                            <div class="tab-pane fade show active" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab" tabindex="0">
                                 <div class="max-w-750px mx-auto mb-32px">
                                     <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Develop your brand, Fully yours to control') }}</h1>
                                     <p class="man-subtitle3-16px text-center">{{ get_phrase('An advanced LMS that turns your learning Into earning potentials. Share what you know and earn money on your own terms.') }}
@@ -434,7 +388,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab" tabindex="0">
+                            <div class="tab-pane fade " id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab" tabindex="0">
                                 <div class="max-w-750px mx-auto mb-32px">
                                     <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Develop your brand, Fully yours to control') }}</h1>
                                     <p class="man-subtitle3-16px text-center">{{ get_phrase('An advanced LMS that turns your learning Into earning potentials. Share what you know and earn money on your own terms.') }}
@@ -659,10 +613,8 @@
             </div>
         </div>
     </section>
-    <!-- Testimonial Area End -->
 
 
-    <!-- QNA Area Start -->
     <section>
         <div class="container">
             <div class="row mb-32px">
@@ -761,21 +713,7 @@
 
 
 
-    <section class="wow animate__fadeInUp" data-wow-delay=".3s">
-        <div class="container">
-            <div class="row mb-100px">
-                <div class="col-12">
-                    <div class="lms-joining-area">
-                        <h1 class="man-title-48px fw-semibold text-white mb-12px text-center">{{ get_phrase('Trainer? Creator? Smart cookie?') }}</h1>
-                        <p class="mb-32px man-subtitle2-20px text-white text-center">{{ get_phrase('Join GrowUp LMS to be part of the creator community') }}</p>
-                        <div class="text-center">
-                            <a href="#" class="btn cin1-btn-outline-white">{{ get_phrase('Join us free!') }}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-footer-signup />
 @endsection
 
 @push('js')

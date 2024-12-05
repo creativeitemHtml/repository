@@ -2,7 +2,6 @@
 @section('content')
     @include('frontend.growup_lms.lms_header')
 
-    <!-- Pricing Area Start -->
     <section>
         <div class="container">
             <div class="row">
@@ -21,14 +20,11 @@
                                 <button class="nav-link" id="pills-yearly-tab" data-bs-toggle="pill" data-bs-target="#pills-yearly" type="button" role="tab" aria-controls="pills-yearly" aria-selected="false">Annual billing</button>
                             </li>
                         </ul>
-                        <!-- pricing -->
                         <div class="tab-content mb-100px" id="pills-tabContent">
-                            <!-- Monthly billing -->
                             <div class="tab-pane fade show active" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab" tabindex="0">
                                 <div class="row mcg-30 justify-content-center">
                                     @foreach ($packages as $package)
                                         <div class="col-lg-4 col-md-6">
-                                            <!-- Single Pricing Card -->
                                             <div class="lms1-pricing-card h-100 package" id="{{ $package->id }}">
                                                 <p class="lms1-badge-primary mb-12px text-capitalize">{{ $package->type }}</p>
                                                 <div class="d-flex align-items-end flex-wrap mb-3">
@@ -74,11 +70,9 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <!-- yearly billing -->
                             <div class="tab-pane fade" id="pills-yearly" role="tabpanel" aria-labelledby="pills-yearly-tab" tabindex="0">
                                 <div class="row mcg-30 justify-content-center">
                                     <div class="col-lg-4 col-md-6">
-                                        <!-- Single Pricing Card -->
                                         <div class="lms1-pricing-card h-100">
                                             <p class="lms1-badge-primary mb-12px">Pro</p>
                                             <div class="d-flex align-items-end flex-wrap mb-3">
@@ -159,10 +153,8 @@
             </div>
         </div>
     </section>
-    <!-- Pricing Area End -->
 
 
-    <!-- Dedicated Success Area Start -->
     <section>
         <div class="container">
             <div class="row mb-100px">
@@ -214,10 +206,8 @@
             </div>
         </div>
     </section>
-    <!-- Dedicated Success Area End -->
 
 
-    <!-- Testimonial Area Start -->
     <section>
         <div class="container">
             <div class="row mb-32px">
@@ -232,7 +222,6 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="lms-testimonial-space">
-                            <!-- Swiper -->
                             <div class="swiper lms2-swiper lms2-slider">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -311,10 +300,8 @@
             </div>
         </div>
     </section>
-    <!-- Testimonial Area End -->
 
 
-    <!-- QNA Area Start -->
     <section>
         <div class="container">
             <div class="row mb-32px">
@@ -404,26 +391,10 @@
             </div>
         </div>
     </section>
-    <!-- QNA Area End -->
 
 
-    <!-- Blue Signup Area Start -->
-    <section class="wow animate__fadeInUp" data-wow-delay=".3s">
-        <div class="container">
-            <div class="row mb-100px">
-                <div class="col-12">
-                    <div class="lms-getstarted-area">
-                        <h2 class="man-title-60px text-white mb-20px text-center">Start Making Money!</h2>
-                        <h4 class="man-title-48px fw-semibold text-white text-center mb-32px">Enroll Free Today.</h4>
-                        <div class="text-center">
-                            <a href="#" class="btn cin1-btn-outline-white">Get started for free</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Blue Signup Area End -->
+    <x-footer-signup />
+
     <form action="{{ route('lms.subscription') }}" id="lms-subscription-form" method="post">@csrf</form>
 @endsection
 

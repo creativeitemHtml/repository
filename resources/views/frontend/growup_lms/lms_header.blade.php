@@ -15,6 +15,7 @@
                                 <ul class="d-flex align-items-center justify-content-between">
                                     <li><a href="{{ route('lms.home') }}" class="{{ Route::currentRouteName() == 'lms.home' ? 'active' : '' }}">{{ get_phrase('Home') }}</a></li>
                                     <li><a href="{{ route('lms.features') }}" class="{{ Route::currentRouteName() == 'lms.features' ? 'active' : '' }}">{{ get_phrase('Features') }}</a></li>
+                                    <li><a href="{{ route('lms.solutions') }}" class="{{ Route::currentRouteName() == 'lms.solutions' ? 'active' : '' }}">{{ get_phrase('Solutions') }}</a></li>
                                     <li><a href="{{ route('lms.pricing') }}" class="{{ Route::currentRouteName() == 'lms.pricing' ? 'active' : '' }}">{{ get_phrase('Pricing') }}</a></li>
                                     <li><a href="{{ route('lms.help') }}" class="{{ Route::currentRouteName() == 'lms.help' ? 'active' : '' }}">{{ get_phrase('Help Center') }}</a></li>
                                     <li class="list-button">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\VerifyEmailWithPassword;
+use App\Models\Article;
 use App\Models\PricingPackage;
 use App\Models\Product;
 use App\Models\SaasCompany;
@@ -34,6 +35,11 @@ class LmsController extends Controller
         return view('frontend.growup_lms.features');
     }
 
+    public function solutions()
+    {
+        return view('frontend.growup_lms.solutions');
+    }
+
     public function pricing()
     {
         $lms_id                = SaasProduct::where('slug', 'creative-lms')->value('id');
@@ -41,11 +47,48 @@ class LmsController extends Controller
         return view('frontend.growup_lms.pricing', $page_data);
     }
 
-    public function help()
+    public function signup(Request $request)
     {
-        $page_data['topics'] = Topic::where('product_id', 1)->where('visibility', 1)
-            ->where('is_saas', 1)->orderBy('order', 'asc')->get();
-        return view('frontend.growup_lms.help', $page_data);
+        $page_data['email'] = htmlspecialchars($request->email);
+        return view('frontend.growup_lms.signup', $page_data);
+    }
+
+    public function help($topic = "", $article = "")
+    {
+        $query = Topic::where('product_id', 1)->where('visibility', 1)
+            ->where('is_saas', 1);
+
+        // this is for only https://creativeitem/product-slug/help
+        $search = request()->query('search');
+        if ($search) {
+            $query->where('topic', 'like', "%{$search}%");
+        }
+
+        if (! empty($topic)) {
+            $query->where('slug', $topic);
+            $product              = str_replace('/', '', request()->route()->getPrefix());
+            $page_data['product'] = SaasProduct::where('slug', $product)->first();
+
+            if (! $query->exists()) {
+                return redirect()->back()->with('error', get_phrase('Data not found.'));
+            }
+
+            $searched_topic = $query->first();
+            $first_article  = Article::where('topic_id', $searched_topic->id)->orderBy('order', 'asc')->first();
+
+            if (empty($article)) {
+                return redirect()->route('lms.help', [$topic, $first_article->slug]);
+            }
+        }
+
+        $path = 'frontend.growup_lms.help';
+        $view = $topic ? "{$path}_details" : $path;
+
+        $topic
+        ? $page_data['topic']  = $query->first()
+        : $page_data['topics'] = $query->orderBy('order', 'asc')->paginate(15);
+
+        return view($view, $page_data);
     }
 
     public function register_company_lms(Request $request)
@@ -802,10 +845,5 @@ class LmsController extends Controller
         }
 
         return $recover_user_data;
-    }
-
-    public function signup()
-    {
-        return view('frontend.growup_lms.signup');
     }
 }

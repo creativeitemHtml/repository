@@ -250,6 +250,7 @@ $(document).ready(function () {
         });
     }
 
+
     // Growup Slider
     if ($(".gr-testimonial").length > 0) {
         var grsmslider = new Swiper(".gr-testimonial", {
@@ -271,6 +272,9 @@ $(document).ready(function () {
             },
         });
     }
+
+
+
 
 
     // Nice Select
@@ -616,6 +620,7 @@ $(document).ready(function () {
         slidesPerView: "auto",
         speed: 5000,
         spaceBetween: 30,
+        centeredSlides: true,
     });
 
 });
@@ -643,46 +648,38 @@ $(document).ready(function () {
 
 
 
-// Player js 
-var player2;
+// Player js
 $(document).ready(function () {
     var $player1 = $('#player'),
-    $player2 = $('#player-2'),
-    $player3 = $('#player-3'),
-    $player4 = $('#player-4'),
-    $player5 = $('#player-5'),
-    $player6 = $('#player-6'),
-    $player7 = $('#player-7');
+        $player2 = $('#player-2'),
+        $player3 = $('#player-3'),
+        $player4 = $('#player-4'),
+        $player5 = $('#player-5'),
+        $player6 = $('#player-6'),
+        $player7 = $('#player-7');
 
-    if ($player1.length > 0){
+    if ($player1.length > 0) {
         const player = new Plyr('#player');
     }
-    if ($player2.length > 0){
-        player2 = new Plyr('#player-2');
-        
+    if ($player2.length > 0) {
+        const player2 = new Plyr('#player-2');
     }
-    if ($player3.length > 0){
+    if ($player3.length > 0) {
         const player3 = new Plyr('#player-3');
     }
-    if ($player4.length > 0){
+    if ($player4.length > 0) {
         const player4 = new Plyr('#player-4');
     }
-    if ($player5.length > 0){
+    if ($player5.length > 0) {
         const player5 = new Plyr('#player-5');
     }
-    if ($player6.length > 0){
+    if ($player6.length > 0) {
         const player6 = new Plyr('#player-6');
     }
-    if ($player7.length > 0){
+    if ($player7.length > 0) {
         const player7 = new Plyr('#player-7');
     }
-    
-    
 });
-
-function service_pause() {
-    player2.stop();
-}
 
 
 

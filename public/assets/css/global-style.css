@@ -3345,3 +3345,9 @@ a.cin2-text-dark:hover {
     }
     /* product details */
 }
+
+.beta{
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 4px;
+}

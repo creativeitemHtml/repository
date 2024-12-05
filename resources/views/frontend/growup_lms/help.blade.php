@@ -9,12 +9,20 @@
                     <div class="help-center-title-area">
                         <h1 class="man-title-48px fw-extrabold text-center mb-12px">{{ get_phrase('Help Center') }}</h1>
                         <p class="mb-20px man-subtitle-16px text-capitalize ci2-text-secondary text-center">{{ get_phrase('Advice and answers from the GrowUp Lms Team') }}</p>
-                        <form action="">
+                        <form action="{{ route('lms.help') }}">
                             <div class="search-input-wrap position-relative max-w-440px mx-auto">
                                 <label for="help-center-search" class="cin1-search-label">
                                     <img src="{{ asset('assets/img/icon/search-gray-20.svg') }}" alt="">
                                 </label>
-                                <input type="search" class="form-control cin1-search-input" id="help-center-search" placeholder="{{ get_phrase('Search for help') }}...">
+                                <input type="search" name="search" class="form-control cin1-search-input pe-5" id="help-center-search" value="{{ request()->query('search') }}" placeholder="{{ get_phrase('Search for help') }}...">
+
+                                @if (request()->query('search'))
+                                    <a href="{{ route('lms.help') }}" class="remove-search-help">
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="18" height="18">
+                                            <path fill="#706c81" d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z" />
+                                        </svg>
+                                    </a>
+                                @endif
                             </div>
                         </form>
                     </div>
@@ -27,19 +35,31 @@
     <section>
         <div class="container">
             <div class="row row-30px mb-100px">
-                @foreach ($topics as $topic)
-                    <div class="col-md-4 col-sm-6">
-                        <a href="javascript:void(0)" class="cin1-service-item">
-                            <div class="text-center">
-                                <span class="cin1-service-icon mb-3">
-                                    <img src="{{ asset($topic->thumbnail) }}" alt="">
-                                </span>
-                                <h4 class="mb-1 cin1-service-title">{{ $topic->topic }}</h4>
-                                <p class="cin1-service-subtitle">{{ count($topic->topic_to_article) }} {{ get_phrase('Article') }}</p>
-                            </div>
-                        </a>
+                @if (count($topics) > 0)
+                    @foreach ($topics as $topic)
+                        <div class="col-md-4 col-sm-6">
+                            <a href="{{ route('lms.help', $topic->slug) }}" class="cin1-service-item">
+                                <div class="text-center">
+                                    <span class="cin1-service-icon mb-3">
+                                        <img src="{{ asset($topic->thumbnail) }}" alt="">
+                                    </span>
+                                    <h4 class="mb-1 cin1-service-title">{{ $topic->topic }}</h4>
+                                    <p class="cin1-service-subtitle">{{ count($topic->topic_to_article) }} {{ get_phrase('Article') }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+
+                    <div class="col-12 d-flex justify-content-center">
+                        {{ $topics->links('pagination::bootstrap-4') }}
                     </div>
-                @endforeach
+                @else
+                    <div class="no-subscription mt-60 d-flex gap-3 flex-column justify-content-start align-items-lg-center">
+                        <img src="{{ asset('assets/img/admin-customer/subscription-status-2.png') }}" alt="" />
+                        <h4 class="title fs-5">{{ get_phrase('No data found.') }}</h4>
+                    </div>
+                @endif
+
             </div>
         </div>
     </section>
@@ -126,18 +146,5 @@
     </section>
 
 
-    <section>
-        <div class="container">
-            <div class="row mb-100px">
-                <div class="col-12">
-                    <div class="help-request-area">
-                        <h4 class="man-title-48px fw-semibold text-white mb-32px text-center">{{ get_phrase('Need more help?') }}</h4>
-                        <div class="text-center">
-                            <a href="#" class="btn cin1-btn-outline-white">{{ get_phrase('Submit a request') }}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-footer-signup />
 @endsection

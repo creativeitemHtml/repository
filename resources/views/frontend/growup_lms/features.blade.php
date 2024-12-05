@@ -153,7 +153,6 @@
 
 
 
-    <!-- Watermark Area Start -->
     <section>
         <div class="container">
             <div class="row row-30px align-items-center mb-100px">
@@ -179,10 +178,8 @@
             </div>
         </div>
     </section>
-    <!-- Watermark Area End -->
 
 
-    <!-- Certificate Area Start -->
     <section>
         <div class="container">
             <div class="row row-30px align-items-center mb-100px">
@@ -208,18 +205,14 @@
             </div>
         </div>
     </section>
-    <!-- Certificate Area End -->
 
 
-    <!-- Engage, Learn, & Access Area Start -->
     <section>
         <div class="container">
             <div class="row row-30px align-items-center mb-100px">
-                <!-- Left -->
                 <div class="col-md-6">
                     <div>
                         <h1 class="man-title-48px mb-20px">Engage, Learn, & Access</h1>
-                        <!-- Accordion -->
                         <div class="mb-32px">
                             <div class="accordion lms2-accordion" id="lms-accordion2">
                                 <div class="accordion-item">
@@ -272,7 +265,6 @@
                         </a>
                     </div>
                 </div>
-                <!-- Right -->
                 <div class="col-xl-6 col-lg-6 col-md-6 d-none d-md-block">
                     <div class="ms-lg-4 ms-md-3">
                         <img id="lms2-accordion-img" class="lms2-accordion-img" src="{{ asset('assets/img/growup/gr-accordion-banner1.webp') }}" alt="banner">
@@ -281,10 +273,8 @@
             </div>
         </div>
     </section>
-    <!-- Engage, Learn, & Access Area End -->
 
 
-    <!-- Sales Simplified Area Start -->
     <section>
         <div class="container">
             <div class="row">
@@ -335,10 +325,8 @@
             </div>
         </div>
     </section>
-    <!-- Sales Simplified Area End -->
 
 
-    <!-- Device & access control Area Start -->
     <section>
         <div class="container">
             <div class="row row-30px align-items-center mb-100px">
@@ -364,10 +352,8 @@
             </div>
         </div>
     </section>
-    <!-- Device & access control Area End -->
 
 
-    <!-- page builder Area Start -->
     <section>
         <div class="container">
             <div class="row row-30px align-items-center mb-100px">
@@ -393,10 +379,8 @@
             </div>
         </div>
     </section>
-    <!-- page builder Area End -->
 
 
-    <!-- Flexible Lesson Type Area Start -->
     <section>
         <div class="container">
             <div class="row mb-100px">
@@ -438,10 +422,8 @@
             </div>
         </div>
     </section>
-    <!-- Flexible Lesson Type Area End -->
 
 
-    <!-- Api & Mobile App Area Start -->
     <section>
         <div class="container">
             <div class="row row-30px align-items-center mb-100px">
@@ -469,10 +451,8 @@
             </div>
         </div>
     </section>
-    <!-- Api & Mobile App Area End -->
 
 
-    <!-- Payment & Report Area Start -->
     <section>
         <div class="container">
             <div class="row row-30px align-items-center mb-100px">
@@ -498,10 +478,8 @@
             </div>
         </div>
     </section>
-    <!-- Payment & Report Area End -->
 
 
-    <!-- Testimonial Area Start -->
     <section>
         <div class="container">
             <div class="row">
@@ -599,7 +577,6 @@
                 <div class="row mb-100px">
                     <div class="col-12">
                         <div>
-                            <!-- Swiper -->
                             <div class="swiper gr-testimonial">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -695,10 +672,8 @@
             </div>
         </div>
     </section>
-    <!-- Testimonial Area End -->
 
 
-    <!-- QNA Area Start -->
     <section>
         <div class="container">
             <div class="row mb-32px">
@@ -789,26 +764,7 @@
             </div>
         </div>
     </section>
-    <!-- QNA Area End -->
 
 
-    <!-- Start Video Modal Area -->
-    <div class="modal fade lms2-video-modal" id="video-modal" tabindex="-1" aria-labelledby="video-modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="man-title-28px" id="video-modalLabel">Video title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="lms2-video-wrap">
-                        <div class="plyr__video-embe" id="player">
-                            <iframe src="https://www.youtube.com/embed/5YHAVhEJ9TM?si=GrmhAZyUahBciHUm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Video Modal Area -->
+    <x-footer-signup />
 @endsection

@@ -19,9 +19,10 @@ Route::name('lms.')->prefix('growup-lms')->group(function () {
     Route::controller(LmsController::class)->group(function () {
         Route::get('/', 'index')->name('home');
         Route::get('/features', 'features')->name('features');
+        Route::get('/solutions', 'solutions')->name('solutions');
         Route::get('/pricing', 'pricing')->name('pricing');
-        Route::get('/help', 'help')->name('help');
-        Route::get('/signup', 'signup')->name('signup');
+        Route::get('/help/{topic?}/{article?}', 'help')->name('help');
+        Route::any('/signup', 'signup')->name('signup');
         Route::post('/register-company-lms', 'register_company_lms')->name('register_company_lms');
         Route::post('/company-lms-register', 'company_lms_register')->name('company_lms_register');
         Route::post('/company-email-verify', 'company_email_verify')->name('company_email_verify');

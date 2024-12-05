@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="ci-banner-details2">
-                        <h1 class="mb-20px man-title-60px mb-20px">{{ get_phrase('Train, Sell, Succeed with') }} <span class="ci2-title-gradient fw-extrabold">{{ get_phrase('GrowUp Lms') }}</span></h1>
+                        <h1 class="mb-20px man-title-60px mb-20px">{{ get_phrase('Train, Sell, Succeed with') }} <span class="ci2-title-gradient fw-extrabold">{{ get_phrase('GrowUp Lms') }}</span><span class="beta">BETA</span></h1>
                         <p class="man-subtitle-2 mb-38px">{{ get_phrase('GrowUp LMS helps you train students, sell courses, and achieve success effortlessly. Empower learners, expand your reach, and grow your business with a user-friendly platform designed for results.') }}</p>
                         <div class="d-flex align-items-center gap-4 flex-wrap">
                             <a href="#" class="btn btn-primary-ci1">{{ get_phrase('Coming Soon') }}</a>

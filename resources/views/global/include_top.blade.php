@@ -30,7 +30,7 @@
         <link href="{{ asset('assets/css/blog.css') }}" rel="stylesheet" />
     @endif
 
-    @if (Route::currentRouteName() == 'docs' || Route::currentRouteName() == 'documentation_details')
+    @if (Route::currentRouteName() == 'docs' || Route::currentRouteName() == 'documentation_details' || Route::currentRouteName() == 'lms.help')
         <link href="{{ asset('assets/css/documentation.css') }}" rel="stylesheet" />
     @endif
 

@@ -24,7 +24,7 @@
                                         <input type="email" class="form-control gr-form-control" name="company_name" id="type-company-name" placeholder="Your company name*">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" class="form-control gr-form-control" name="email" @auth value="{{ auth()->user()->email }}" @endauth id="" placeholder="Your Email Address*">
+                                        <input type="text" class="form-control gr-form-control" name="email" value="{{ $email }}" id="" placeholder="Your Email Address*">
                                     </div>
                                     <div class="mb-32px">
                                         <div class="input-password-wrap">
