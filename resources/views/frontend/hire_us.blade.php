@@ -94,9 +94,9 @@
                                     <option value="continuos">{{ get_phrase('continuos development<') }}</option>
                                 </select>
                             </div>
-                            <div class="pForm-wrap">
+                            {{-- <div class="pForm-wrap">
                                 <input class="form-control eForm-control-file" type="file" name="attachment" id="attachment">
-                            </div>
+                            </div> --}}
                         </div>
                         <button type="submit" class="project-submit">
                             {{ get_phrase('Submit') }}

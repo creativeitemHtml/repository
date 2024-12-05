@@ -419,24 +419,24 @@ class HomeController extends Controller
             // print_r($data['attachment']);
             // die();
 
-            if (! empty($data['attachment'])) {
-                array_push($attachments_name, $data['attachment']->getClientOriginalName());
-                $page_data['attachment_name'] = json_encode($attachments_name);
+            // if (! empty($data['attachment'])) {
+            //     array_push($attachments_name, $data['attachment']->getClientOriginalName());
+            //     $page_data['attachment_name'] = json_encode($attachments_name);
 
-                if (! File::exists(public_path('uploads/projects'))) {
-                    File::makeDirectory(public_path('uploads/projects'));
-                }
+            //     if (! File::exists(public_path('uploads/projects'))) {
+            //         File::makeDirectory(public_path('uploads/projects'));
+            //     }
 
-                $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
+            //     $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
 
-                $data['attachment']->move(public_path('uploads/projects/'), $attachment);
+            //     $data['attachment']->move(public_path('uploads/projects/'), $attachment);
 
-                array_push($attachements, $attachment);
-                $page_data['attachment'] = json_encode($attachements);
-            } else {
+            //     array_push($attachements, $attachment);
+            //     $page_data['attachment'] = json_encode($attachements);
+            // } else {
                 $page_data['attachment_name'] = json_encode(array());
                 $page_data['attachment']      = json_encode(array());
-            }
+            // }
 
             $project_details = Project::create($page_data);
 
@@ -501,24 +501,24 @@ class HomeController extends Controller
             $page_data['completion_progress'] = 0;
             $page_data['paid_amount']         = 0;
 
-            if (! empty($data['attachment'])) {
-                array_push($attachments_name, $data['attachment']->getClientOriginalName());
-                $page_data['attachment_name'] = json_encode($attachments_name);
+            // if (! empty($data['attachment'])) {
+            //     array_push($attachments_name, $data['attachment']->getClientOriginalName());
+            //     $page_data['attachment_name'] = json_encode($attachments_name);
 
-                if (! File::exists(public_path('uploads/projects'))) {
-                    File::makeDirectory(public_path('uploads/projects'));
-                }
+            //     if (! File::exists(public_path('uploads/projects'))) {
+            //         File::makeDirectory(public_path('uploads/projects'));
+            //     }
 
-                $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
+            //     $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
 
-                $data['attachment']->move(public_path('uploads/projects/'), $attachment);
+            //     $data['attachment']->move(public_path('uploads/projects/'), $attachment);
 
-                array_push($attachements, $attachment);
-                $page_data['attachment'] = json_encode($attachements);
-            } else {
+            //     array_push($attachements, $attachment);
+            //     $page_data['attachment'] = json_encode($attachements);
+            // } else {
                 $page_data['attachment_name'] = json_encode(array());
                 $page_data['attachment']      = json_encode(array());
-            }
+            // }
 
             $project_details = Project::create($page_data);
 

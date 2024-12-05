@@ -1020,24 +1020,27 @@ class CustomerController extends Controller
             $page_data['status']              = 'pending';
             $page_data['completion_progress'] = 0;
 
-            if (! empty($data['attachment'])) {
-                array_push($attachments_name, $data['attachment']->getClientOriginalName());
-                $page_data['attachment_name'] = json_encode($attachments_name);
+            // if (! empty($data['attachment'])) {
+            //     array_push($attachments_name, $data['attachment']->getClientOriginalName());
+            //     $page_data['attachment_name'] = json_encode($attachments_name);
 
-                if (! File::exists(public_path('uploads/projects'))) {
-                    File::makeDirectory(public_path('uploads/projects'));
-                }
+            //     if (! File::exists(public_path('uploads/projects'))) {
+            //         File::makeDirectory(public_path('uploads/projects'));
+            //     }
 
-                $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
+            //     $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
 
-                $data['attachment']->move(public_path('uploads/projects/'), $attachment);
+            //     $data['attachment']->move(public_path('uploads/projects/'), $attachment);
 
-                array_push($attachements, $attachment);
-                $page_data['attachment'] = json_encode($attachements);
-            } else {
-                $page_data['attachment_name'] = json_encode(array());
-                $page_data['attachment']      = json_encode(array());
-            }
+            //     array_push($attachements, $attachment);
+            //     $page_data['attachment'] = json_encode($attachements);
+            // } else {
+            //     $page_data['attachment_name'] = json_encode(array());
+            //     $page_data['attachment']      = json_encode(array());
+            // }
+
+            $page_data['attachment_name'] = json_encode(array());
+            $page_data['attachment']      = json_encode(array());
 
             $project_details = Project::create($page_data);
 
@@ -1334,29 +1337,32 @@ class CustomerController extends Controller
 
         $project_details = Project::find($project_id);
 
-        $attachments      = json_decode($project_details->attachment);
-        $attachments_name = json_decode($project_details->attachment_name);
+        // $attachments      = json_decode($project_details->attachment);
+        // $attachments_name = json_decode($project_details->attachment_name);
 
-        if (! empty($request->all())) {
-            $data = $request->all();
+        // if (! empty($request->all())) {
+        //     $data = $request->all();
 
-            array_push($attachments_name, $data['attachment']->getClientOriginalName());
-            $page_data['attachment_name'] = json_encode($attachments_name);
+        //     array_push($attachments_name, $data['attachment']->getClientOriginalName());
+        //     $page_data['attachment_name'] = json_encode($attachments_name);
 
-            if (! File::exists(public_path('uploads/projects'))) {
-                File::makeDirectory(public_path('uploads/projects'));
-            }
+        //     if (! File::exists(public_path('uploads/projects'))) {
+        //         File::makeDirectory(public_path('uploads/projects'));
+        //     }
 
-            $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
+        //     $attachment = time() . '-' . random(2) . '.' . $data['attachment']->extension();
 
-            $data['attachment']->move(public_path('uploads/projects/'), $attachment);
+        //     $data['attachment']->move(public_path('uploads/projects/'), $attachment);
 
-            array_push($attachments, $attachment);
-            $page_data['attachment'] = json_encode($attachments);
-        } else {
-            $page_data['attachment_name'] = $project_details->attachment_name;
-            $page_data['attachment']      = $project_details->attachment;
-        }
+        //     array_push($attachments, $attachment);
+        //     $page_data['attachment'] = json_encode($attachments);
+        // } else {
+        //     $page_data['attachment_name'] = $project_details->attachment_name;
+        //     $page_data['attachment']      = $project_details->attachment;
+        // }
+
+        $page_data['attachment_name'] = json_encode(array());
+        $page_data['attachment']      = json_encode(array());
 
         // print_r($page_data);
         // die();

@@ -56,7 +56,7 @@
 
                 <div class="pForm-wrap">
                     <label for="thumbnail" class="enForm-label">{{ get_phrase('Thumbnail') }}</label>
-                    <input class="form-control enForm-control-file" type="file" name="thumbnail" id="thumbnail">
+                    <input class="form-control enForm-control-file" type="file" name="thumbnail" id="thumbnail" accept="image/*">
                 </div>
 
             </div>

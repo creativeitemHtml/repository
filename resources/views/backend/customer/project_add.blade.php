@@ -67,10 +67,10 @@
                     </select>
                 </div>
 
-                <div class="pForm-wrap">
+                {{-- <div class="pForm-wrap">
                     <label for="attachment" class="enForm-label">{{ get_phrase('Attachment') }}</label>
                     <input class="form-control enForm-control-file" type="file" name="attachment" id="attachment">
-                </div>
+                </div> --}}
             </div>
             <button type="submit" class="enproject-submit mt-5">
                 {{ get_phrase('Submit') }}
