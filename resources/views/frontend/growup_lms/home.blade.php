@@ -18,7 +18,7 @@
                             <span class="cin2-text-dark fw-semibold">{{ get_phrase('Turn your knowledge into business opportunity.') }}</span>
                         </p>
 
-                        <form action="{{ route('lms.signup') }}" method="post">@csrf
+                        <form action="{{ route('lms.signup') }}" method="get">@csrf
                             <div class="gr-subscribe-wrap">
                                 <button type="submit" class="btn gr-subscribe-btn">{{ get_phrase('Get Started') }}</button>
                                 <input type="email" name="email" class="form-control gr-subscribe-input" placeholder="Enter your email">
@@ -185,7 +185,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <a href="#" class="btn gr-btn-primary ms-76px">
+                            <a href="{{ route('register.company', 'growup-lms') }}" class="btn gr-btn-primary ms-76px">
                                 <span>{{ get_phrase('Get Started') }}</span>
                                 <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                             </a>
@@ -290,7 +290,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <a href="#" class="btn gr-btn-primary ms-76px">
+                            <a href="{{ route('register.company', 'growup-lms') }}" class="btn gr-btn-primary ms-76px">
                                 <span>{{ get_phrase('Get Started') }}</span>
                                 <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                             </a>
@@ -382,7 +382,7 @@
                                     <img class="chart" src="{{ asset('assets/img/growup/gr-chart-2.svg') }}" alt="">
                                 </div>
                                 <div class="text-center">
-                                    <a href="#" class="btn gr-btn-primary">
+                                    <a href="{{ route('register.company', 'growup-lms') }}" class="btn gr-btn-primary">
                                         <span>{{ get_phrase('Get Started') }}</span>
                                         <img src="{{ get_phrase('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                                     </a>
@@ -399,7 +399,7 @@
                                     <img class="chart" src="{{ get_phrase('assets/img/growup/gr-chart-1.svg') }}" alt="">
                                 </div>
                                 <div class="text-center">
-                                    <a href="#" class="btn gr-btn-primary">
+                                    <a href="{{ route('register.company', 'growup-lms') }}" class="btn gr-btn-primary">
                                         <span>{{ get_phrase('Get Started') }}</span>
                                         <img src="{{ get_phrase('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                                     </a>

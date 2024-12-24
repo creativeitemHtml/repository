@@ -20,7 +20,7 @@
                                     <li><a href="{{ route('lms.help') }}" class="{{ Route::currentRouteName() == 'lms.help' ? 'active' : '' }}">{{ get_phrase('Help Center') }}</a></li>
                                     <li class="list-button">
                                         <div class="element-sm-btn-2 mt-3 mt-lg-0">
-                                            <a href="{{ route('lms.signup') }}" class="unlimited-btn w-100 justify-content-center">{{ get_phrase('Start For Free') }}</a>
+                                            <a href="{{ route('register.company', 'growup-lms') }}" class="unlimited-btn w-100 justify-content-center">{{ get_phrase('Start For Free') }}</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="element-sm-btn mt-3 mt-lg-0">
-                            <a href="{{ route('lms.signup') }}" class="unlimited-btn w-100 justify-content-center">{{ get_phrase('Start For Free') }}</a>
+                            <a href="{{ route('register.company', 'growup-lms') }}" class="unlimited-btn w-100 justify-content-center">{{ get_phrase('Start For Free') }}</a>
                         </div>
 
                         <div class="element-menu-button">

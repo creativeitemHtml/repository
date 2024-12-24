@@ -585,3 +585,10 @@ if (! function_exists('seo')) {
         }
     }
 }
+
+if (! function_exists('get_popup_banner')) {
+    function get_popup_banner($path)
+    {
+        return $path ? asset("uploads/popup/{$path}") : '';
+    }
+}

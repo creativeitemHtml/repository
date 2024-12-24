@@ -4,7 +4,6 @@
 
         $product_img = !empty($product_details->favicon) ? $product_details->favicon : 'favicon.png';
         $articles = $product_details->product_to_article;
-
     @endphp
 
     <!-- Start Main Content -->

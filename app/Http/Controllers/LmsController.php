@@ -11,14 +11,15 @@ use App\Models\SaasProduct;
 use App\Models\SaasSubscription;
 use App\Models\Topic;
 use App\Models\User;
-use DB;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 use mysqli;
 use PDO;
 use Stripe;
@@ -202,79 +203,53 @@ class LmsController extends Controller
 
     public function company_lms_register(Request $request)
     {
-        if (! empty($request->company_name) && ! empty($request->email) && ! empty($request->password)) {
+        // validate the user input data
+        $rules['company_name'] = 'required|string|max:255|unique:saas_companies,company_name';
+        $msg['company_name']   = 'Company name is required and must be unique. Try another name.';
 
-            if (auth()->user()) {
-                $user = User::find(auth()->user()->id);
+        if (! Auth::check()) {
+            $rules['email']    = 'required|string|lowercase|email|max:255|unique:' . User::class;
+            $rules['password'] = ['required', Password::defaults()];
 
-                $check_verification = auth()->user()->email_verified_at;
+            $msg['email.required']    = 'Please enter your email address.';
+            $msg['email.unique']      = 'This email is already in use. Log in if it’s yours.';
+            $msg['password.required'] = 'Password is required. Create one to proceed.';
+        }
 
-                if (is_null($check_verification)) {
+        $validator = Validator::make($request->all(), $rules, $msg);
 
-                    $passwordReset = DB::table('password_resets')
-                        ->where('email', $request->email)
-                        ->first();
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
 
-                    if (empty($passwordReset)) {
+        // handle existing user
+        if (Auth::check()) {
+            $user = Auth::user();
 
-                        $pin = rand(10000, 99999);
+            if (! $user->email_verified_at) {
+                $reset_password = DB::table('password_resets')->where('email', $request->email)->first();
 
-                        DB::table('password_resets')
-                            ->insert(
-                                [
-                                    'email' => $request->email,
-                                    'token' => $pin,
-                                ]
-                            );
+                $data['email'] = $request->email;
+                $data['pin']   = $reset_password ? $reset_password : rand(10000, 99999);
 
-                        Mail::to($request->email)->send(new VerifyEmailWithPassword($pin, $user, $request->password));
-                    } else {
-                        Mail::to($request->email)->send(new VerifyEmailWithPassword($passwordReset->token, $user, $request->password));
-                    }
-
+                if (! $reset_password) {
+                    DB::table('password_resets')->insert($data);
                 }
 
-            } else {
-                // Define a stricter regex pattern for email validation
-                $emailRegex = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+                Mail::to($request->email)->send(new VerifyEmailWithPassword($data['pin'], $user, $request->password));
+            }
+        }
 
-                // Use the regex pattern in the validator
-                $validator = Validator::make($request->all(), [
-                    'email' => ['required', 'regex:' . $emailRegex],
-                ]);
+        if (auth()->user()) {
+            $user = User::find(auth()->user()->id);
 
-                if ($validator->fails()) {
-                    // Get the error messages as a string
-                    $errorMessages = $validator->messages()->all();
-                    $errorString   = implode(' ', $errorMessages);
+            $check_verification = auth()->user()->email_verified_at;
 
-                    // Pass the error messages to the session
-                    $response = [
-                        'status'  => '500',
-                        'message' => 'Check your email Address',
-                    ];
+            if (is_null($check_verification)) {
 
-                    $response = json_encode($response);
+                $passwordReset = DB::table('password_resets')->where('email', $request->email)->first();
 
-                    return $response;
-                }
-
-                $name = strstr($request->email, '@', true);
-
-                $check_email = User::where('email', $request->email)->first();
-
-                if (! empty($check_email)) {
-                    // $user = $check_email;
-                    return redirect()->route('login')->with('info', 'This email already exists. Please login or provide new email address');
-                } else {
-                    $password = random(8);
-
-                    $user = User::create([
-                        'name'     => $name,
-                        'email'    => $request->email,
-                        'role_id'  => '6',
-                        'password' => Hash::make($password),
-                    ]);
+                if (empty($passwordReset)) {
 
                     $pin = rand(10000, 99999);
 
@@ -286,92 +261,120 @@ class LmsController extends Controller
                             ]
                         );
 
-                    Mail::to($request->email)->send(new VerifyEmailWithPassword($pin, $user, $password));
-
-                    // $token = $user->createToken('myapptoken')->plainTextToken;
+                    Mail::to($request->email)->send(new VerifyEmailWithPassword($pin, $user, $request->password));
+                } else {
+                    Mail::to($request->email)->send(new VerifyEmailWithPassword($passwordReset->token, $user, $request->password));
                 }
-                relogin_user($user->id);
+
             }
 
-            $company = $request->company_name;
+        } else {
+            // Define a stricter regex pattern for email validation
+            $emailRegex = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
 
-            $company_check = SaasCompany::where('company_name', $company)->first();
+            // Use the regex pattern in the validator
+            $validator = Validator::make($request->all(), [
+                'email' => ['required', 'regex:' . $emailRegex],
+            ]);
 
-            if (! empty($company_check)) {
+            if ($validator->fails()) {
+                // Get the error messages as a string
+                $errorMessages = $validator->messages()->all();
+                $errorString   = implode(' ', $errorMessages);
 
-                header('Content-Type: application/json');
-
+                // Pass the error messages to the session
                 $response = [
                     'status'  => '500',
-                    'message' => 'This company name already in use. Try different name',
+                    'message' => 'Check your email Address',
                 ];
 
                 $response = json_encode($response);
 
                 return $response;
-            } else {
-
-                $company_data = [
-                    'admin_name'     => $user->name,
-                    'admin_email'    => $user->email,
-                    'admin_password' => $request->password,
-                    'company_name'   => $company,
-                    'user_id'        => $user->id,
-                ];
-
-                $company_data = json_encode($company_data);
-
-                $data = $this->create_db($company_data);
-
-                $data1 = json_decode($data, true);
-
-                if (is_array($data1) && $data1['status'] == 200) {
-
-                    $check_verification = auth()->user()->email_verified_at;
-
-                    // subscription to a free package
-                    $package = PricingPackage::where('is_free', 1)->first();
-                    $expiry  = strtotime("+ {$package->interval_period} {$package->interval}");
-
-                    $subscription['user_id']        = auth()->user()->id;
-                    $subscription['package_id']     = $package->id;
-                    $subscription['price']          = $package->is_free ? null : (($package->discount ?? $package->price) * 100);
-                    $subscription['expiry']         = isset($time_diff) ? $expiry - $time_diff : $expiry;
-                    $subscription['expiry']         = date('Y-m-d H:i:s', $subscription['expiry']);
-                    $subscription['payment_method'] = 'free';
-                    $subscription['status']         = 1;
-
-                    $subscription_id = SaasSubscription::insertGetId($subscription);
-                    $this->updateGrowUpSubscription($subscription_id);
-
-                    if (is_null($check_verification)) {
-                        return view('frontend.growup_lms.company_email_verify');
-                    } else {
-                        return view('frontend.growup_lms.company_create_success');
-                    }
-
-                    // Step 4: Set the appropriate header
-                    header('Content-Type: application/json');
-
-                    return $data;
-
-                } else {
-                    // Step 4: Set the appropriate header
-                    header('Content-Type: application/json');
-
-                    $response = [
-                        'status'  => '500',
-                        'message' => 'Failed to create company',
-                    ];
-
-                    $response = json_encode($response);
-
-                    return $response;
-                }
             }
 
-        } else {
+            $name = strstr($request->email, '@', true);
 
+            $check_email = User::where('email', $request->email)->first();
+
+            if (! empty($check_email)) {
+                // $user = $check_email;
+                return redirect()->route('login')->with('info', 'This email already exists. Please login or provide new email address');
+            } else {
+                $password = random(8);
+
+                $user = User::create([
+                    'name'     => $name,
+                    'email'    => $request->email,
+                    'role_id'  => '6',
+                    'password' => Hash::make($password),
+                ]);
+
+                $pin = rand(10000, 99999);
+
+                DB::table('password_resets')
+                    ->insert(
+                        [
+                            'email' => $request->email,
+                            'token' => $pin,
+                        ]
+                    );
+
+                Mail::to($request->email)->send(new VerifyEmailWithPassword($pin, $user, $password));
+
+                // $token = $user->createToken('myapptoken')->plainTextToken;
+            }
+            relogin_user($user->id);
+        }
+
+        $company = $request->company_name;
+
+        $company_data = [
+            'admin_name'     => $user->name,
+            'admin_email'    => $user->email,
+            'admin_password' => $request->password,
+            'company_name'   => $company,
+            'user_id'        => $user->id,
+        ];
+
+        $company_data = json_encode($company_data);
+
+        $data = $this->create_db($company_data);
+
+        $data1 = json_decode($data, true);
+
+        if (is_array($data1) && $data1['status'] == 200) {
+
+            $check_verification = auth()->user()->email_verified_at;
+
+            // subscription to a free package
+            $package = PricingPackage::where('is_free', 1)->first();
+            $expiry  = strtotime("+ {$package->interval_period} {$package->interval}");
+
+            $subscription['user_id']        = auth()->user()->id;
+            $subscription['package_id']     = $package->id;
+            $subscription['price']          = $package->is_free ? null : (($package->discount ?? $package->price) * 100);
+            $subscription['expiry']         = isset($time_diff) ? $expiry - $time_diff : $expiry;
+            $subscription['expiry']         = date('Y-m-d H:i:s', $subscription['expiry']);
+            $subscription['payment_method'] = 'free';
+            $subscription['status']         = 1;
+
+            $subscription_id = SaasSubscription::insertGetId($subscription);
+            $this->updateGrowUpSubscription($subscription_id);
+
+            if (is_null($check_verification)) {
+                return view('frontend.growup_lms.company_email_verify');
+            } else {
+                return view('frontend.growup_lms.company_create_success');
+            }
+
+            // Step 4: Set the appropriate header
+            header('Content-Type: application/json');
+
+            return $data;
+
+        } else {
+            // Step 4: Set the appropriate header
             header('Content-Type: application/json');
 
             $response = [
@@ -417,8 +420,6 @@ class LmsController extends Controller
         }
 
     }
-
-    //Database create
 
     public function create_db($company_data)
     {
@@ -846,4 +847,5 @@ class LmsController extends Controller
 
         return $recover_user_data;
     }
+
 }

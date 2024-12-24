@@ -56,6 +56,22 @@
         @endif
     </script>
 
+    @if (isset($errors) && $errors->any())
+        <script>
+            "use strict";
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "timeOut": 5000,
+                "extendedTimeOut": 2000
+            };
+
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        </script>
+    @endif
+
     <script type="text/javascript">
         function support() {
             zE(function() {

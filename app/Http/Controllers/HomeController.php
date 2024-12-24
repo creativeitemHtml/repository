@@ -161,9 +161,10 @@ class HomeController extends Controller
 
         $page_data['product_slug'] = $product_slug;
         $page_data['article_slug'] = $article_slug;
-        $page_data['topics']       = Topic::where('product_id', $page_data['product_details']->id)->where('visibility', 1)->orderBy('order', 'asc')->get();
+        $page_data['topics']       = Topic::where('product_id', $page_data['product_details']->id)->where('visibility', 1)->where('is_saas', 0)->orderBy('order', 'asc')->get();
         $page_data['page_title']   = 'Documentation - ' . $page_data['product_details']->name;
         $page_data['meta_keyword'] = 'docs, documentation,';
+
         return view('frontend.documentation_details', $page_data);
     }
 
@@ -434,8 +435,8 @@ class HomeController extends Controller
             //     array_push($attachements, $attachment);
             //     $page_data['attachment'] = json_encode($attachements);
             // } else {
-                $page_data['attachment_name'] = json_encode(array());
-                $page_data['attachment']      = json_encode(array());
+            $page_data['attachment_name'] = json_encode(array());
+            $page_data['attachment']      = json_encode(array());
             // }
 
             $project_details = Project::create($page_data);
@@ -516,8 +517,8 @@ class HomeController extends Controller
             //     array_push($attachements, $attachment);
             //     $page_data['attachment'] = json_encode($attachements);
             // } else {
-                $page_data['attachment_name'] = json_encode(array());
-                $page_data['attachment']      = json_encode(array());
+            $page_data['attachment_name'] = json_encode(array());
+            $page_data['attachment']      = json_encode(array());
             // }
 
             $project_details = Project::create($page_data);

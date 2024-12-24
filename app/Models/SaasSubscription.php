@@ -15,6 +15,6 @@ class SaasSubscription extends Model
     }
     public function package()
     {
-        return $this->belongsTo(PricingPackage::class, 'package_id', 'id');
+        return $this->belongsTo(PricingPackage::class, 'package_id');
     }
 }

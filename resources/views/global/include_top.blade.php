@@ -1,10 +1,12 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon" />
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/global-style.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/vendors/plyr/plyr.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/toastr.min.css') }}" />
+    <link href="{{ asset('assets/css/global-style.css') }}" rel="stylesheet" />
 
     <!-- lms css -->
-    @if (Route::getCurrentRoute() && Route::getCurrentRoute()->getPrefix() == '/growup-lms')
+    @if ((Route::getCurrentRoute() && Route::getCurrentRoute()->getPrefix() == '/growup-lms') || Route::currentRouteName() == 'register.company')
         <link href="{{ asset('assets/css/lms-signup.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/element-header.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/vendors/wow-js-new/animate.min.css') }}" rel="stylesheet" />
@@ -141,7 +143,8 @@
             Route::currentRouteName() == 'superadmin.seo_settings' ||
             Route::currentRouteName() == 'superadmin.language.manage_language' ||
             Route::currentRouteName() == 'superadmin.payment_request' ||
-            Route::currentRouteName() == 'superadmin.milestone_invoice')
+            Route::currentRouteName() == 'superadmin.milestone_invoice' ||
+            Route::currentRouteName() == 'superadmin.pop.ups')
         <link href="{{ asset('assets/css/element-user.css') }}" rel="stylesheet" />
     @endif
 
@@ -173,8 +176,7 @@
     @endif
 
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/toastr.min.css') }}" />
+
 
     <title>CREATIVEITEM</title>
 

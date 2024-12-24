@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function user_to_rolesAndPermission()
     {
-        return $this->belongsTo(RolesAndPermission::class,'role_id','id');
+        return $this->belongsTo(RolesAndPermission::class, 'role_id', 'id');
     }
 
     public function payments()

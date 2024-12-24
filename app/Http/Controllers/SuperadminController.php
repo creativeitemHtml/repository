@@ -20,6 +20,7 @@ use App\Models\Language;
 use App\Models\OnlineMeeting;
 use App\Models\Package;
 use App\Models\PaymentMilestone;
+use App\Models\PopUp;
 use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\Project;
@@ -40,6 +41,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Response;
 use Validator;
 
@@ -542,6 +544,12 @@ class SuperadminController extends Controller
     {
         $page_data['type']             = $type;
         $page_data['selected_article'] = Article::find($article_id);
+
+        if ($type == 'saas') {
+            $page_data['product'] = $page_data['selected_article']->article_to_topic->saas_product;
+        } elseif ($type == 'codecanyon') {
+            $page_data['product'] = $page_data['selected_article']->article_to_topic->topic_to_product;
+        }
 
         $page_data['articles']        = Article::where('topic_id', $page_data['selected_article']->topic_id)->get();
         $page_data['article_details'] = Documentation::where('article_id', $article_id)->first();
@@ -2480,6 +2488,97 @@ class SuperadminController extends Controller
     {
         $databases = DB::select('SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = ?', [$databaseName]);
         return ! empty($databases);
+    }
+
+    public function pop_up_index()
+    {
+        $page_data['popups']     = PopUp::paginate(9);
+        $page_data['page_title'] = 'PopUp Banner';
+        $page_data['pop_up']     = 'active';
+        $page_data['file_name']  = 'popup.index';
+
+        return view('superadmin.navigation', $page_data);
+    }
+
+    public function pop_up_create()
+    {
+        return view('superadmin.popup.create');
+    }
+
+    public function pop_up_store(Request $request)
+    {
+        $request->validate([
+            'title'       => 'required|string|unique:pop_ups,title',
+            'description' => 'nullable|string',
+            'banner'      => 'required|image|mimes:png,jpg,jpeg',
+            'start_date'  => 'required|date',
+            'end_date'    => 'required|date|after_or_equal:start_date',
+        ]);
+
+        $data['title']       = $request->title;
+        $data['description'] = $request->description;
+        $data['start_date']  = "{$request->start_date} 00:00:00";
+        $data['end_date']    = "{$request->end_date} 23:59:59";
+
+        $banner = $request->file('banner');
+        if ($banner) {
+            $data['banner'] = Str::random(20) . '.' . $banner->getClientOriginalExtension();
+            $banner->move('public/uploads/popup/', $data['banner']);
+        }
+
+        PopUp::create($data);
+        return redirect()->back()->with('success', get_phrase('PopUp has been created.'));
+    }
+
+    public function pop_up_edit($id)
+    {
+        $page_data['popup'] = PopUp::findOrFail($id);
+        return view('superadmin.popup.edit', $page_data);
+    }
+
+    public function pop_up_update(Request $request, $id)
+    {
+        $popUp = PopUp::findOrFail($id);
+
+        $request->validate([
+            'title'       => 'required|string|unique:pop_ups,title,' . $popUp->id,
+            'description' => 'nullable|string',
+            'banner'      => 'nullable|image|mimes:png,jpg,jpeg',
+            'start_date'  => 'required|date',
+            'end_date'    => 'required|date|after_or_equal:start_date',
+        ]);
+
+        $data['title']       = $request->title;
+        $data['description'] = $request->description;
+        $data['start_date']  = "{$request->start_date} 00:00:00";
+        $data['end_date']    = "{$request->end_date} 23:59:59";
+
+        $banner = $request->file('banner');
+        if ($banner) {
+            if ($popUp->banner && file_exists('public/uploads/popup/' . $popUp->banner)) {
+                unlink('public/uploads/popup/' . $popUp->banner);
+            }
+
+            $data['banner'] = Str::random(20) . '.' . $banner->getClientOriginalExtension();
+            $banner->move('public/uploads/popup/', $data['banner']);
+        }
+
+        $popUp->update($data);
+
+        return redirect()->back()->with('success', get_phrase('PopUp has been updated.'));
+    }
+
+    public function pop_up_delete($id)
+    {
+        $popUp = PopUp::findOrFail($id);
+
+        if ($popUp->banner && file_exists('public/uploads/popup/' . $popUp->banner)) {
+            unlink('public/uploads/popup/' . $popUp->banner);
+        }
+
+        $popUp->delete();
+
+        return redirect()->back()->with('success', get_phrase('PopUp has been deleted.'));
     }
 
 }

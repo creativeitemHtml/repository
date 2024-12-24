@@ -5309,8 +5309,7 @@ a.black-btn-lms{
     background: url(../img/lms/lms2-login-banner.webp) no-repeat scroll center center / cover;
 }
 .gr-user-access-inner{
-    min-height: 100vh;
-    height: 100%;
+    min-height: 87vh;
     display: flex;
     align-items: center;
     padding-top: 40px;
@@ -5587,45 +5586,6 @@ a.black-btn-lms{
     background: var(--skinHover) !important;
 }
 
-
-/* Purple Gradient */
-.gr-btn-purple-gradient{
-    display: inline flex;
-    padding: 14px 28px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 12px;
-    background: linear-gradient(90deg, #3B25F4 0%, #C255AB 51%, #FF5C50 100%);
-    color: #FFF;
-    font-family: 'Manrope';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px; /* 150% */
-    border: none;
-    transition: all ease 450ms;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-.gr-btn-purple-gradient::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	height: 100%;
-	background: linear-gradient(90deg, rgba(255,92,80,1) 0%, rgba(194,85,171,1) 50%, rgba(59,37,244,1) 100%);
-	border-radius: inherit;
-	opacity: 1;
-	z-index: -1;
-	transition: all ease 450ms;
-	-moz-transition: all ease 450ms;
-	-webkit-transition: all ease 450ms;
-    width: 100%;
-	right: auto;
-	left: 0;
-    opacity: 0;
-}
 .gr-btn-purple-gradient:hover::before {
 	opacity: 1;
 }
@@ -5839,14 +5799,7 @@ a.black-btn-lms{
     right: 0;
     background: url(../img/lms/lms2-login-banner.webp) no-repeat scroll center center / cover;
 }
-.gr-user-access-inner{
-    min-height: 100vh;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
+
 .gr-user-access-page-logo a{
     display: block;
     width: fit-content;

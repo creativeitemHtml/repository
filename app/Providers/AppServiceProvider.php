@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\PopUp;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,6 +32,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $currentDate = now()->toDateTimeString();
+
+        $popups = PopUp::where('start_date', '<=', $currentDate)
+            ->where('end_date', '>=', $currentDate)
+            ->orderBy('priority', 'asc')
+            ->get()
+            ->each(function ($popup) {
+                $popup->status = 1;
+            });
+
+        // session()->forget('popups');
+        // session(['popups' => $popups]);
+
         Paginator::useBootstrap();
     }
 }

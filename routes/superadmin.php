@@ -118,5 +118,13 @@ Route::name('superadmin.')->prefix('superadmin')->middleware('auth', 'superadmin
         Route::get('payment-request-delete/{id}', 'paymentRequestDelete')->name('paymentRequestDelete');
         Route::get('subpayment-request-approve/{id}', 'subpaymentRequestApprove')->name('subpaymentRequestApprove');
         Route::get('subpayment-request-delete/{id}', 'subpaymentRequestDelete')->name('subpaymentRequestDelete');
+
+        // PopUp Table
+        Route::get('pop-ups', 'pop_up_index')->name('pop.ups');
+        Route::get('pop-ups/create', 'pop_up_create')->name('pop.ups.create');
+        Route::post('pop-ups/store', 'pop_up_store')->name('pop.ups.store');
+        Route::get('pop-ups/edit/{id}', 'pop_up_edit')->name('pop.ups.edit');
+        Route::post('pop-ups/update/{id}', 'pop_up_update')->name('pop.ups.update');
+        Route::get('pop-ups/delete/{id}', 'pop_up_delete')->name('pop.ups.delete');
     });
 });

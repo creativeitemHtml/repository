@@ -15,6 +15,8 @@
     @include('global.zendesk_widget')
     @include('modal')
     @include('global.include_bottom')
+    @include('global.popup')
+
 </body>
 
 </html>

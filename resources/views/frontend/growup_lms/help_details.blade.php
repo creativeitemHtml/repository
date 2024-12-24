@@ -4,7 +4,13 @@
 
     @php
         // $product_img = !empty($product_details->favicon) ? $product_details->favicon : 'favicon.png';
-        $current_article = App\Models\Article::where('slug', request()->route()->parameter('article'))->first();
+        $topic_slug = request()->route()->parameter('topic');
+        $current_article = App\Models\Article::where('slug', request()->route()->parameter('article'))
+            ->whereHas('article_to_topic', function ($q) use ($topic_slug) {
+                $q->where('slug', $topic_slug);
+            })
+            ->first();
+
         $documentation_details = App\Models\Documentation::where('article_id', $current_article->id)->first();
 
         $searched_topic = request()->route()->parameter('topic');
