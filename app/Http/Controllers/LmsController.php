@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\VerifyEmailWithPassword;
 use App\Models\Article;
+use App\Models\Documentation;
 use App\Models\PricingPackage;
 use App\Models\Product;
 use App\Models\SaasCompany;
@@ -60,10 +61,10 @@ class LmsController extends Controller
             ->where('is_saas', 1);
 
         // this is for only https://creativeitem/product-slug/help
-        $search = request()->query('search');
-        if ($search) {
-            $query->where('topic', 'like', "%{$search}%");
-        }
+        // $search = request()->query('search');
+        // if ($search) {
+        //     $query->where('topic', 'like', "%{$search}%");
+        // }
 
         if (! empty($topic)) {
             $query->where('slug', $topic);
@@ -846,6 +847,11 @@ class LmsController extends Controller
         }
 
         return $recover_user_data;
+    }
+
+    public function page($path)
+    {
+        return view('frontend.growup_lms.' . $path);
     }
 
 }

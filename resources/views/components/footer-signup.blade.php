@@ -5,7 +5,7 @@
                 <div class="gr-subscribe-area">
                     <div class="gr-subscribe-content">
                         <h2 class="man-title-48px text-white mb-32px">{{ get_phrase('Take the leap - Sign up today!') }}</h2>
-                        <form action="{{ route('lms.signup') }}" method="post">@csrf
+                        <form action="{{ route('register.company.form', 'growup-lms') }}" method="post">@csrf
                             <div class="position-relative max-w-503px">
                                 <input type="email" name="email" class="form-control gr-subscribe2-input" placeholder="Enter your email">
                                 <button type="submit" class="btn gr-btn-white gr-subscribe2-btn">{{ get_phrase('Get Started') }}</button>

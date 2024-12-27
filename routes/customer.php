@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::controller(CustomerController::class)->middleware(['auth', 'customer'])->group(function () {
+Route::controller(CustomerController::class)->middleware(['auth', 'verified', 'customer'])->group(function () {
 
     Route::get('/customer/dashboard', 'dashboard')->name('customer.dashboard');
 

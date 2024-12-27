@@ -385,7 +385,7 @@ class SuperadminController extends Controller
                 return redirect()->back()->with('error', 'Sorry this topic already exist');
             }
 
-            $page_data['thumbnail'] = 'thumbnail.png';
+            $page_data['thumbnail'] = null;
             if (! empty($data['thumbnail'])) {
                 $thumbnailName = random(15) . '.' . $data['thumbnail']->extension();
                 $data['thumbnail']->move(public_path('uploads/thumbnails/topic_thumbnails/'), $thumbnailName);
@@ -420,7 +420,7 @@ class SuperadminController extends Controller
 
             if (! empty($data['thumbnail'])) {
 
-                $thumbnailPathName = 'public/uploads/thumbnails/topic_thumbnails/' . $topic->thumbnail;
+                $thumbnailPathName = public_path('uploads/thumbnails/topic_thumbnails/' . $topic->thumbnail);
 
                 if (file_exists($thumbnailPathName)) {
                     unlink($thumbnailPathName);

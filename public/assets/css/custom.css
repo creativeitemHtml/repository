@@ -351,8 +351,8 @@ form :where(i, p) {
 }
 
 /* ServiceCheckoutVue component */
-.btn-close{
-    background-color: #ffffff !important;
+.toast-header:not() .btn-close{
+    background-color: #ffffff;
 }
 
 .modal-title {
@@ -376,10 +376,6 @@ form :where(i, p) {
     color: #212534;
 }
 
-/* ServiceCustomCheckoutVue component */
-.btn-close{
-    background-color: #ffffff !important;
-}
 
 .modal-title {
     font-weight: 700;

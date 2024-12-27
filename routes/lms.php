@@ -31,5 +31,7 @@ Route::name('lms.')->prefix('growup-lms')->group(function () {
             Route::post('subscription/', 'subscription')->name('subscription');
             Route::get('subscription/success/{purchase_data}/{response}', 'subscription_success')->name('subscription.success');
         });
+
+        Route::get('/page/{path}', 'page');
     });
 });

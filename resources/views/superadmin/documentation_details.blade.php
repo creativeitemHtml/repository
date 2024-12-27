@@ -2,6 +2,10 @@
     $doc_url = $type == 'saas' ? url("{$product->slug}/help/{$selected_article->slug}") : route('documentation_details', [$selected_article->article_to_product->slug, $selected_article->slug]);
 @endphp
 
+<p>{{ $doc_url }}</p>
+<p>{{ $selected_article->article_to_product->slug }}</p>
+<p>{{ $selected_article->slug }}</p>
+
 <div class="admin_main_right p-30 bd-r-5 mb-60">
     <div class="title-btn-menu-wrap d-flex justify-content-between align-items-center flex-wrap g-10 pb-30">
         <h4 class="fz-20-sb-black">{{ $selected_article->article }}</h4>

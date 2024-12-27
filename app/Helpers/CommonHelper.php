@@ -203,7 +203,7 @@ if (! function_exists('get_fist_article_for_an_applicaiton')) {
 if (! function_exists('reformat_image_path')) {
     function reformat_image_path($html, $is_blog = false, $export = false)
     {
-        $image_title;
+        $image_title = '';
         preg_match_all('@img src="([^"]+)"@', $html, $match);
         $sources = array_pop($match);
         foreach ($sources as $key => $source) {
@@ -590,5 +590,18 @@ if (! function_exists('get_popup_banner')) {
     function get_popup_banner($path)
     {
         return $path ? asset("uploads/popup/{$path}") : '';
+    }
+}
+
+if (! (function_exists('get_image'))) {
+    function get_image($path = null)
+    {
+        if (! $path) {
+            return asset('assets/img/image-placeholder.png');
+        }
+        $placeholder = asset('assets/img/image-placeholder.png');
+
+        $full_path = public_path($path);
+        return file_exists($full_path) ? asset($path) : $placeholder;
     }
 }

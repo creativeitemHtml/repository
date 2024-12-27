@@ -9,6 +9,17 @@ class SaasSubscription extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'package_id',
+        'price',
+        'payment_method',
+        'transaction_keys',
+        'expiry',
+        'upgrade_from_package_id',
+        'status',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');

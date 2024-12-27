@@ -21,13 +21,13 @@
                                             www.creativeitem.com/
                                             <span class="company-name">{{ old('company_name') }}</span>
                                         </p>
-                                        <input type="text" class="form-control gr-form-control" name="company_name" value="{{ old('company_name') }}" id="type-company-name" placeholder="Your company name*">
+                                        <input type="text" class="form-control gr-form-control" name="company_name" value="{{ old('company_name') }}" id="type-company-name" placeholder="Your company name*" required>
                                     </div>
 
 
                                     @guest
                                         <div class="mb-3">
-                                            <input type="text" class="form-control gr-form-control" name="email" {{ old('email') }} placeholder="Your Email Address*">
+                                            <input type="text" class="form-control gr-form-control" name="email" @isset($email) value="{{ $email }}" @else value="{{ old('email') }}" @endisset placeholder="Your Email Address*" required>
                                         </div>
                                         <div class="mb-32px">
                                             <div class="input-password-wrap">
@@ -35,7 +35,7 @@
                                                     <img class="eye-unlock" src="assets/img/icon/eye-gray-18.svg" alt="">
                                                     <img class="eye-lock" src="assets/img/icon/eye-slash-gray-18.svg" alt="">
                                                 </div>
-                                                <input type="password" id="password1" class="form-control gr-form-control password-field1" name="password" placeholder="Password*">
+                                                <input type="password" id="password1" class="form-control gr-form-control password-field1" name="password" placeholder="Password*" required>
                                             </div>
                                         </div>
                                     @endguest
@@ -43,7 +43,7 @@
 
                                     <div class="mb-3">
                                         <div class="form-check gr-form-check">
-                                            <input class="form-check-input gr-form-check-input" type="checkbox" name="policy" value="0" id="flexCheckDefault">
+                                            <input class="form-check-input gr-form-check-input" type="checkbox" name="policy" value="0" id="flexCheckDefault" required>
                                             <label class="form-check-label gr-form-check-label" for="flexCheckDefault">
                                                 {{ get_phrase('I agree to the') }} <a href="#" class="cin2-text-dark fw-semibold">{{ get_phrase('Terms of Service') }}</a> and <a href="#" class="cin2-text-dark fw-semibold">Privacy Policy</a>.
                                             </label>

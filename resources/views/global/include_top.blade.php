@@ -1,12 +1,19 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon" />
+
+    <link rel="stylesheet" href="{{ asset('assets/icons/uicons-solid-rounded/css/uicons-solid-rounded.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/icons/uicons-bold-rounded/css/uicons-bold-rounded.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/icons/uicons-bold-straight/css/uicons-bold-straight.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/icons/uicons-regular-rounded/css/uicons-regular-rounded.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/icons/uicons-thin-rounded/css/uicons-thin-rounded.css') }}" />
+
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/vendors/plyr/plyr.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/toastr.min.css') }}" />
+    <link href="{{ asset('assets/css/toastr.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/global-style.css') }}" rel="stylesheet" />
 
     <!-- lms css -->
-    @if ((Route::getCurrentRoute() && Route::getCurrentRoute()->getPrefix() == '/growup-lms') || Route::currentRouteName() == 'register.company')
+    @if ((Route::getCurrentRoute() && Route::getCurrentRoute()->getPrefix() == '/growup-lms') || Route::currentRouteName() == 'register.company.form' || Route::currentRouteName() == 'email.verification.process' || Route::currentRouteName() == 'signup.success')
         <link href="{{ asset('assets/css/lms-signup.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/element-header.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/vendors/wow-js-new/animate.min.css') }}" rel="stylesheet" />

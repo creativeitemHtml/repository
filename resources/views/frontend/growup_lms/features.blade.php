@@ -15,8 +15,8 @@
                             <span class="cin2-text-dark fw-semibold">{{ get_phrase('successful') }}</span> {{ get_phrase('careers.') }}
                         </p>
                         <div class="d-flex align-items-center cg-32px rg-20px flex-wrap">
-                            <a href="#" class="btn lms-btn-purple-gradient px-4 py-3 lh-base">{{ get_phrase('Start Selling Today') }}</a>
-                            <a href="javascript:void(0)" class="lms2-modal-video-btn" data-bs-toggle="modal" data-bs-target="#video-modal">{{ get_phrase('Watch Video') }}</a>
+                            <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn lms-btn-purple-gradient px-4 py-3 lh-base">{{ get_phrase('Start Selling Today') }}</a>
+                            {{-- <a href="javascript:void(0)" class="lms2-modal-video-btn" data-bs-toggle="modal" data-bs-target="#video-modal">{{ get_phrase('Watch Video') }}</a> --}}
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                             <span class="cin2-text-dark fw-semibold">{{ get_phrase('interactive learning process') }}</span>
                             {{ get_phrase('that students love.') }}
                         </p>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>{{ get_phrase('Get Started') }}</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -68,7 +68,7 @@
                         <p class="lms-notice-badge-warning mb-3 text-center">Ai- generated content</p>
                         <h1 class="man-title-48px mb-3">Fast, Unique, and Engaging AI Content!</h1>
                         <p class="man-subtitle3-16px mb-32px">Don't waste your time and focus on what you love about your business. Create your thinking with <span class="cin2-text-dark fw-semibold">built-in AI tools</span> without delay.</p>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -141,7 +141,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -162,7 +162,7 @@
                         <h1 class="man-title-48px mb-3">Keep Your Videos Safe</h1>
                         <p class="man-subtitle3-16px mb-32px">Your valuable videos deserve the best protection. Keep them <span class="cin2-text-dark fw-semibold">secure,</span> accessible only to your <span class="cin2-text-dark fw-semibold">chosen audience,</span> and <span
                                 class="cin2-text-dark fw-semibold">safeguard</span> your creative work effortlessly.</p>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -196,7 +196,7 @@
                         <h1 class="man-title-48px mb-3">Certificate of Course Completion</h1>
                         <p class="man-subtitle3-16px mb-32px">Your learning journey deserves recognition, and our <span class="cin2-text-dark fw-semibold">Certificate of Course</span> Completion reflects that commitment. We’re grateful to provide you with a valuable credential to help advance your
                             career.</p>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -259,7 +259,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -336,7 +336,7 @@
                         <h1 class="man-title-48px mb-3">Protect Your Business, Anytime, Anywhere</h1>
                         <p class="man-subtitle3-16px mb-32px">Keep your business <span class="cin2-text-dark fw-semibold">top-notch protection</span> from risks <span class="cin2-text-dark fw-semibold">24/7</span> with our proven and protective solution. Focus on your business with confidence and
                             guarantee is our commitment.</p>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -370,7 +370,7 @@
                         <h1 class="man-title-48px mb-3">Create Pages in Minutes</h1>
                         <p class="man-subtitle3-16px mb-32px">Create your homepage with ease! Our <span class="cin2-text-dark fw-semibold">self-help tool</span> makes building a professional website simple, letting you <span class="cin2-text-dark fw-semibold">design, customize, and launch</span> a
                             homepage that reflects your vision.</p>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>
@@ -433,7 +433,7 @@
                         <h1 class="man-title-48px mb-3">Reliable API & App Solutions Anytime</h1>
                         <p class="man-subtitle3-16px mb-32px">Get reliable <span class="cin2-text-dark fw-semibold">API and App support</span> round-the-clock. Our expert team ensures seamless performance and quick issue resolution at any time.</p>
                         <div class="d-flex align-items-center flex-wrap rg-20px cg-20px">
-                            <a href="#" class="btn gr-btn-primary">
+                            <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                                 <span>Get Started</span>
                                 <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                             </a>
@@ -469,7 +469,7 @@
                         <h1 class="man-title-48px mb-3">Popular Payment Gateways with acknowledgment</h1>
                         <p class="man-subtitle3-16px mb-32px">We offer those payment gateways which is recognized globally. Choose your <span class="cin2-text-dark fw-semibold">trusted payment gateways.</span> Through these options, payments are <span class="cin2-text-dark fw-semibold">easy,
                                 reliable, and widely</span> acknowledged by businesses and customers.</p>
-                        <a href="#" class="btn gr-btn-primary">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
                             <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
                         </a>

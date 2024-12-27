@@ -190,7 +190,7 @@
                         <h1 class="man-title-48px mb-32px">GrowUp LMS network</h1>
                         <p class="man-subtitle3-16px mb-32px"><span class="cin2-text-dark fw-semibold">Connect, collaborate, and grow</span> with our lively GrowUp LMS community on Facebook. Engage with fellow learners, share insights, and fuel your passion with entrepreneurs, experts, and
                             innovators. Read more.</p>
-                        <a href="#" class="btn cin3-btn-outline-secondary svg-stroke px-32px py-3 d-flex align-items-center gap-2">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn cin3-btn-outline-secondary svg-stroke px-32px py-3 d-flex align-items-center gap-2">
                             <span>Get Started</span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.90625 19.92L15.4263 13.4C16.1963 12.63 16.1963 11.37 15.4263 10.6L8.90625 4.08" stroke="#212534" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>

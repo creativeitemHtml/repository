@@ -28,17 +28,33 @@ class RegisterCompanyController extends Controller
     public $company_db_host;
     public $company_db_user;
     public $company_db_pass;
+    public $product_slug;
+
+    public function __construct()
+    {
+        $this->product_slug = request()->route()->parameter('saas_product');
+    }
 
     public function create(Request $request, $saas_product)
     {
-        $view = '';
+        $product_id = SaasProduct::where('slug', $saas_product)->value('id');
+        $view       = '';
         if ($saas_product == 'growup-lms') {
             $view = 'frontend.growup_lms.signup';
-            $url  = 'lms.home';
         }
 
         if (Auth::check()) {
-            return to_route($url)->with('warning', 'You are already logged in');
+            $subscription = SaasSubscription::where('user_id', auth()->id())
+                ->where('status', 1)
+                ->whereDate('expiry', '>', now()->toDateTimeString())
+                ->whereHas('package', function ($query) use ($product_id) {
+                    $query->where('id', $product_id);
+                })
+                ->exists();
+
+            if ($subscription) {
+                return redirect()->back()->with('warning', 'You have already subscribed to this product');
+            }
         }
 
         $page_data['email'] = htmlspecialchars($request->email);
@@ -74,9 +90,6 @@ class RegisterCompanyController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        // handle existing and guest user request
-        $user_data = $this->handleUserRequest($request);
-
         // company name
         $this->company_name = $request->company_name;
 
@@ -84,6 +97,28 @@ class RegisterCompanyController extends Controller
         $this->saas_product = SaasProduct::where('slug', $saas_product)->first();
         if (! $this->saas_product) {
             return redirect()->back()->with('error', 'Product not found');
+        }
+
+        // handle existing and guest user request
+        $user_data = $this->handleUserRequest($request);
+
+        // check user has any company
+        $has_company = SaasCompany::where('user_id', auth()->id())->first();
+        if ($has_company) {
+            return redirect()->back()->with('warning', 'You have already created a company');
+        }
+
+        // check user has already subscribed to the selected saas product
+        $product_id   = $this->saas_product->id;
+        $subscription = SaasSubscription::where('user_id', auth()->id())
+            ->where('status', 1)
+            ->whereHas('package', function ($query) use ($product_id) {
+                $query->where('id', $product_id);
+            })
+            ->exists();
+
+        if ($subscription) {
+            return redirect()->back()->with('warning', 'You have already subscribed to this product');
         }
 
         // create the company database
@@ -112,10 +147,16 @@ class RegisterCompanyController extends Controller
 
         // send email verification
         if ($user_data['send_mail']) {
-            Mail::to($user_data['email'])->send(new VerifyEmailWithPassword($user_data['pin'], auth()->user(), $user_data['password']));
+            Mail::to($user_data['email'])->send(new VerifyEmailWithPassword($user_data['token'], auth()->user(), $user_data['password']));
         }
 
-        return view('frontend.growup_lms.' . auth()->user()->email_verified_at ? 'company_create_success' : 'company_email_verify');
+        $url = auth()->user()->email_verified_at ? 'signup.success' : 'email.verification.process';
+        $msg = auth()->user()->email_verified_at ? 'Company created successfully' : 'Please verify your email to continue';
+
+        session(['company_registration_success' => true]);
+        session(['email_verification' => true]);
+
+        return to_route($url, $saas_product)->with('success', $msg);
     }
 
     public function handleUserRequest($request)
@@ -123,39 +164,45 @@ class RegisterCompanyController extends Controller
         $user = Auth::user();
 
         // common data for user and password reset
-        $data['email']     = $request->email;
-        $data['pin']       = rand(10000, 99999);
-        $data['password']  = $request->password;
-        $data['send_mail'] = true;
+        $data['email']      = $request->email;
+        $data['token']      = rand(10000, 99999);
+        $data['created_at'] = date('Y-m-d H:i:s');
 
-        if ($user) {
-
-            // handle auth existing user
-            if (! $user->email_verified_at) {
-                $reset_password   = DB::table('password_resets')->where('email', $user->email)->first();
-                $data['email']    = $user->email;
-                $data['password'] = $user->password;
-                $data['pin']      = $reset_password ? $reset_password->token : $data['pin'];
-
-                if (! $reset_password) {
-                    DB::table('password_resets')->insert($data);
-                }
-            }
-            $data['send_mail'] = false;
-        } else {
-
-            // handle guest user registration and login to system
+        // if user not exists then insert user and make login
+        if (! $user) {
             $username = strstr($data['email'], '@', true);
-            $user     = User::create([
+
+            $user = User::create([
                 'name'     => $username,
                 'email'    => $data['email'],
                 'role_id'  => '6',
-                'password' => Hash::make($data['password']),
+                'password' => Hash::make($request->password),
             ]);
+
+            DB::table('password_resets')->insert($data);
 
             event(new Registered($user));
             Auth::login($user);
+
+            $user = Auth::user();
         }
+
+        // check email has been verified or not
+        $send_mail = false;
+        if (! $user->email_verified_at) {
+            $send_mail      = true;
+            $reset_password = DB::table('password_resets')->where('email', $user->email)->first();
+
+            $data['email'] = $user->email;
+            $data['token'] = $reset_password ? $reset_password->token : $data['token'];
+
+            if (! $reset_password) {
+                DB::table('password_resets')->insert($data);
+            }
+        }
+
+        $data['password']  = $user->password;
+        $data['send_mail'] = $send_mail;
 
         return $data;
     }
@@ -289,6 +336,67 @@ class RegisterCompanyController extends Controller
 
         $connection->table('company_subscriptions')->insert($subscription_data);
         return ['status' => true, 'msg' => 'Company data has been saved'];
+    }
+
+    public function verification_form()
+    {
+        if (! session()->has('email_verification')) {
+            return redirect()->route('register.company.form', $this->product_slug)->with('error', 'Invalid request');
+        }
+
+        if (auth()->user()->email_verified_at) {
+            return redirect()->route('home')->with('warning', 'Email already verified');
+        }
+
+        return view('frontend.growup_lms.company_email_verify');
+    }
+
+    public function process_verification(Request $request)
+    {
+        $request->validate([
+            'pin' => 'required|digits:5',
+        ]);
+
+        $user = Auth::user();
+
+        if ($user->email_verified_at) {
+            return redirect()->route('home')->with('warning', 'Email already verified');
+        }
+
+        $password_reset = DB::table('password_resets')->where('email', $user->email)->first();
+
+        if (! $password_reset || $password_reset->token != $request->pin) {
+            return redirect()->back()->with('error', 'Invalid token');
+        }
+
+        $user->email_verified_at = date('Y-m-d H:i:s');
+        $user->save();
+
+        session()->forget('email_verification');
+
+        return redirect()->route('signup.success', $this->product_slug)->with('success', 'Email verified successfully');
+    }
+
+    public function resend_verification(Request $request)
+    {
+        $user = Auth::user();
+        $pin  = rand(10000, 99999);
+
+        DB::table('password_resets')->where('email', $user->email)->update(['token' => $pin]);
+        Mail::to($user->email)->send(new VerifyEmailWithPassword($pin, $user, $user->password));
+
+        return to_route('email.verification.process', $this->product_slug)->with('success', 'Verification email sent successfully');
+    }
+
+    public function signup_success()
+    {
+        if (! session()->has('company_registration_success')) {
+            return redirect()->route('register.company.form', $this->product_slug)->with('error', 'Invalid request');
+        }
+
+        session()->forget('company_registration_success');
+        $page_data['product'] = SaasProduct::where('slug', $this->product_slug)->first();
+        return view('frontend.growup_lms.company_create_success', $page_data);
     }
 
 }
