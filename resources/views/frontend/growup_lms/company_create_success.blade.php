@@ -20,7 +20,7 @@
                                 </div>
                                 <h3 class="text-center mb-3 man-title-26px">Congratulations! {{ auth()->user()->name }}</h3>
                                 <p class="man-subtitle-16px cin2-text-dark text-center mb-4 pb-1">Company Create Successfully!</p>
-                                <a href="#" class="btn gr-btn-purple-gradient w-100">Explore Application</a>
+                                <a href="{{ $domain }}" class="btn gr-btn-purple-gradient w-100">Explore Application</a>
                             </div>
                         </div>
                     </div>

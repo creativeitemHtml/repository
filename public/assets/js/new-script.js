@@ -759,3 +759,40 @@ new VenoBox({
 // const player_4 = new Plyr('#player-4');
 // const player_5 = new Plyr('#player-5');
 // const player_6 = new Plyr('#player-6');
+
+var sectionIds = $('a.gr-scrollspy-btn');
+
+$(document).scroll(function () {
+    var scrollPosition = $(document).scrollTop();
+    var firstContainer = $(sectionIds.first().attr('href'));
+    var lastContainer = $(sectionIds.last().attr('href'));
+    var firstContainerBottom = firstContainer.offset().top + firstContainer.outerHeight();
+    var lastContainerBottom = lastContainer.offset().top + lastContainer.outerHeight();
+
+    // Activate the first button if the scroll position is less than the first container's bottom
+    if (scrollPosition < firstContainerBottom - 20) {
+        sectionIds.removeClass('active');
+        sectionIds.first().addClass('active');
+        return;
+    }
+
+    // Activate the last button if the scroll position is greater than the last container's bottom
+    if (scrollPosition >= lastContainerBottom - 20) {
+        sectionIds.removeClass('active');
+        sectionIds.last().addClass('active');
+        return;
+    }
+
+    // Check other sections for activation
+    sectionIds.each(function () {
+        var container = $($(this).attr('href'));
+        var containerOffset = container.offset().top;
+        var containerHeight = container.outerHeight();
+        var containerBottom = containerOffset + containerHeight;
+
+        if (scrollPosition < containerBottom - 20 && scrollPosition >= containerOffset - 20) {
+            sectionIds.removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+});

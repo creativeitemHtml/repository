@@ -6,145 +6,109 @@
         use App\Models\SaasCompany;
     @endphp
 
-    <section class="gr-main-hero-section">
+    <section>
         <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-md-6 order-2 order-md-1">
-                    <div class="md-max-w-535px">
-                        <h1 class="man-title-60px mb-3">{{ get_phrase('Sell, Earn, Train and GrowUp') }}</h1>
-
-                        <p class="man-subtitle3-16px mb-32px md-max-w-503px">
-                            {{ get_phrase('An advanced LMS that turns your learning Into earning potentials. Share what you know and earn money on your own terms.') }}
-                            <span class="cin2-text-dark fw-semibold">{{ get_phrase('Turn your knowledge into business opportunity.') }}</span>
-                        </p>
-
-                        <form action="{{ route('register.company.form', 'growup-lms') }}" method="post">@csrf
-                            <div class="gr-subscribe-wrap">
-                                <button type="submit" class="btn gr-subscribe-btn">{{ get_phrase('Get Started') }}</button>
-                                <input type="email" name="email" class="form-control gr-subscribe-input" placeholder="Enter your email">
+            <div class="row mt-60px mb-100px">
+                <div class="col-12">
+                    <div>
+                        <div class="gr-main-hero-title-area">
+                            <h1 class="man-title-60px text-center mb-3">Sell, Earn, Train and GrowUp</h1>
+                            <p class="man-subtitle3-16px text-center max-w-750px mx-auto mb-32px">An advanced LMS that turns your learning Into earning potentials. Share what you know and earn money on your own terms. <span class="cin2-text-dark fw-semibold">Turn your knowledge into business
+                                    opportunity.</span></p>
+                            <div class="d-flex justify-content-center">
+                                <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn lms-btn-purple-gradient px-4 gap-1">
+                                    <span>Get Started Free</span>
+                                    <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="icon">
+                                </a>
                             </div>
-                        </form>
-
-                    </div>
-                </div>
-                <div class="col-md-6 order-1 order-md-2">
-                    <div class="gr-main-hero-banner me-auto ms-auto me-md-0 wow animate__fadeInUp" data-wow-delay=".3s">
-                        <img class="banner" src="{{ asset('assets/img/growup/gr-main-hero-banner.webp') }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="mb-100px">
-        <div class="container">
-            <div class="row mb-32px">
-                <div class="col-12">
-                    <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Dream it, Launch it, Make profit!') }}</h1>
-                    <p class="man-subtitle3-16px text-center"><span class="cin2-text-dark">{{ get_phrase('GrowUp LMS') }}</span> {{ get_phrase('makes it happen fast') }}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="profit-dark-area">
-                        <div class="profit-blue-wrap">
-                            <h1 class="man-title-60px fw-extrabold text-white"><span class="counter">2</span>k+</h1>
-                            <p class="man-subtitle3-16px text-white mb-20px">{{ get_phrase('Satisfied clients') }}</p>
-                            <p class="man-gray-text-14px">{{ get_phrase('Our awesome clients are') }}</p>
-                            <p class="man-gray-text-14px">{{ get_phrase('industry experts around the world') }}</p>
                         </div>
-                        <div class="profit-white-wrap profit-white-wrap-2nd">
-                            <h1 class="text-center man-title-60px fw-extrabold"><span class="counter">1</span>+</h1>
-                            <p class="man-subtitle3-16px cin2-text-dark text-center">{{ get_phrase('Years Experience') }}</p>
-                        </div>
-                        <div class="profit-white-wrap">
-                            <h1 class="text-center man-title-60px fw-extrabold"><span class="counter">12</span></h1>
-                            <p class="man-subtitle3-16px cin2-text-dark text-center">{{ get_phrase('Years Experience') }}</p>
-                        </div>
-                        <div class="profit-white-wrap">
-                            <h1 class="text-center man-title-60px fw-extrabold"><span class="counter">1200</span>+</h1>
-                            <p class="man-subtitle3-16px cin2-text-dark text-center">{{ get_phrase('Clients Review') }}</p>
+                        <div class="gr-main-video-area">
+                            <div class="lms2-video-wrap max-w-941px mx-auto">
+                                <div class="plyr__video-embe" id="player">
+                                    <iframe src="https://www.youtube.com/embed/5YHAVhEJ9TM?si=GrmhAZyUahBciHUm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Hero Area End -->
 
 
-
+    <!-- Key Features List Area Start -->
     <section>
         <div class="container">
             <div class="row mb-32px">
                 <div class="col-12">
-                    <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Everything you need is right here.') }}</h1>
-                    <p class="man-subtitle3-16px text-center">{{ get_phrase('Our') }} <span class="cin2-text-dark fw-semibold">{{ get_phrase('key features') }}</span> {{ get_phrase('you must need') }}</p>
+                    <h1 class="man-title-48px text-center mb-3">Everything you need is right here.</h1>
+                    <p class="man-subtitle3-16px text-center">Our <span class="cin2-text-dark fw-semibold">key features</span> you must need</p>
                 </div>
             </div>
             <div class="gr-radio-list-grid mb-100px">
                 <ul class="gr-radio-list-group">
-                    <li class="gr-radio-list">{{ get_phrase('Drip courses') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Quiz') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Course Discussion') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Course Bundle') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Seat Limit') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Coupons Discount') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Embeds') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Wishlist') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Cart') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Course Catalog') }}</li>
+                    <li class="gr-radio-list">Drip courses</li>
+                    <li class="gr-radio-list">Quiz</li>
+                    <li class="gr-radio-list">Course Discussion</li>
+                    <li class="gr-radio-list">Course Bundle</li>
+                    <li class="gr-radio-list">Seat Limit</li>
+                    <li class="gr-radio-list">Coupons Discount</li>
+                    <li class="gr-radio-list">Embeds</li>
+                    <li class="gr-radio-list">Wishlist</li>
+                    <li class="gr-radio-list">Cart</li>
+                    <li class="gr-radio-list">Course Catalog</li>
                 </ul>
                 <ul class="gr-radio-list-group">
-                    <li class="gr-radio-list">{{ get_phrase('Course Certificate') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Team progress') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Offline Access') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Lesson Builder') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Live Classes') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Multi Lesson') }} Type</li>
-                    <li class="gr-radio-list">{{ get_phrase('Video Watermarking') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('SEO Optimization') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Blog & Content') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Email Newsletter') }}</li>
+                    <li class="gr-radio-list">Course Certificate</li>
+                    <li class="gr-radio-list">Team progress</li>
+                    <li class="gr-radio-list">Offline Access</li>
+                    <li class="gr-radio-list">Lesson Builder</li>
+                    <li class="gr-radio-list">Live Classes</li>
+                    <li class="gr-radio-list">Multi Lesson Type</li>
+                    <li class="gr-radio-list">Video Watermarking</li>
+                    <li class="gr-radio-list">SEO Optimization</li>
+                    <li class="gr-radio-list">Blog & Content</li>
+                    <li class="gr-radio-list">Email Newsletter</li>
                 </ul>
                 <ul class="gr-radio-list-group">
-                    <li class="gr-radio-list">{{ get_phrase('Social Media Sharing') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Access Control') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Device Limitations') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Messaging') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Page Builder') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Multimedia Content Support') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Grading & Feedback') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Advanced Search') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Cross-Device Access') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Role Management') }}</li>
+                    <li class="gr-radio-list">Social Media Sharing</li>
+                    <li class="gr-radio-list">Access Control</li>
+                    <li class="gr-radio-list">Device Limitations</li>
+                    <li class="gr-radio-list">Messaging</li>
+                    <li class="gr-radio-list">Page Builder</li>
+                    <li class="gr-radio-list">Multimedia Content Support</li>
+                    <li class="gr-radio-list">Grading & Feedback</li>
+                    <li class="gr-radio-list">Advanced Search</li>
+                    <li class="gr-radio-list">Cross-Device Access</li>
+                    <li class="gr-radio-list">Role Management</li>
                 </ul>
                 <ul class="gr-radio-list-group">
-                    <li class="gr-radio-list">{{ get_phrase('AI-Generated Content') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Multi-Language') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('API Integration') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Mobile App') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Payment Gateway') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Instant Payouts') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Global Tax') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Revenue Report') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Offline Payment') }}</li>
-                    <li class="gr-radio-list">{{ get_phrase('Subscription Payments') }}</li>
+                    <li class="gr-radio-list">AI-Generated Content</li>
+                    <li class="gr-radio-list">Multi-Language</li>
+                    <li class="gr-radio-list">API Integration</li>
+                    <li class="gr-radio-list">Mobile App</li>
+                    <li class="gr-radio-list">Payment Gateway</li>
+                    <li class="gr-radio-list">Instant Payouts</li>
+                    <li class="gr-radio-list">Global Tax</li>
+                    <li class="gr-radio-list">Revenue Report</li>
+                    <li class="gr-radio-list">Offline Payment</li>
+                    <li class="gr-radio-list">Subscription Payments</li>
                 </ul>
             </div>
         </div>
     </section>
+    <!-- Key Features List Area End -->
 
 
-
+    <!-- Training Plan Area Start -->
     <section>
         <div class="container">
             <div class="row align-items-center mb-100px">
                 <div class="col-md-6 order-2 order-md-1">
                     <div class="pe-lg-1 pe-xl-2">
                         <div>
-                            <h1 class="man-title-48px mb-32px">{{ get_phrase('Find your perfect training plan.') }}</h1>
+                            <h1 class="man-title-48px mb-32px">Find your perfect training plan.</h1>
                             <ul class="d-flex flex-column gap-4 mb-32px">
                                 <li class="d-flex align-items-start gap-3">
                                     <div class="lms-color-iconbox" style="--bg-color:#EBF6E2">
@@ -155,8 +119,8 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="lms-iconlist-title mb-2 cin2-text-dark">{{ get_phrase('Monetize knowledge') }}</h5>
-                                        <p class="lms-iconlist-subtitle">{{ get_phrase('Convert your expertise into earning through Digital downloads, courses, coaching.') }}</p>
+                                        <h5 class="lms-iconlist-title mb-2 cin2-text-dark">Monetize knowledge</h5>
+                                        <p class="lms-iconlist-subtitle">Convert your expertise into earning through Digital downloads, courses, coaching.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
@@ -168,8 +132,8 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="lms-iconlist-title mb-2 cin2-text-dark">{{ get_phrase('Hassle-Free management') }}</h5>
-                                        <p class="lms-iconlist-subtitle">{{ get_phrase('Let us manage the heavy liftings, while you focus on creation.') }}</p>
+                                        <h5 class="lms-iconlist-title mb-2 cin2-text-dark">Hassle-Free management</h5>
+                                        <p class="lms-iconlist-subtitle">Let us manage the heavy liftings, while you focus on creation.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
@@ -181,14 +145,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="lms-iconlist-title mb-2 cin2-text-dark">{{ get_phrase('Carefree Learning') }}</h5>
-                                        <p class="lms-iconlist-subtitle">{{ get_phrase('Nothing to worry about, Just explore.') }}</p>
+                                        <h5 class="lms-iconlist-title mb-2 cin2-text-dark">Carefree Learning</h5>
+                                        <p class="lms-iconlist-subtitle">Nothing to worry about, Just explore.</p>
                                     </div>
                                 </li>
                             </ul>
                             <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary ms-76px">
-                                <span>{{ get_phrase('Get Started') }}</span>
-                                <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
+                                <span>Get Started</span>
                             </a>
                         </div>
                     </div>
@@ -196,30 +159,31 @@
                 <div class="col-md-6 order-1 order-md-2">
                     <div class="ps-lg-1 ps-xl-2 wow animate__fadeInUp" data-wow-delay=".3s">
                         <div class="w-100">
-                            <img class="w-100" src="{{ asset('assets/img/growup/gr-training-plan-banner.webp') }}" alt="banner">
+                            <img class="w-100" src="{{ asset('assets/img/growup/gr-training-plan-banner2.webp') }}" alt="banner">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Training Plan Area End -->
 
 
-
+    <!-- Sell Make Money Area Start -->
     <section>
         <div class="container">
             <div class="row align-items-center mb-100px">
                 <div class="col-md-6">
                     <div class="pe-lg-1 pe-xl-2">
                         <div class="w-100 wow animate__fadeInUp" data-wow-delay=".3s">
-                            <img class="w-100" src="{{ asset('assets/img/growup/gr-make-miney-banner.webp') }}" alt="banner">
+                            <img class="w-100" src="{{ asset('assets/img/growup/gr-make-money-banner2.webp') }}" alt="banner">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="ps-lg-1 ps-xl-2">
                         <div>
-                            <h1 class="man-title-48px mb-32px">{{ get_phrase('Sell with confidence & make money') }}</h1>
+                            <h1 class="man-title-48px mb-32px">Sell with confidence & make money</h1>
                             <ul class="d-flex flex-column gap-4 mb-32px">
                                 <li class="d-flex align-items-start gap-3">
                                     <div class="lms-color-iconbox" style="--bg-color:#FFEFEF">
@@ -254,8 +218,8 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="lms-iconlist-title mb-2">{{ get_phrase('Ultimate Authority') }}</h5>
-                                        <p class="lms-iconlist-subtitle">{{ get_phrase('Seize full control over your business through direct payment processing and management on GrowUp LMS') }}.</p>
+                                        <h5 class="lms-iconlist-title mb-2">Ultimate Authority</h5>
+                                        <p class="lms-iconlist-subtitle">Seize full control over your business through direct payment processing and management GrowUp LMS.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
@@ -273,8 +237,8 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="lms-iconlist-title mb-2">{{ get_phrase('Smart Tracking') }}</h5>
-                                        <p class="lms-iconlist-subtitle">{{ get_phrase('Make smarter business decision and increase  sales by using enhanced tools to track your performance.') }}</p>
+                                        <h5 class="lms-iconlist-title mb-2">Smart Tracking</h5>
+                                        <p class="lms-iconlist-subtitle">Make smarter business decision and increase  sales by using enhanced tools to track your performance.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
@@ -286,14 +250,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h5 class="lms-iconlist-title mb-2">{{ get_phrase('Proven Reliability') }}</h5>
-                                        <p class="lms-iconlist-subtitle">{{ get_phrase('Your confidence, Our efforts.') }}</p>
+                                        <h5 class="lms-iconlist-title mb-2">Proven Reliability</h5>
+                                        <p class="lms-iconlist-subtitle">Your confidence, Our efforts.</p>
                                     </div>
                                 </li>
                             </ul>
                             <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary ms-76px">
-                                <span>{{ get_phrase('Get Started') }}</span>
-                                <img src="{{ asset('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
+                                <span>Get Started</span>
                             </a>
                         </div>
                     </div>
@@ -301,19 +264,18 @@
             </div>
         </div>
     </section>
+    <!-- Sell Make Money Area End -->
 
 
-
+    <!-- GrowUp LMS Help Area Start -->
     <section>
         <div class="container">
             <div class="row mb-32px">
                 <div class="col-12">
                     <div class="max-w-726px mx-auto">
-                        <h1 class="man-title-48px text-center mb-3">{{ get_phrase('How GrowUp LMS Helps You') }}</h1>
-                        <p class="man-subtitle3-16px text-center">{{ get_phrase('Our flexible') }} <span class="cin2-text-dark fw-semibold">{{ get_phrase('multi-lesson') }}</span>
-                            {{ get_phrase('approach offers diverse formats, enhancing engagement and supporting') }}
-                            <span class="cin2-text-dark fw-semibold">{{ get_phrase('various learning styles') }}</span> {{ get_phrase('to meet every learner’s needs effectively.') }}
-                        </p>
+                        <h1 class="man-title-48px text-center mb-3">How GrowUp LMS Helps You</h1>
+                        <p class="man-subtitle3-16px text-center">Our flexible <span class="cin2-text-dark fw-semibold">multi-lesson</span> approach offers diverse formats, enhancing engagement and supporting <span class="cin2-text-dark fw-semibold">various learning styles</span> to meet every
+                            learner’s needs effectively.</p>
                     </div>
                 </div>
             </div>
@@ -355,55 +317,77 @@
             </div>
         </div>
     </section>
+    <!-- GrowUp LMS Help Area End -->
 
 
 
+    <!-- Develop Your Brand Area Start -->
     <section class="mb-100px">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div>
-                        <ul class="nav nav-pills gr-chart-nav-pills mb-52px mx-auto" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link gr-chart-nav-link active" id="pills-two-tab" data-bs-toggle="pill" data-bs-target="#pills-two" type="button" role="tab" aria-controls="pills-two" aria-selected="false">Course Selling</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link gr-chart-nav-link " id="pills-one-tab" data-bs-toggle="pill" data-bs-target="#pills-one" type="button" role="tab" aria-controls="pills-one" aria-selected="true">Team Training</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab" tabindex="0">
-                                <div class="max-w-750px mx-auto mb-32px">
-                                    <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Develop your brand, Fully yours to control') }}</h1>
-                                    <p class="man-subtitle3-16px text-center">{{ get_phrase('An advanced LMS that turns your learning Into earning potentials. Share what you know and earn money on your own terms.') }}
-                                        <span class="cin2-text-dark fw-semibold">{{ get_phrase('Turn your knowledge into business opportunity.') }}</span>
-                                    </p>
-                                </div>
-                                <div class="mb-32px gr-chart-graph">
-                                    <img class="chart" src="{{ asset('assets/img/growup/gr-chart-2.svg') }}" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
-                                        <span>{{ get_phrase('Get Started') }}</span>
-                                        <img src="{{ get_phrase('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
-                                    </a>
+                        <nav class="gr-scrollspy-btn-nav">
+                            <ul class="gr-scrollspy-btn-wrap">
+                                <li>
+                                    <a class="gr-scrollspy-btn active" href="#scrollspyContent1">Course Selling</a>
+                                </li>
+                                <li>
+                                    <a class="gr-scrollspy-btn" href="#scrollspyContent2">Team Training</a>
+                                </li>
+                                <!-- <li>
+                                                                                        <a class="gr-scrollspy-btn" href="#scrollspyContent3">last</a>
+                                                                                      </li> -->
+                            </ul>
+                        </nav>
+                        <div>
+                            <div class="row pt-32px" id="scrollspyContent1">
+                                <div class="col-12">
+                                    <div class="mb-52px">
+                                        <h1 class="man-title-48px text-center mb-3">Sell your Courses and Earn Today!</h1>
+                                        <p class="man-subtitle3-16px text-center max-w-750px mx-auto">Unlock your potential with our expert-led courses! Gain practical skills, boost your career, and learn at your own pace. <span class="cin2-text-dark fw-semibold">Start your journey today and elevate
+                                                your expertise!</span></p>
+                                    </div>
+                                    <div class="gr-first-cards-wrap">
+                                        <div class="gr-shadow-card max-w-360px">
+                                            <h4 class="man-title2-20px fw-semibold cin2-text-dark mb-12px">1. Create Your Course</h4>
+                                            <p class="man-subtitle3-16px">Set up, personalize, and manage your course content.</p>
+                                        </div>
+                                        <div class="gr-shadow-card max-w-360px">
+                                            <h4 class="man-title2-20px fw-semibold cin2-text-dark mb-12px">2. Set Your Price</h4>
+                                            <p class="man-subtitle3-16px">Define pricing and payment options for your course.</p>
+                                        </div>
+                                        <div class="gr-shadow-card max-w-360px">
+                                            <h4 class="man-title2-20px fw-semibold cin2-text-dark mb-12px">3. Launch & Sell</h4>
+                                            <p class="man-subtitle3-16px">Publish your course and start selling to students.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade " id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab" tabindex="0">
-                                <div class="max-w-750px mx-auto mb-32px">
-                                    <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Develop your brand, Fully yours to control') }}</h1>
-                                    <p class="man-subtitle3-16px text-center">{{ get_phrase('An advanced LMS that turns your learning Into earning potentials. Share what you know and earn money on your own terms.') }}
-                                        <span class="cin2-text-dark fw-semibold">{{ get_phrase('Turn your knowledge into business opportunity.') }}</span>
-                                    </p>
-                                </div>
-                                <div class="mb-32px gr-chart-graph">
-                                    <img class="chart" src="{{ get_phrase('assets/img/growup/gr-chart-1.svg') }}" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
-                                        <span>{{ get_phrase('Get Started') }}</span>
-                                        <img src="{{ get_phrase('assets/img/icon/arrow-right-white-24.svg') }}" alt="">
-                                    </a>
+                            <div class="row pt-100px" id="scrollspyContent2">
+                                <div class="col-12">
+                                    <div class="mb-52px">
+                                        <h1 class="man-title-48px text-center mb-3">Success Starts with a Strong Team</h1>
+                                        <p class="man-subtitle3-16px text-center max-w-750px mx-auto">Build a culture of excellence with our training programs, designed to improve <span class="cin2-text-dark fw-semibold">performance, communication, and leadership.</span></p>
+                                    </div>
+                                    <div class="gr-second-cards-wrap">
+                                        <div class="gr-second-inner-cards">
+                                            <div class="gr-shadow-card max-w-360px">
+                                                <h4 class="man-title2-20px fw-semibold cin2-text-dark mb-12px">1. Create Teams</h4>
+                                                <p class="man-subtitle3-16px">Create team groups and assign members seamlessly.</p>
+                                            </div>
+                                            <div class="gr-shadow-card max-w-360px">
+                                                <h4 class="man-title2-20px fw-semibold cin2-text-dark mb-12px">2. Assign Courses</h4>
+                                                <p class="man-subtitle3-16px">Select and allocate relevant courses or training modules.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="gr-shadow-card max-w-360px">
+                                                <h4 class="man-title2-20px fw-semibold cin2-text-dark mb-12px">3. Track Progress</h4>
+                                                <p class="man-subtitle3-16px">Monitor team performance and provide feedback.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -412,17 +396,18 @@
             </div>
         </div>
     </section>
+    <!-- Develop Your Brand Area End -->
 
 
-
+    <!-- Testimonial Area Start -->
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="max-w-836px mx-auto">
-                        <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Customer response') }}</h1>
-                        <p class="man-subtitle3-16px text-center">{{ get_phrase('Our organization positively addresses the') }} <span class="cin2-text-dark fw-semibold">{{ get_phrase('valued customer reactions.') }}</span>
-                            {{ get_phrase('There is the team to analyze all the raised issues and provide possible solutions on a top priority basis because of organizational commitment.') }}</p>
+                        <h1 class="man-title-48px text-center mb-3">Customer response</h1>
+                        <p class="man-subtitle3-16px text-center">Our organization positively addresses the <span class="cin2-text-dark fw-semibold">valued customer reactions.</span> There is the team to analyze all the raised issues and provide possible solutions on a top priority basis because of
+                            organizational commitment.</p>
                     </div>
                 </div>
             </div>
@@ -439,7 +424,7 @@
                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                 </div>
                             </div>
-                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.') }}</p>
+                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
                         </div>
                         <div class="gr-single-testimonial">
                             <div class="d-flex gap-2 align-items-start mb-20px">
@@ -451,7 +436,7 @@
                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                 </div>
                             </div>
-                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -465,7 +450,7 @@
                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                 </div>
                             </div>
-                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                         </div>
                         <div class="gr-single-testimonial">
                             <div class="d-flex gap-2 align-items-start mb-20px">
@@ -477,7 +462,7 @@
                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                 </div>
                             </div>
-                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -491,7 +476,7 @@
                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                 </div>
                             </div>
-                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.') }}</p>
+                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
                         </div>
                         <div class="gr-single-testimonial">
                             <div class="d-flex gap-2 align-items-start mb-20px">
@@ -503,7 +488,7 @@
                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                 </div>
                             </div>
-                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                         </div>
                     </div>
                 </div>
@@ -519,90 +504,84 @@
                                         <div class="gr-single-testimonial h-100">
                                             <div class="d-flex gap-2 align-items-start mb-20px">
                                                 <div class="img-circle-44px">
-                                                    <img src="assets/img/growup/user-sm-1.svg" alt="">
+                                                    <img src="{{ asset('assets/img/growup/user-sm-1.svg') }}" alt="">
                                                 </div>
                                                 <div>
                                                     <h5 class="man-title-16px fw-bold">Robert Johnson</h5>
                                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                                 </div>
                                             </div>
-                                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to
-                                                personally thank you.</p>
+                                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="gr-single-testimonial h-100">
                                             <div class="d-flex gap-2 align-items-start mb-20px">
                                                 <div class="img-circle-44px">
-                                                    <img src="assets/img/growup/user-sm-2.svg" alt="">
+                                                    <img src="{{ asset('assets/img/growup/user-sm-2.svg') }}" alt="">
                                                 </div>
                                                 <div>
                                                     <h5 class="man-title-16px fw-bold">Jenny Wilson</h5>
                                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                                 </div>
                                             </div>
-                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
-                                                compliments on it all the time! I will definitely be ordering again!</p>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="gr-single-testimonial h-100">
                                             <div class="d-flex gap-2 align-items-start mb-20px">
                                                 <div class="img-circle-44px">
-                                                    <img src="assets/img/growup/user-sm-3.svg" alt="">
+                                                    <img src="{{ asset('assets/img/growup/user-sm-3.svg') }}" alt="">
                                                 </div>
                                                 <div>
                                                     <h5 class="man-title-16px fw-bold">David Carvajal</h5>
                                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                                 </div>
                                             </div>
-                                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to
-                                                personally thank you.</p>
+                                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="gr-single-testimonial h-100">
                                             <div class="d-flex gap-2 align-items-start mb-20px">
                                                 <div class="img-circle-44px">
-                                                    <img src="assets/img/growup/user-sm-4.svg" alt="">
+                                                    <img src="{{ asset('assets/img/growup/user-sm-4.svg') }}" alt="">
                                                 </div>
                                                 <div>
                                                     <h5 class="man-title-16px fw-bold">Hikmet Atceken</h5>
                                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                                 </div>
                                             </div>
-                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
-                                                compliments on it all the time! I will definitely be ordering again!</p>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="gr-single-testimonial h-100">
                                             <div class="d-flex gap-2 align-items-start mb-20px">
                                                 <div class="img-circle-44px">
-                                                    <img src="assets/img/growup/user-sm-5.svg" alt="">
+                                                    <img src="{{ asset('assets/img/growup/user-sm-5.svg') }}" alt="">
                                                 </div>
                                                 <div>
                                                     <h5 class="man-title-16px fw-bold">Ragiv Diler</h5>
                                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                                 </div>
                                             </div>
-                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
-                                                compliments on it all the time! I will definitely be ordering again!</p>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="gr-single-testimonial h-100">
                                             <div class="d-flex gap-2 align-items-start mb-20px">
                                                 <div class="img-circle-44px">
-                                                    <img src="assets/img/growup/user-sm-6.svg" alt="">
+                                                    <img src="{{ asset('assets/img/growup/user-sm-6.svg') }}" alt="">
                                                 </div>
                                                 <div>
                                                     <h5 class="man-title-16px fw-bold">Maria Ancelotti</h5>
                                                     <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
                                                 </div>
                                             </div>
-                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
-                                                compliments on it all the time! I will definitely be ordering again!</p>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!</p>
                                         </div>
                                     </div>
                                 </div>
@@ -614,13 +593,15 @@
             </div>
         </div>
     </section>
+    <!-- Testimonial Area End -->
 
 
+    <!-- QNA Area Start -->
     <section>
         <div class="container">
             <div class="row mb-32px">
                 <div class="col-12">
-                    <h1 class="man-title-48px text-center">{{ get_phrase('Customers FAQ') }}</h1>
+                    <h1 class="man-title-48px text-center">Customers FAQ</h1>
                 </div>
             </div>
             <div class="row mb-100px justify-content-center">
@@ -630,78 +611,73 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaOne" aria-expanded="true" aria-controls="collapseqnaOne">
-                                        {{ get_phrase('Can I use CreativeLMS at no cost?') }}
+                                        Can I use GrowUp LMS at no cost?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaOne" class="accordion-collapse collapse show" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">{{ get_phrase('Yes! You can start with free plan  of GrowUp LMS at no cost and begin earning right away.') }}</p>
+                                        <p class="man-subtitle3-16px">Yes! You can start with free plan  of GrowUp LMS at no cost and begin earning right away.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaTwo" aria-expanded="false" aria-controls="collapseqnaTwo">
-                                        {{ get_phrase('Can I close my account whenever I want?') }}
+                                        Can I close my account whenever I want?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaTwo" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">
-                                            {{ get_phrase('In short, yes. If your organization is committed to training employees, partners, and customers, you can either enhance traditional methods or replace them entirely. Online training offers benefits like lower costs, reusable content, flexible scheduling, and detailed reporting, among others.') }}
-                                        </p>
+                                        <p class="man-subtitle3-16px">In short, yes. If your organization is committed to training employees, partners, and customers, you can either enhance traditional methods or replace them entirely. Online training offers benefits like lower costs, reusable content,
+                                            flexible scheduling, and detailed reporting, among others.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaThree" aria-expanded="false" aria-controls="collapseqnaThree">
-                                        {{ get_phrase('Do I have to provide credit card details to sign up?') }}
+                                        Do I have to provide credit card details to sign up?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaThree" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">
-                                            {{ get_phrase('Absolutely! You can share course links directly, enabling users to access the content without registering. However, note that progress made by unregistered users will not be tracked.') }}
-                                        </p>
+                                        <p class="man-subtitle3-16px">Absolutely! You can share course links directly, enabling users to access the content without registering. However, note that progress made by unregistered users will not be tracked.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaFour" aria-expanded="false" aria-controls="collapseqnaFour">
-                                        {{ get_phrase('Does GrowUp LMS take a percentage of my earnings?') }}
+                                        Does GrowUp LMS take a percentage of my earnings?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaFour" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">{{ get_phrase('Yes, you can evaluate knowledge through quizzes, surveys, and assignments.') }}</p>
+                                        <p class="man-subtitle3-16px">Yes, you can evaluate knowledge through quizzes, surveys, and assignments.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaFive" aria-expanded="false" aria-controls="collapseqnaFive">
-                                        {{ get_phrase('Is support included with my plan?') }}
+                                        Is support included with my plan?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaFive" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">
-                                            {{ get_phrase('Yes, GrowUp LMS offers robust communication tools. You can make global announcements visible to all users, send direct messages to individuals or groups, and automate emails for events like recertification or course completion.') }}
-                                        </p>
+                                        <p class="man-subtitle3-16px">Yes, GrowUp LMS offers robust communication tools. You can make global announcements visible to all users, send direct messages to individuals or groups, and automate emails for events like recertification or course completion.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseqnaSix" aria-expanded="false" aria-controls="collapseqnaSix">
-                                        {{ get_phrase('Will I need a web host?') }}
+                                        Will I need a web host?
                                     </button>
                                 </h2>
                                 <div id="collapseqnaSix" class="accordion-collapse collapse" data-bs-parent="#lms-qna-accordion">
                                     <div class="accordion-body">
-                                        <p class="man-subtitle3-16px">{{ get_phrase('No matter your size, GrowUp LMS offers affordable plans for everyone—from solo entrepreneurs to SMBs and growing enterprises. That’s why over 28000  teams rely on GrowUp LMS for their training needs.') }}</p>
+                                        <p class="man-subtitle3-16px">No matter your size, GrowUp LMS offers affordable plans for everyone—from solo entrepreneurs to SMBs and growing enterprises. That’s why over 28000  teams rely on GrowUp LMS for their training needs.</p>
                                     </div>
                                 </div>
                             </div>
@@ -711,8 +687,7 @@
             </div>
         </div>
     </section>
-
-
+    <!-- QNA Area End -->
 
     <x-footer-signup />
 @endsection

@@ -395,7 +395,15 @@ class RegisterCompanyController extends Controller
         }
 
         session()->forget('company_registration_success');
+
+        $domain = 'javascript:void(0);';
+        if ($this->product_slug == 'growup-lms') {
+            $domain = "https://lms.creativeitem.com/{$this->company_name}/login";
+        }
+
         $page_data['product'] = SaasProduct::where('slug', $this->product_slug)->first();
+        $page_data['domain']  = $domain;
+
         return view('frontend.growup_lms.company_create_success', $page_data);
     }
 

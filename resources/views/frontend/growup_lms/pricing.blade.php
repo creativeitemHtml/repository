@@ -175,10 +175,10 @@
                     <div class="pb-30px">
                         <h1 class="man-title-48px mb-32px">24/7 Customer support</h1>
                         <p class="man-subtitle3-16px mb-32px">With GrowUp LMS, you’re never alone. Our <span class="cin2-text-dark fw-semibold">24/7 support</span> ensures that help is always available, no matter the hour. so you can focus on what matters most—your success.</p>
-                        <a href="#" class="btn cin3-btn-outline-secondary svg-stroke px-32px py-3 d-flex align-items-center gap-2">
+                        <a href="javascript:void(0);" onclick="support()" class="btn gr-btn-primary">
                             <span>Get Support</span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.90625 19.92L15.4263 13.4C16.1963 12.63 16.1963 11.37 15.4263 10.6L8.90625 4.08" stroke="#212534" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M8.90625 19.92L15.4263 13.4C16.1963 12.63 16.1963 11.37 15.4263 10.6L8.90625 4.08" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                         </a>
                     </div>
@@ -190,11 +190,8 @@
                         <h1 class="man-title-48px mb-32px">GrowUp LMS network</h1>
                         <p class="man-subtitle3-16px mb-32px"><span class="cin2-text-dark fw-semibold">Connect, collaborate, and grow</span> with our lively GrowUp LMS community on Facebook. Engage with fellow learners, share insights, and fuel your passion with entrepreneurs, experts, and
                             innovators. Read more.</p>
-                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn cin3-btn-outline-secondary svg-stroke px-32px py-3 d-flex align-items-center gap-2">
+                        <a href="{{ route('register.company.form', 'growup-lms') }}" class="btn gr-btn-primary">
                             <span>Get Started</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.90625 19.92L15.4263 13.4C16.1963 12.63 16.1963 11.37 15.4263 10.6L8.90625 4.08" stroke="#212534" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>
                         </a>
                     </div>
                 </div>
@@ -210,89 +207,196 @@
 
     <section>
         <div class="container">
-            <div class="row mb-32px">
+            <div class="row">
                 <div class="col-12">
-                    <h1 class="man-title-48px text-center mb-20px">What Our <span class="skin-color">Customers</span> Say</h1>
-                    <p class="man-subtitle3-16px text-center max-w-750px mx-auto">We’ve made it easier than ever to create, manage, and grow a profitable their coaching business that achieves transformational client results.</p>
+                    <div class="max-w-836px mx-auto">
+                        <h1 class="man-title-48px text-center mb-3">{{ get_phrase('Customer response') }}</h1>
+                        <p class="man-subtitle3-16px text-center">{{ get_phrase('Our organization positively addresses the') }} <span class="cin2-text-dark fw-semibold">{{ get_phrase('valued customer reactions.') }}</span>
+                            {{ get_phrase('There is the team to analyze all the raised issues and provide possible solutions on a top priority basis because of organizational commitment.') }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="lms-main-testimonial-area mb-100px">
-            <div class="container">
-                <div class="row">
+            <div class="d-none d-lg-block">
+                <div class="row row-30px mb-100px mt-32px">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="gr-single-testimonial mb-30px">
+                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                <div class="img-circle-44px">
+                                    <img src="{{ asset('assets/img/growup/user-sm-1.svg') }}" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="man-title-16px fw-bold">Robert Johnson</h5>
+                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                </div>
+                            </div>
+                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.') }}</p>
+                        </div>
+                        <div class="gr-single-testimonial">
+                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                <div class="img-circle-44px">
+                                    <img src="{{ asset('assets/img/growup/user-sm-4.svg') }}" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="man-title-16px fw-bold">Hikmet Atceken</h5>
+                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                </div>
+                            </div>
+                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="gr-single-testimonial mb-30px">
+                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                <div class="img-circle-44px">
+                                    <img src="{{ asset('assets/img/growup/user-sm-2.svg') }}" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="man-title-16px fw-bold">Jenny Wilson</h5>
+                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                </div>
+                            </div>
+                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                        </div>
+                        <div class="gr-single-testimonial">
+                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                <div class="img-circle-44px">
+                                    <img src="{{ asset('assets/img/growup/user-sm-5.svg') }}" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="man-title-16px fw-bold">Ragiv Diler</h5>
+                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                </div>
+                            </div>
+                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="gr-single-testimonial mb-30px">
+                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                <div class="img-circle-44px">
+                                    <img src="{{ asset('assets/img/growup/user-sm-3.svg') }}" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="man-title-16px fw-bold">David Carvajal</h5>
+                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                </div>
+                            </div>
+                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.') }}</p>
+                        </div>
+                        <div class="gr-single-testimonial">
+                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                <div class="img-circle-44px">
+                                    <img src="{{ asset('assets/img/growup/user-sm-6.svg') }}" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="man-title-16px fw-bold">Maria Ancelotti</h5>
+                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                </div>
+                            </div>
+                            <p class="man-subtitle-16px cin2-text-dark">{{ get_phrase('I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get compliments on it all the time! I will definitely be ordering again!') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-lg-none">
+                <div class="row mb-100px">
                     <div class="col-12">
-                        <div class="lms-testimonial-space">
-                            <div class="swiper lms2-swiper lms2-slider">
+                        <div>
+                            <!-- Swiper -->
+                            <div class="swiper gr-testimonial">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <div class="d-flex flex-column flex-sm-row lms2-single-slider">
-                                            <div class="lms2-slider-img">
-                                                <img src="{{ asset('assets/img/lms/lms-main-slider-banner-1.svg') }}" alt="banner">
+                                        <div class="gr-single-testimonial h-100">
+                                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                                <div class="img-circle-44px">
+                                                    <img src="assets/img/growup/user-sm-1.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5 class="man-title-16px fw-bold">Robert Johnson</h5>
+                                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                                </div>
                                             </div>
-                                            <div class="lms2-slider-details">
-                                                <img class="lms2-slider-quote" src="{{ asset('assets/img/lms/quote-up-blue-72.svg') }}" alt="">
-                                                <p class="lms2-slider-comment">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
-                                                <h5 class="man-subtitle-16px mb-2px fw-bold cin2-text-dark">Robert Johnson</h5>
-                                                <p class="man-subtitle3-16px">CEO at Startup Inc.</p>
-                                            </div>
+                                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to
+                                                personally thank you.</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="d-flex flex-column flex-sm-row lms2-single-slider">
-                                            <div class="lms2-slider-img">
-                                                <img src="{{ asset('assets/img/lms/lms-main-slider-banner-1.svg') }}" alt="banner">
+                                        <div class="gr-single-testimonial h-100">
+                                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                                <div class="img-circle-44px">
+                                                    <img src="assets/img/growup/user-sm-2.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5 class="man-title-16px fw-bold">Jenny Wilson</h5>
+                                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                                </div>
                                             </div>
-                                            <div class="lms2-slider-details">
-                                                <img class="lms2-slider-quote" src="{{ asset('assets/img/lms/quote-up-blue-72.svg') }}" alt="">
-                                                <p class="lms2-slider-comment">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
-                                                <h5 class="man-subtitle-16px mb-2px fw-bold cin2-text-dark">Robert Johnson</h5>
-                                                <p class="man-subtitle3-16px">CEO at Startup Inc.</p>
-                                            </div>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
+                                                compliments on it all the time! I will definitely be ordering again!</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="d-flex flex-column flex-sm-row lms2-single-slider">
-                                            <div class="lms2-slider-img">
-                                                <img src="{{ asset('assets/img/lms/lms-main-slider-banner-1.svg') }}" alt="banner">
+                                        <div class="gr-single-testimonial h-100">
+                                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                                <div class="img-circle-44px">
+                                                    <img src="assets/img/growup/user-sm-3.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5 class="man-title-16px fw-bold">David Carvajal</h5>
+                                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                                </div>
                                             </div>
-                                            <div class="lms2-slider-details">
-                                                <img class="lms2-slider-quote" src="{{ asset('assets/img/lms/quote-up-blue-72.svg') }}" alt="">
-                                                <p class="lms2-slider-comment">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
-                                                <h5 class="man-subtitle-16px mb-2px fw-bold cin2-text-dark">Robert Johnson</h5>
-                                                <p class="man-subtitle3-16px">CEO at Startup Inc.</p>
-                                            </div>
+                                            <p class="man-subtitle-16px cin2-text-dark">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to
+                                                personally thank you.</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="d-flex flex-column flex-sm-row lms2-single-slider">
-                                            <div class="lms2-slider-img">
-                                                <img src="{{ asset('assets/img/lms/lms-main-slider-banner-1.svg') }}" alt="banner">
+                                        <div class="gr-single-testimonial h-100">
+                                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                                <div class="img-circle-44px">
+                                                    <img src="assets/img/growup/user-sm-4.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5 class="man-title-16px fw-bold">Hikmet Atceken</h5>
+                                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                                </div>
                                             </div>
-                                            <div class="lms2-slider-details">
-                                                <img class="lms2-slider-quote" src="{{ asset('assets/img/lms/quote-up-blue-72.svg') }}" alt="">
-                                                <p class="lms2-slider-comment">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
-                                                <h5 class="man-subtitle-16px mb-2px fw-bold cin2-text-dark">Robert Johnson</h5>
-                                                <p class="man-subtitle3-16px">CEO at Startup Inc.</p>
-                                            </div>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
+                                                compliments on it all the time! I will definitely be ordering again!</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="d-flex flex-column flex-sm-row lms2-single-slider">
-                                            <div class="lms2-slider-img">
-                                                <img src="{{ asset('assets/img/lms/lms-main-slider-banner-1.svg') }}" alt="banner">
+                                        <div class="gr-single-testimonial h-100">
+                                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                                <div class="img-circle-44px">
+                                                    <img src="assets/img/growup/user-sm-5.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5 class="man-title-16px fw-bold">Ragiv Diler</h5>
+                                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                                </div>
                                             </div>
-                                            <div class="lms2-slider-details">
-                                                <img class="lms2-slider-quote" src="{{ asset('assets/img/lms/quote-up-blue-72.svg') }}" alt="">
-                                                <p class="lms2-slider-comment">Great job, I will definitely be ordering again! LookScout is worth much more than I paid. I would like to personally thank you.</p>
-                                                <h5 class="man-subtitle-16px mb-2px fw-bold cin2-text-dark">Robert Johnson</h5>
-                                                <p class="man-subtitle3-16px">CEO at Startup Inc.</p>
-                                            </div>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
+                                                compliments on it all the time! I will definitely be ordering again!</p>
                                         </div>
                                     </div>
-
+                                    <div class="swiper-slide">
+                                        <div class="gr-single-testimonial h-100">
+                                            <div class="d-flex gap-2 align-items-start mb-20px">
+                                                <div class="img-circle-44px">
+                                                    <img src="assets/img/growup/user-sm-6.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5 class="man-title-16px fw-bold">Maria Ancelotti</h5>
+                                                    <p class="man-subtitle2-14px">CEO at Startup Inc.</p>
+                                                </div>
+                                            </div>
+                                            <p class="man-subtitle-16px cin2-text-dark">I love GrowUp lms software because it has the absolute best user experience for my students and customers. I get
+                                                compliments on it all the time! I will definitely be ordering again!</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
                             </div>
                         </div>
                     </div>

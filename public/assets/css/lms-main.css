@@ -6479,3 +6479,200 @@ a.black-btn-lms{
         flex-direction: column;
     }
 }
+
+/* GrowUp LMS main 2 Css End */
+.max-w-941px{
+    max-width: 941px;
+}
+.gr-main-hero-title-area{
+    margin-bottom: 62px;
+}
+.gr-main-video-area {
+    position: relative;
+    overflow-x: clip;
+    z-index: 1;
+}
+.gr-main-video-area::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: -56px;
+    aspect-ratio: 1140 / 255;
+    width: 100%;
+    background: url(../img/growup/gr-video-shape2.svg) no-repeat scroll center center / cover;
+    z-index: -1;
+}
+.gr-main-video-area::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -56px;
+    aspect-ratio: 1140 / 255;
+    width: 100%;
+    background: url(../img/growup/gr-video-shape1.svg) no-repeat scroll center center / cover;
+    z-index: -1;
+}
+.gr-subscribe2-input {
+    border: 1px solid rgba(225, 228, 236, 0.52);
+}
+.gr-scrollspy-btn-nav {
+    position: sticky;
+    top: 72px;
+    z-index: 1020;
+}
+.gr-scrollspy-btn-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid rgba(10, 126, 251, 0.40);
+    padding: 8px 9px;
+    background-color: var(--whiteColor);
+}
+.gr-scrollspy-btn{
+    border: none;
+    transition: .3s;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-align: center;
+    color: #0A7EFB;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    cursor: pointer;
+}
+.gr-scrollspy-btn.active{
+    background: #0A7EFB;
+    color: #FFF;
+}
+.gr-shadow-card{
+    border-radius: 12px;
+    background: var(--whiteColor);
+    box-shadow: 0px -4px 12px 0px rgba(10, 126, 251, 0.16), 0px 4px 12px 0px rgba(10, 126, 251, 0.16);
+    padding: 20px;
+}
+.max-w-360px{
+    max-width: 360px;
+}
+.pt-32px{
+    padding-top: 32px;
+}
+.pt-100px{
+    padding-top: 100px;
+}
+.gr-first-cards-wrap{
+    position: relative;
+    max-width: 1087px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+}
+.gr-first-cards-wrap::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 728px;
+    aspect-ratio: 729 / 353;
+    background-image: url(../img/growup/course-selling-shape.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    z-index: -1;
+}
+.gr-second-inner-cards{
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    margin-bottom: 236px;
+}
+.gr-second-cards-wrap{
+    max-width: 1142px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.gr-second-cards-wrap::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 52px;
+    transform: translateX(-50%);
+    width: 798px;
+    aspect-ratio: 780 / 332;
+    background-image: url(../img/growup/team-training-shape.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    z-index: -1;
+}
+
+/* Responsive */
+@media screen and (max-width: 1199px){
+    .gr-first-cards-wrap {
+        max-width: 991px;
+    }
+    .gr-second-cards-wrap{
+        max-width: 991px;
+    }
+    .gr-second-cards-wrap::after {
+        top: 85px;
+        width: 660px;
+    }
+}
+@media screen and (max-width: 991px){
+    .gr-main-video-area::before{
+        aspect-ratio: 1140 / 270;
+    }
+    .gr-main-video-area::after{
+        aspect-ratio: 1140 / 270;
+    }
+    .gr-first-cards-wrap::after {
+        display: none;
+    }
+    .gr-first-cards-wrap {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .gr-second-cards-wrap::after {
+        display: none;
+    }
+    .gr-second-inner-cards{
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 767px){
+    .gr-main-video-area::before{
+        aspect-ratio: 1140 / 300;
+    }
+    .gr-main-video-area::after{
+        aspect-ratio: 1140 / 300;
+    }
+}
+@media screen and (max-width: 575px){
+    .gr-main-video-area::before{
+        aspect-ratio: 1140 / 345;
+    }
+    .gr-main-video-area::after{
+        aspect-ratio: 1140 / 345;
+    }
+}
+@media screen and (max-width: 450px){
+    .gr-main-video-area::before{
+        aspect-ratio: 1140 / 360;
+    }
+    .gr-main-video-area::after{
+        aspect-ratio: 1140 / 360;
+    }
+}
+/* GrowUp LMS main 2 Css Start */

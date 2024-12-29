@@ -17,10 +17,7 @@
                                 </div>
                                 <form action="{{ route('register.company', 'growup-lms') }}" method="post" id="growup-signup" enctype="multipart/form-data">@csrf
                                     <div class="mb-3">
-                                        <p class="gr-input-value-text ci2-input-value-text mb-2">
-                                            www.creativeitem.com/
-                                            <span class="company-name">{{ old('company_name') }}</span>
-                                        </p>
+                                        <p class="gr-input-value-text ci2-input-value-text mb-2">www.creativeitem.com/<span class="company-name">{{ old('company_name') }}</span></p>
                                         <input type="text" class="form-control gr-form-control" name="company_name" value="{{ old('company_name') }}" id="type-company-name" placeholder="Your company name*" required>
                                     </div>
 

@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="element-sm-btn mt-3 mt-lg-0">
-                            <a href="{{ route('register.company', 'growup-lms') }}" class="unlimited-btn w-100 justify-content-center">{{ get_phrase('Start For Free') }}</a>
+                            <a href="{{ route('register.company.form', 'growup-lms') }}" class="unlimited-btn w-100 justify-content-center">{{ get_phrase('Start For Free') }}</a>
                         </div>
 
                         <div class="element-menu-button">
